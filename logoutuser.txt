@@ -1,0 +1,6 @@
+# TASK 6: Logout User
+# Command:
+curl -X GET http://localhost:8000/djangoapp/logout
+
+# Output:
+{"userName": "", "status": "Logged out"}{"userName": "", "status": "Logged out"}

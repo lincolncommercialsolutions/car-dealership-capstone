@@ -1,0 +1,31 @@
+# TASK 24: Deployment URL
+
+Note: The application is currently running locally for testing.
+
+Local URLs:
+- Django Backend: http://localhost:8000
+- Sentiment Analyzer: http://localhost:5000
+- Car Inventory: http://localhost:5001
+
+To deploy to IBM Cloud Code Engine, follow these steps:
+
+1. Install IBM Cloud CLI:
+   curl -fsSL https://clis.cloud.ibm.com/install/linux | sh
+   ibmcloud plugin install code-engine
+
+2. Login and create project:
+   ibmcloud login
+   ibmcloud target -r us-south
+   ibmcloud ce project create --name car-dealership
+   ibmcloud ce project select --name car-dealership
+
+3. Build and deploy:
+   ibmcloud ce application create --name car-dealership-app \
+     --build-source . \
+     --port 8000
+
+4. Get deployment URL:
+   ibmcloud ce application get --name car-dealership-app
+
+Deployment URL will be in the format:
+https://car-dealership-app.xxxxxxxx.us-south.codeengine.appdomain.cloud

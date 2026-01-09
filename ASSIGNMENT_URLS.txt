@@ -1,0 +1,74 @@
+===============================================================================
+ASSIGNMENT SUBMISSION - GITHUB URLs
+===============================================================================
+
+Repository: https://github.com/lincolncommercialsolutions/car-dealership-capstone
+
+===============================================================================
+TASK 1: README.md URL (1 pt)
+===============================================================================
+
+https://github.com/lincolncommercialsolutions/car-dealership-capstone/blob/main/README.md
+
+===============================================================================
+TASK 3: About.html URL (3 pts)
+===============================================================================
+
+https://github.com/lincolncommercialsolutions/car-dealership-capstone/blob/main/server/frontend/static/About.html
+
+===============================================================================
+TASK 4: Contact.html URL (2 pts)
+===============================================================================
+
+https://github.com/lincolncommercialsolutions/car-dealership-capstone/blob/main/server/frontend/static/Contact.html
+
+===============================================================================
+TASK 7: Register.jsx URL (1 pt)
+===============================================================================
+
+https://github.com/lincolncommercialsolutions/car-dealership-capstone/blob/main/server/frontend/src/components/Register/Register.jsx
+
+===============================================================================
+FILES ALREADY CREATED FOR CURL COMMANDS
+===============================================================================
+
+These files are ready in your project directory:
+
+✅ django_server.txt - Django server output (Task 2)
+
+You still need to create these by running curl commands:
+
+TASK 5: loginuser.txt
+curl -X POST http://localhost:8000/djangoapp/login \
+  -H "Content-Type: application/json" \
+  -d '{"username":"admin","password":"admin123"}' | tee loginuser.txt
+
+TASK 6: logoutuser.txt
+curl -X GET http://localhost:8000/djangoapp/logout | tee logoutuser.txt
+
+TASK 8: getdealerreviews.txt
+curl http://localhost:8000/djangoapp/get_reviews?dealerId=15 | tee getdealerreviews.txt
+
+TASK 9: getalldealers.txt
+curl http://localhost:8000/djangoapp/get_dealers | tee getalldealers.txt
+
+TASK 10: getdealerbyid.txt
+curl http://localhost:8000/djangoapp/get_dealers/15 | tee getdealerbyid.txt
+
+TASK 11: getdealersbyState.txt
+curl "http://localhost:8000/djangoapp/get_dealers?state=Kansas" | tee getdealersbyState.txt
+
+===============================================================================
+VERIFY YOUR REPOSITORY
+===============================================================================
+
+Visit your repository:
+https://github.com/lincolncommercialsolutions/car-dealership-capstone
+
+Make sure it shows:
+✅ Public repository
+✅ All files visible
+✅ README.md displays on the main page
+✅ All URLs above are accessible
+
+===============================================================================

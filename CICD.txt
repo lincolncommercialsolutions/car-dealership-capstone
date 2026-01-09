@@ -1,0 +1,30 @@
+# TASK 23: GitHub Actions CI/CD Workflow Output
+
+To trigger the GitHub Actions workflow and capture output:
+
+1. Make a small change and push to trigger workflow:
+   git commit --allow-empty -m "Trigger CI/CD workflow"
+   git push
+
+2. View workflow run:
+   gh run list
+   gh run view <run-id> --log
+
+Note: The workflow file is located at:
+.github/workflows/build-deploy.yml
+
+Expected output will show:
+- Checkout code
+- Set up Python
+- Install Python dependencies
+- Run Django migrations
+- Run Django tests
+- Set up Node.js
+- Install Node dependencies
+- Build Docker images
+- Run Docker Compose
+- Success notification
+
+For now, trigger the workflow with:
+
+$ git commit --allow-empty -m 'Trigger workflow' && git push

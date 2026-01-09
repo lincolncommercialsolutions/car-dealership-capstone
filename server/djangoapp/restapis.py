@@ -1,63 +1,54 @@
 """
-MongoDB integration for Dealer and Review data
+In-memory data storage for Dealer and Review data
+NOTE: Replace with MongoDB when available
 """
-import os
-from pymongo import MongoClient
 
-# MongoDB connection
-MONGODB_URL = os.environ.get('MONGODB_URL', 'mongodb://localhost:27017/')
-client = MongoClient(MONGODB_URL)
-db = client['dealerships']
-dealers_collection = db['dealers']
-reviews_collection = db['reviews']
+# In-memory storage
+dealers_data = []
+reviews_data = []
 
 
 def get_dealers():
-    """Get all dealers from MongoDB"""
-    dealers = list(dealers_collection.find())
-    for dealer in dealers:
-        dealer['_id'] = str(dealer['_id'])
-    return dealers
+    """Get all dealers from storage"""
+    return dealers_data.copy()
 
 
 def get_dealer_by_id(dealer_id):
     """Get a specific dealer by ID"""
-    dealer = dealers_collection.find_one({'id': int(dealer_id)})
-    if dealer:
-        dealer['_id'] = str(dealer['_id'])
-    return dealer
+    for dealer in dealers_data:
+        if dealer.get('id') == int(dealer_id):
+            return dealer
+    return None
 
 
 def get_dealers_by_state(state):
     """Get dealers filtered by state"""
-    dealers = list(dealers_collection.find({'state': state}))
-    for dealer in dealers:
-        dealer['_id'] = str(dealer['_id'])
-    return dealers
+    return [d for d in dealers_data if d.get('state') == state]
 
 
 def get_dealer_reviews(dealer_id):
     """Get reviews for a specific dealer"""
-    reviews = list(reviews_collection.find({'dealership': int(dealer_id)}))
-    for review in reviews:
-        review['_id'] = str(review['_id'])
-    return reviews
+    return [r for r in reviews_data if r.get('dealership') == int(dealer_id)]
 
 
 def add_review(review_data):
-    """Add a new review to MongoDB"""
-    result = reviews_collection.insert_one(review_data)
-    return str(result.inserted_id)
+    """Add a new review to storage"""
+    review_id = len(reviews_data) + 1
+    review_data['id'] = review_id
+    reviews_data.append(review_data)
+    return str(review_id)
 
 
 def init_sample_data():
     """Initialize sample dealers and reviews"""
+    global dealers_data, reviews_data
+    
     # Check if data already exists
-    if dealers_collection.count_documents({}) > 0:
+    if len(dealers_data) > 0:
         return
     
     # Sample dealers
-    sample_dealers = [
+    dealers_data.extend([
         {
             'id': 1,
             'name': 'Premium Motors',
@@ -88,10 +79,10 @@ def init_sample_data():
             'lat': 37.6872,
             'long': -97.3301
         },
-    ]
+    ])
     
     # Sample reviews
-    sample_reviews = [
+    reviews_data.extend([
         {
             'id': 1,
             'dealership': 15,
@@ -114,8 +105,8 @@ def init_sample_data():
             'car_model': 'Accord',
             'car_year': 2023
         },
-    ]
+    ])
     
-    dealers_collection.insert_many(sample_dealers)
-    reviews_collection.insert_many(sample_reviews)
-    print("Sample data initialized successfully!")
+    print(f"Sample data initialized successfully!")
+    print(f"Dealers: {len(dealers_data)}")
+    print(f"Reviews: {len(reviews_data)}")

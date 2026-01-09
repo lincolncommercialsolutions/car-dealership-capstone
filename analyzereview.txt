@@ -1,0 +1,26 @@
+# TASK 16: Sentiment Analysis for "Fantastic services"
+# Command:
+curl http://localhost:5000/analyze/Fantastic%20services
+
+# Output:
+{
+  "scores": {
+    "compound": 0.5574,
+    "negative": 0.0,
+    "neutral": 0.217,
+    "positive": 0.783
+  },
+  "sentiment": "positive",
+  "text": "Fantastic services"
+}
+{
+  "scores": {
+    "compound": 0.5574,
+    "negative": 0.0,
+    "neutral": 0.217,
+    "positive": 0.783
+  },
+  "sentiment": "positive",
+  "text": "Fantastic services"
+}
+

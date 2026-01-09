@@ -1,0 +1,6 @@
+# TASK 9: Get All Dealers
+# Command:
+curl http://localhost:8000/djangoapp/get_dealers
+
+# Output:
+[][]

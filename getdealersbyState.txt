@@ -1,0 +1,6 @@
+# TASK 11: Get Dealers by State (Kansas)
+# Command:
+curl "http://localhost:8000/djangoapp/get_dealers?state=Kansas"
+
+# Output:
+[][]
