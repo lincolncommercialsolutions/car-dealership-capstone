@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Car Dealership</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #f5f5f5;
+        }
+        
+        nav {
+            background: #2c3e50;
+            padding: 1rem 2rem;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            margin: 0 0.5rem;
+            border-radius: 4px;
+            transition: background 0.3s;
+        }
+        
+        nav a:hover {
+            background: #34495e;
+        }
+        
+        nav a.active {
+            background: #3498db;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        
+        h1 {
+            color: #2c3e50;
+            margin-bottom: 2rem;
+            text-align: center;
+            font-size: 2.5rem;
+        }
+        
+        .contact-wrapper {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .contact-info, .contact-form {
+            background: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        
+        .contact-info h2, .contact-form h2 {
+            color: #2c3e50;
+            margin-bottom: 1.5rem;
+            border-bottom: 3px solid #3498db;
+            padding-bottom: 0.5rem;
+        }
+        
+        .info-item {
+            display: flex;
+            align-items: start;
+            margin-bottom: 1.5rem;
+            padding: 1rem;
+            background: #ecf0f1;
+            border-radius: 4px;
+        }
+        
+        .info-item img {
+            width: 30px;
+            height: 30px;
+            margin-right: 1rem;
+        }
+        
+        .info-item div h3 {
+            color: #3498db;
+            margin-bottom: 0.5rem;
+        }
+        
+        .info-item div p {
+            color: #555;
+        }
+        
+        .map {
+            margin-top: 2rem;
+            background: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+        
+        .map img {
+            max-width: 100%;
+            border-radius: 4px;
+            margin-top: 1rem;
+        }
+        
+        @media (max-width: 768px) {
+            .contact-wrapper {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="/">Home</a>
+        <a href="/about/">About</a>
+        <a href="/contact/" class="active">Contact</a>
+    </nav>
+    
+    <div class="container">
+        <h1>Contact Us</h1>
+        
+        <div class="contact-wrapper">
+            <div class="contact-info">
+                <h2>Get In Touch</h2>
+                
+                <div class="info-item">
+                    <img src="https://via.placeholder.com/30/3498db/ffffff?text=📞" alt="Phone">
+                    <div>
+                        <h3>Phone</h3>
+                        <p>Main: (555) 123-4567</p>
+                        <p>Sales: (555) 123-4568</p>
+                        <p>Service: (555) 123-4569</p>
+                    </div>
+                </div>
+                
+                <div class="info-item">
+                    <img src="https://via.placeholder.com/30/3498db/ffffff?text=✉️" alt="Email">
+                    <div>
+                        <h3>Email</h3>
+                        <p>General: info@dealership.com</p>
+                        <p>Sales: sales@dealership.com</p>
+                        <p>Support: support@dealership.com</p>
+                    </div>
+                </div>
+                
+                <div class="info-item">
+                    <img src="https://via.placeholder.com/30/3498db/ffffff?text=📍" alt="Address">
+                    <div>
+                        <h3>Address</h3>
+                        <p>123 Main Street</p>
+                        <p>Kansas City, KS 66101</p>
+                        <p>United States</p>
+                    </div>
+                </div>
+                
+                <div class="info-item">
+                    <img src="https://via.placeholder.com/30/3498db/ffffff?text=🕐" alt="Hours">
+                    <div>
+                        <h3>Business Hours</h3>
+                        <p>Monday - Friday: 9:00 AM - 8:00 PM</p>
+                        <p>Saturday: 9:00 AM - 6:00 PM</p>
+                        <p>Sunday: 11:00 AM - 5:00 PM</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="contact-form">
+                <h2>Send Us a Message</h2>
+                <p style="color: #7f8c8d; margin-bottom: 1rem;">
+                    Have a question? Fill out the form below and we'll get back to you as soon as possible.
+                </p>
+                <p style="color: #3498db; font-style: italic;">
+                    (Contact form integration coming soon)
+                </p>
+            </div>
+        </div>
+        
+        <div class="map">
+            <h2>Find Us Here</h2>
+            <p style="color: #7f8c8d; margin-bottom: 1rem;">
+                Visit our showroom at 123 Main Street, Kansas City, KS
+            </p>
+            <img src="https://via.placeholder.com/800x400/ecf0f1/2c3e50?text=Map+Location" alt="Map">
+        </div>
+    </div>
+</body>
+</html>

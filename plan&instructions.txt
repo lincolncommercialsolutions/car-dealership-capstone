@@ -1,0 +1,215 @@
+Step-by-Step Plan for Completing Your Assignment
+This plan assumes you've already worked on or are in the process of completing the Full-stack development Capstone project for the Cars Dealership web app. If not, prioritize finishing the project first, as all submissions depend on it. The assignment requires submitting specific artifacts (URLs, outputs, screenshots) via an online form or platform. I'll break it down into phases: preparation (completing the project), gathering evidence for each task, and submitting the assignment. Aim to document everything as you go—save files, take screenshots, and note outputs immediately to avoid rework.
+Phase 1: Complete the Capstone Project
+Before starting the assignment, ensure the project is fully built, tested, and deployed. Refer to the capstone's original instructions for details, but here's a high-level checklist based on the technologies mentioned (React, Django, Flask, Node.js, MongoDB, SQLite, Docker, Kubernetes, IBM Cloud Code Engine):
+
+Set Up Version Control: Initialize a GitHub repository (public) for the project. Commit all code regularly. Include a README.md with the project name, description, setup instructions, and any other details.
+Build the Backend:
+Use Django for the main server (handling dealers, reviews, authentication).
+Integrate Flask/Node.js for microservices (e.g., sentiment analysis, car makes/models).
+Set up databases: MongoDB for reviews or unstructured data, SQLite for dealers/users.
+Implement APIs for dealers (get all, by ID, by state), reviews (get by dealer, post review, sentiment analysis), user auth (login, logout, register).
+Add admin functionality for root user management.
+
+Build the Frontend:
+Use React for the UI.
+Create pages: Home (list dealers, filter by state), About Us, Contact Us, Sign-up (Register.jsx), Dealer Details (with reviews), Post Review.
+Make it responsive with CSS. Include navigation bar, images, and forms.
+Integrate with backend APIs (e.g., fetch dealers, submit reviews).
+
+Implement Features:
+User authentication: Login/logout, registration with fields (username, first/last name, email, password).
+Dealer listings: Display branches, filter by state (e.g., Kansas).
+Reviews: View/submit reviews, sentiment analysis (e.g., for "Fantastic services").
+Car data: Fetch makes/models.
+Static pages: About.html (team details), Contact.html (contact info).
+
+Set Up CI/CD:
+Use GitHub Actions for workflows (build, test, deploy).
+Ensure workflows run successfully on commits/pushes.
+
+Deploy the Application:
+Containerize with Docker.
+Orchestrate with Kubernetes.
+Deploy to IBM Cloud Code Engine.
+Get the public deployment URL.
+Test deployed app: Landing page, login, dealer details, reviews.
+
+Test Thoroughly:
+Run local servers (e.g., Django server).
+Use cURL for API testing (login, logout, get dealers, etc.).
+Verify responsive design, sentiment analysis, admin login/logout.
+Save all terminal outputs and screenshots as specified.
+
+Document and Save Artifacts:
+As you build, prepare files/outputs for the tasks below. Name them exactly as specified (e.g., django_server, loginuser).
+Make GitHub repo public and note URLs for specific files.
+Take screenshots with visible endpoints (browser address bar) where required.
+
+
+If you're stuck on any project part, review course materials or debug step-by-step (e.g., check console errors, API responses).
+Phase 2: Gather Evidence for Each Task
+Once the project is complete, collect the required submissions. Go through these in order, as some depend on others (e.g., APIs need to be working for cURL outputs). Test everything locally and on the deployed version.
+
+Task 1: Open your GitHub repo. Navigate to README.md. Copy the public URL (e.g., https://github.com/yourusername/repo/README.md).
+Task 2: Run the Django server locally (e.g., python manage.py runserver). Copy the terminal output showing it's running. Save as a text file named django_server.
+Task 3: Update server/frontend/static/About.html with CSS links, images, names/roles/details/emails. Commit to GitHub. Copy the public URL of this file.
+Task 4: Create/update server/frontend/static/Contact.html with CSS, nav bar (active on Contact), images, contact details. Commit. Copy the public URL.
+Task 5: Use cURL to login (e.g., curl -X POST -d "username=validuser&password=validpass" http://localhost:8000/login). Copy command + output. Save as loginuser.
+Task 6: After logging in (use token/cookie if needed), run cURL for logout (e.g., curl -X POST http://localhost:8000/logout). Copy command + output. Save as logoutuser.
+Task 7: Ensure server/frontend/src/components/Register/Register.jsx has all fields and button. Commit. Copy the public URL.
+Task 8: Run cURL to get reviews for a dealer ID (e.g., curl http://localhost:8000/api/reviews/dealer/123). Copy command + output showing review(s). Save as getdealerreviews.
+Task 9: Run cURL to get all dealers (e.g., curl http://localhost:8000/api/dealers). Copy command + output. Save as getalldealers.
+Task 10: Run cURL for a specific dealer (e.g., curl http://localhost:8000/api/dealers/123). Copy command + output. Save as getdealerbyid.
+Task 11: Run cURL for dealers in Kansas (e.g., curl http://localhost:8000/api/dealers?state=Kansas). Copy command + output. Save as getdealersbyState.
+Task 12: Access admin page (e.g., /admin), login as root. Take screenshot showing login success. Name: admin_login.png or .jpeg.
+Task 13: Logout from admin. Take screenshot showing logout. Name: admin_logout.png or .jpeg.
+
+14-15. Tasks 14 & 15: Run cURL to get all car makes/models (e.g., curl http://localhost:5000/api/cars—adjust port if Flask/Node). Copy command + output. Save as getallcarmakes. (Combined for 4 points.)
+
+Task 16: Run cURL for sentiment analysis (e.g., curl -X POST -d "review=Fantastic services" http://localhost:5000/analyze). Copy command + output. Save as analyzereview.
+Task 17: Open home page locally before login. Take screenshot showing dealers. Name: get_dealers.png or .jpeg. Include address bar.
+Task 18: Login, refresh home. Take screenshot showing dealers, Review Dealer option, username, address bar. Name: get_dealers_loggedin.png or .jpeg.
+Task 19: Filter dealers by state on home. Take screenshot with address bar. Name: dealersbystate.png or .jpeg.
+Task 20: Open dealer page with reviews. Take screenshot with address bar. Name: dealer_id_reviews.png or .jpeg.
+Task 21: Fill Post Review form (don't submit yet). Take screenshot. Name: dealership_review_submission.png or .jpeg.
+Task 22: Submit review, view it. Take screenshot. Name: added_review.png or .jpeg.
+Task 23: Trigger GitHub Actions workflow (e.g., push code). Copy terminal/output showing successful run (steps executed). Save as CICD.
+Task 24: Get the IBM Cloud deployment URL (e.g., https://yourapp.codeengine.appdomain.cloud). Save in file named deploymentURL.
+Task 25: Open deployed landing page. Take screenshot. Name: deployed_landingpage.png or .jpeg.
+Task 26: Login on deployed app. Take screenshot showing username. Name: deployed_loggedin.png or .jpeg.
+Task 27: Open dealer details on deployed app. Take screenshot. Name: deployed_dealer_detail.png or .jpeg.
+Task 28: View a review on deployed app. Take screenshot. Name: deployed_add_review.png or .jpeg.
+
+Phase 3: Submit the Assignment
+
+Start the Assignment: Click "Begin the Assignment" on your platform (e.g., Coursera, IBM Skills Network).
+Answer Questions: For each question (corresponding to tasks), paste the URL, output, or upload the file/screenshot as required. Double-check file names and formats.
+Review and Submit: Go through all responses. Click "Submit Assignment".
+Check Feedback: After submission, wait for grading (automated/manual). Review scores and feedback. If below 70%, retry (unlimited attempts)—fix issues in project and resubmit.
+
+Tips for Success
+
+Time Management: The estimate is 30 minutes, but gathering evidence might take longer if project isn't done. Allocate 1-2 hours.
+Common Pitfalls: Ensure GitHub URLs are public and direct to exact files. Screenshots must show address bars/endpoints. cURL outputs should include both command and response. Test APIs with valid data.
+Debugging: If something fails (e.g., API), check logs, database, and code. Use tools like Postman for cURL alternatives during testing.
+Backup: Save all files in a dedicated folder. Version your repo.
+If Stuck: Revisit capstone guides or seek clarification from instructors (don't share code here if prohibited).
+
+
+
+
+Detailed Instructions and Checklist for Completing Your Full-Stack Capstone Assignment
+
+This guide provides step-by-step instructions to complete and submit the graded assignment successfully (passing grade: 70%). The assignment has unlimited attempts and no time limit, but the estimated time is 30 minutes once your capstone project is fully complete, tested, and deployed.
+Preparation Before Starting the Assignment
+
+    Ensure the Capstone Project is 100% Complete
+        All 28 tasks from the project must be implemented and working locally.
+        Code is pushed to a public GitHub repository.
+        Application is fully deployed to IBM Cloud Code Engine (or equivalent) with a working public URL.
+        All APIs (dealers, reviews, auth, sentiment analysis, car makes/models) are functional.
+        Frontend (React + static pages) is responsive and complete.
+        CI/CD with GitHub Actions runs successfully.
+        Test everything thoroughly: local server, APIs with cURL/Postman, UI interactions, admin panel, deployed version.
+    Create a Dedicated Folder on Your Computer
+        Name it something like Capstone_Assignment_Submission.
+        Inside, create subfolders: screenshots, curl_outputs, terminal_outputs, files.
+        This will keep all your evidence organized.
+    Gather All Required Artifacts
+    Follow the checklist below exactly. Save files with the exact names specified.
+
+Detailed Checklist with Instructions
+
+GitHub URLs (Make sure repo is PUBLIC)
+
+ Task 1: README.md URL
+→ Go to your repo → Click README.md → Copy browser URL (ends with /README.md).
+→ Example: https://github.com/yourusername/cars-dealership-capstone/README.md
+ Task 3: About.html URL
+→ Navigate to server/frontend/static/About.html → Copy raw/file URL.
+ Task 4: Contact.html URL
+→ Navigate to server/frontend/static/Contact.html → Copy raw/file URL.
+
+     Task 7: Register.jsx URL
+    → Navigate to server/frontend/src/components/Register/Register.jsx → Copy raw/file URL.
+
+Terminal Outputs (Copy-paste exactly as shown in terminal)
+
+ Task 2: Django server running
+→ Run python manage.py runserver → Copy output showing "Starting development server at http://127.0.0.1:8000/"
+→ Save as text file: django_server.txt
+
+     Task 23: GitHub Actions CI/CD success
+    → Trigger a workflow (e.g., push a small commit) → Go to Actions tab → Click latest workflow → Copy terminal log showing all steps green/successful
+    → Save as text file: CICD.txt
+
+cURL Commands + Outputs (Use exact file names)
+Run these against your local backend (usually port 8000 or 5000). Include both the command and full response.
+
+ Task 5: Login
+→ curl -X POST -d "username=youruser&password=yourpass" http://localhost:8000/login/ (adjust endpoint)
+→ Save as: loginuser.txt
+ Task 6: Logout
+→ Include session/cookie if required → Save as: logoutuser.txt
+ Task 8: Get reviews for a dealer
+→ curl http://localhost:8000/api/get_reviews?dealerId=X → Save as: getdealerreviews.txt
+ Task 9: Get all dealers
+→ curl http://localhost:8000/api/get_dealers → Save as: getalldealers.txt
+ Task 10: Get dealer by ID
+→ curl http://localhost:8000/api/get_dealers/X → Save as: getdealerbyid.txt
+ Task 11: Dealers in Kansas
+→ curl http://localhost:8000/api/get_dealers?state=Kansas → Save as: getdealersbyState.txt
+ Tasks 14–15: Get all car makes/models
+→ curl http://localhost:5000/api/get_cars (or correct endpoint) → Save as: getallcarmakes.txt
+
+     Task 16: Sentiment analysis
+    → curl -X POST -d "review=Fantastic services" http://localhost:5000/sentiment → Must show positive sentiment → Save as: analyzereview.txt
+
+Local Screenshots (Take on local app)
+Use full-screen or browser window screenshots. Show URL in address bar where required.
+
+ Task 12: Admin login successful → Name: admin_login.png or .jpeg
+ Task 13: Admin logout → Name: admin_logout.png or .jpeg
+ Task 17: Home page dealers (before login) → Show address bar → Name: get_dealers.png or .jpeg
+ Task 18: Home page after login → Show username, "Review Dealer" option, address bar → Name: get_dealers_loggedin.png or .jpeg
+ Task 19: Dealers filtered by state → Show address bar → Name: dealersbystate.png or .jpeg
+ Task 20: Dealer details + reviews → Show address bar → Name: dealer_id_reviews.png or .jpeg
+ Task 21: Post Review form filled (before submit) → Name: dealership_review_submission.png or .jpeg
+
+     Task 22: Review after posting → Name: added_review.png or .jpeg
+
+Deployment-Related
+
+ Task 24: Deployment URL
+→ Copy the full public URL of your deployed app → Save in text file: deploymentURL.txt
+ Task 25: Deployed landing page → Screenshot → Name: deployed_landingpage.png or .jpeg
+ Task 26: Deployed page after login → Show logged-in username → Name: deployed_loggedin.png or .jpeg
+ Task 27: Deployed dealer details page → Name: deployed_dealer_detail.png or .jpeg
+
+     Task 28: Deployed review visible → Name: deployed_add_review.png or .jpeg
+
+Final Submission Steps
+
+ Log into the course platform (e.g., Coursera, IBM Skills Network).
+ Navigate to the graded assignment.
+ Click Begin the Assignment.
+ Answer each question in order:
+
+    Paste GitHub URLs directly.
+    Copy-paste text from your saved .txt files.
+    Upload screenshots and files as required.
+
+ Double-check every answer matches the task exactly.
+ Click Submit Assignment.
+ Wait for grading feedback.
+
+     If score <70%, review feedback, fix issues in project, update artifacts, and resubmit (unlimited attempts).
+
+Quick Tips for 100% Success
+
+    Use consistent naming — graders are strict about file names.
+    Ensure all screenshots clearly show required elements (e.g., address bar, username).
+    Test all cURL commands multiple times to confirm correct output.
+    Deployed app must be publicly accessible and fully functional.
+    Keep your GitHub repo clean and public until grading is complete.

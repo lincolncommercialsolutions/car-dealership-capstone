@@ -1,0 +1,61 @@
+name: CI/CD Pipeline
+
+on:
+  push:
+    branches: [ main, master ]
+  pull_request:
+    branches: [ main, master ]
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+      
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.9'
+        
+    - name: Install Python dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install -r server/requirements.txt
+        
+    - name: Run Django migrations
+      run: |
+        cd server
+        python manage.py migrate
+        
+    - name: Run Django tests
+      run: |
+        cd server
+        python manage.py test
+        
+    - name: Set up Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: '18'
+        
+    - name: Install Node dependencies
+      run: |
+        cd microservices/car-inventory
+        npm install
+        
+    - name: Build Docker images
+      run: |
+        docker build -t car-dealership-django .
+        docker build -t car-dealership-sentiment ./microservices/sentiment-analyzer
+        docker build -t car-dealership-cars ./microservices/car-inventory
+        
+    - name: Run Docker Compose
+      run: |
+        docker-compose up -d
+        sleep 10
+        docker-compose ps
+        docker-compose down
+        
+    - name: Success notification
+      run: echo "✅ CI/CD Pipeline completed successfully!"

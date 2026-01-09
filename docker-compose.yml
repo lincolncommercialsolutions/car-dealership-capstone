@@ -1,0 +1,59 @@
+version: '3.8'
+
+services:
+  # MongoDB Database
+  mongodb:
+    image: mongo:latest
+    container_name: dealership-mongodb
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongodb_data:/data/db
+    networks:
+      - dealership-network
+
+  # Django Backend
+  django:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: dealership-django
+    ports:
+      - "8000:8000"
+    depends_on:
+      - mongodb
+    environment:
+      - MONGODB_URL=mongodb://mongodb:27017/
+    networks:
+      - dealership-network
+    volumes:
+      - ./server:/app
+
+  # Sentiment Analyzer Microservice
+  sentiment:
+    build:
+      context: ./microservices/sentiment-analyzer
+      dockerfile: Dockerfile
+    container_name: dealership-sentiment
+    ports:
+      - "5000:5000"
+    networks:
+      - dealership-network
+
+  # Car Inventory Microservice
+  car-inventory:
+    build:
+      context: ./microservices/car-inventory
+      dockerfile: Dockerfile
+    container_name: dealership-cars
+    ports:
+      - "5001:5001"
+    networks:
+      - dealership-network
+
+networks:
+  dealership-network:
+    driver: bridge
+
+volumes:
+  mongodb_data:

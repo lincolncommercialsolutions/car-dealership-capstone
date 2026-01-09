@@ -1,0 +1,668 @@
+===============================================================================
+CAR DEALERSHIP CAPSTONE PROJECT - BUILD INSTRUCTIONS
+===============================================================================
+Created: January 9, 2026
+Project: Full-Stack Car Dealership Web Application
+Tech Stack: React, Django, Flask/Node.js, MongoDB, SQLite, Docker, Kubernetes
+Deployment: IBM Cloud Code Engine
+
+===============================================================================
+PHASE 1: INITIAL SETUP & ENVIRONMENT PREPARATION
+===============================================================================
+
+STEP 1: Install Required Software
+----------------------------------
+Ensure you have the following installed:
+
+□ Python 3.8+ (python --version)
+□ Node.js 16+ and npm (node --version, npm --version)
+□ Git (git --version)
+□ Docker Desktop (docker --version)
+□ MongoDB Community Edition (mongod --version)
+□ A code editor (VS Code recommended)
+□ IBM Cloud CLI (ibmcloud --version)
+
+Installation commands (Linux):
+  sudo apt update
+  sudo apt install python3 python3-pip python3-venv nodejs npm git docker.io mongodb
+  npm install -g npm@latest
+
+
+STEP 2: Create GitHub Repository
+---------------------------------
+□ Go to https://github.com and create a new repository
+□ Name: car-dealership-capstone (or your choice)
+□ Make it PUBLIC (required for grading)
+□ Add README.md with project description
+□ Clone to local: git clone https://github.com/yourusername/car-dealership-capstone.git
+
+
+STEP 3: Initialize Project Structure
+-------------------------------------
+Run these commands from /home/linkl0n/cert-projects/Car-Dealership:
+
+mkdir -p server/djangoapp
+mkdir -p server/database
+mkdir -p server/frontend/static
+mkdir -p server/frontend/src/components/Register
+mkdir -p server/frontend/src/components/Dealers
+mkdir -p microservices/sentiment-analyzer
+mkdir -p microservices/car-inventory
+mkdir -p kubernetes
+mkdir -p .github/workflows
+
+Your structure should look like:
+car-dealership-capstone/
+├── server/
+│   ├── djangoapp/          # Django backend
+│   ├── database/           # MongoDB/SQLite configs
+│   └── frontend/           # React app
+│       ├── static/         # About.html, Contact.html
+│       ├── src/
+│       │   └── components/
+│       │       ├── Register/
+│       │       └── Dealers/
+│       └── package.json
+├── microservices/
+│   ├── sentiment-analyzer/ # Flask sentiment service
+│   └── car-inventory/      # Node.js/Flask car service
+├── kubernetes/             # K8s deployment files
+├── .github/workflows/      # GitHub Actions
+├── Dockerfile
+├── docker-compose.yml
+└── README.md
+
+===============================================================================
+PHASE 2: BACKEND DEVELOPMENT (DJANGO)
+===============================================================================
+
+STEP 4: Set Up Django Project
+------------------------------
+cd server
+python3 -m venv venv
+source venv/bin/activate  # On Windows: venv\Scripts\activate
+pip install django djangorestframework pymongo djongo requests django-cors-headers
+
+django-admin startproject dealership .
+python manage.py startapp djangoapp
+
+Files to create/edit:
+□ server/dealership/settings.py - Configure databases, CORS, apps
+□ server/djangoapp/models.py - CarDealer, CarMake, CarModel, DealerReview
+□ server/djangoapp/views.py - API endpoints
+□ server/djangoapp/urls.py - URL routing
+□ server/djangoapp/admin.py - Admin interface
+
+
+STEP 5: Configure Databases
+----------------------------
+Edit server/dealership/settings.py:
+
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
+    },
+    'mongodb': {
+        'ENGINE': 'djongo',
+        'NAME': 'dealerships',
+        'CLIENT': {
+            'host': 'mongodb://localhost:27017',
+        }
+    }
+}
+
+INSTALLED_APPS = [
+    'django.contrib.admin',
+    'django.contrib.auth',
+    'django.contrib.contenttypes',
+    'django.contrib.sessions',
+    'django.contrib.messages',
+    'django.contrib.staticfiles',
+    'corsheaders',
+    'rest_framework',
+    'djangoapp',
+]
+
+MIDDLEWARE = [
+    'corsheaders.middleware.CorsMiddleware',
+    # ... other middleware
+]
+
+CORS_ALLOW_ALL_ORIGINS = True  # For development only
+
+
+STEP 6: Create Django Models
+-----------------------------
+Edit server/djangoapp/models.py:
+
+from django.db import models
+
+class CarMake(models.Model):
+    name = models.CharField(max_length=100)
+    description = models.TextField()
+    
+class CarModel(models.Model):
+    make = models.ForeignKey(CarMake, on_delete=models.CASCADE)
+    name = models.CharField(max_length=100)
+    dealer_id = models.IntegerField()
+    type = models.CharField(max_length=50)
+    year = models.IntegerField()
+
+# Dealer and Review models will be stored in MongoDB
+# Create restapi.py for MongoDB models
+
+
+STEP 7: Create API Endpoints
+-----------------------------
+Required endpoints in server/djangoapp/views.py:
+
+□ /djangoapp/login - POST login
+□ /djangoapp/logout - GET logout
+□ /djangoapp/register - POST user registration
+□ /djangoapp/get_dealers - GET all dealers
+□ /djangoapp/get_dealers/<int:dealer_id> - GET dealer by ID
+□ /djangoapp/get_dealers?state=<state> - GET dealers by state
+□ /djangoapp/get_reviews?dealerId=<id> - GET reviews for dealer
+□ /djangoapp/add_review - POST new review
+
+Create views for each endpoint using Django's function-based or class-based views.
+
+
+STEP 8: Set Up Admin Interface
+-------------------------------
+Edit server/djangoapp/admin.py:
+
+from django.contrib import admin
+from .models import CarMake, CarModel
+
+admin.site.register(CarMake)
+admin.site.register(CarModel)
+
+Create superuser:
+python manage.py createsuperuser
+# Username: root or admin
+# Password: (choose a strong password)
+
+
+STEP 9: Run Migrations & Test Django Server
+--------------------------------------------
+python manage.py makemigrations
+python manage.py migrate
+python manage.py runserver
+
+# Save the terminal output for Task 2!
+# Copy everything from terminal to django_server.txt
+
+Test in browser: http://localhost:8000/admin
+
+
+===============================================================================
+PHASE 3: MICROSERVICES DEVELOPMENT
+===============================================================================
+
+STEP 10: Create Sentiment Analyzer (Flask)
+-------------------------------------------
+cd microservices/sentiment-analyzer
+python3 -m venv venv
+source venv/bin/activate
+pip install flask flask-cors nltk
+
+Create app.py:
+
+from flask import Flask, request, jsonify
+from flask_cors import CORS
+import nltk
+from nltk.sentiment import SentimentIntensityAnalyzer
+
+app = Flask(__name__)
+CORS(app)
+
+nltk.download('vader_lexicon', quiet=True)
+sia = SentimentIntensityAnalyzer()
+
+@app.route('/analyze/<string:text>', methods=['POST', 'GET'])
+def analyze_sentiment(text):
+    scores = sia.polarity_scores(text)
+    if scores['compound'] >= 0.05:
+        sentiment = 'positive'
+    elif scores['compound'] <= -0.05:
+        sentiment = 'negative'
+    else:
+        sentiment = 'neutral'
+    return jsonify({'sentiment': sentiment, 'scores': scores})
+
+if __name__ == '__main__':
+    app.run(debug=True, port=5000)
+
+Test:
+python app.py
+# In another terminal:
+curl -X POST http://localhost:5000/analyze/Fantastic%20services
+# Save output for Task 16!
+
+
+STEP 11: Create Car Inventory Service (Node.js or Flask)
+---------------------------------------------------------
+cd microservices/car-inventory
+
+Option A - Node.js:
+npm init -y
+npm install express cors body-parser
+
+Create server.js:
+
+const express = require('express');
+const cors = require('cors');
+const app = express();
+
+app.use(cors());
+app.use(express.json());
+
+const cars = [
+    { id: 1, make: 'Toyota', model: 'Camry', year: 2023 },
+    { id: 2, make: 'Honda', model: 'Accord', year: 2023 },
+    { id: 3, make: 'Ford', model: 'Mustang', year: 2023 },
+    // Add more cars
+];
+
+app.get('/get_cars', (req, res) => {
+    res.json(cars);
+});
+
+app.listen(5001, () => console.log('Car service on port 5001'));
+
+Test:
+node server.js
+curl http://localhost:5001/get_cars
+# Save output for Tasks 14-15!
+
+
+===============================================================================
+PHASE 4: FRONTEND DEVELOPMENT (REACT)
+===============================================================================
+
+STEP 12: Initialize React App
+------------------------------
+cd server/frontend
+npx create-react-app .
+# Or if directory exists:
+npm install
+
+npm install react-router-dom axios bootstrap
+
+
+STEP 13: Create Static Pages
+-----------------------------
+Create server/frontend/static/About.html:
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>About Us - Car Dealership</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav>
+        <a href="/">Home</a>
+        <a href="/about.html" class="active">About</a>
+        <a href="/contact.html">Contact</a>
+    </nav>
+    <h1>About Our Team</h1>
+    <div class="team">
+        <div class="member">
+            <img src="team1.jpg" alt="Team Member 1">
+            <h3>John Doe</h3>
+            <p>Role: Lead Developer</p>
+            <p>Email: john@dealership.com</p>
+        </div>
+        <!-- Add more team members -->
+    </div>
+</body>
+</html>
+
+Create server/frontend/static/Contact.html:
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Contact Us - Car Dealership</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav>
+        <a href="/">Home</a>
+        <a href="/about.html">About</a>
+        <a href="/contact.html" class="active">Contact</a>
+    </nav>
+    <h1>Contact Us</h1>
+    <div class="contact-info">
+        <p>Phone: (555) 123-4567</p>
+        <p>Email: info@dealership.com</p>
+        <p>Address: 123 Main St, City, State 12345</p>
+    </div>
+</body>
+</html>
+
+
+STEP 14: Create Register Component
+-----------------------------------
+Create server/frontend/src/components/Register/Register.jsx:
+
+import React, { useState } from 'react';
+import axios from 'axios';
+
+function Register() {
+    const [formData, setFormData] = useState({
+        username: '',
+        firstName: '',
+        lastName: '',
+        email: '',
+        password: ''
+    });
+
+    const handleChange = (e) => {
+        setFormData({ ...formData, [e.target.name]: e.target.value });
+    };
+
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        try {
+            const response = await axios.post(
+                'http://localhost:8000/djangoapp/register',
+                formData
+            );
+            alert('Registration successful!');
+        } catch (error) {
+            alert('Registration failed');
+        }
+    };
+
+    return (
+        <form onSubmit={handleSubmit}>
+            <input name="username" placeholder="Username" onChange={handleChange} required />
+            <input name="firstName" placeholder="First Name" onChange={handleChange} required />
+            <input name="lastName" placeholder="Last Name" onChange={handleChange} required />
+            <input name="email" type="email" placeholder="Email" onChange={handleChange} required />
+            <input name="password" type="password" placeholder="Password" onChange={handleChange} required />
+            <button type="submit">Register</button>
+        </form>
+    );
+}
+
+export default Register;
+
+
+STEP 15: Create Dealers Components
+-----------------------------------
+Create components for:
+□ DealersList.jsx - Display all dealers with state filter
+□ DealerDetails.jsx - Show dealer info + reviews
+□ PostReview.jsx - Form to submit reviews
+
+Set up React Router in App.js for navigation between pages.
+
+
+STEP 16: Build & Test Frontend
+-------------------------------
+npm start
+# Opens http://localhost:3000
+
+Test all pages:
+□ Home page shows dealers
+□ Login/Register works
+□ Dealer details shows reviews
+□ Can post reviews
+□ Navigation works
+
+
+===============================================================================
+PHASE 5: DOCKER & KUBERNETES
+===============================================================================
+
+STEP 17: Create Dockerfile
+---------------------------
+Create Dockerfile in project root:
+
+FROM python:3.9
+WORKDIR /app
+COPY server/ /app/server/
+COPY microservices/ /app/microservices/
+RUN pip install -r server/requirements.txt
+EXPOSE 8000
+CMD ["python", "server/manage.py", "runserver", "0.0.0.0:8000"]
+
+
+STEP 18: Create docker-compose.yml
+-----------------------------------
+version: '3.8'
+services:
+  django:
+    build: .
+    ports:
+      - "8000:8000"
+    depends_on:
+      - mongodb
+  
+  mongodb:
+    image: mongo:latest
+    ports:
+      - "27017:27017"
+  
+  sentiment:
+    build: ./microservices/sentiment-analyzer
+    ports:
+      - "5000:5000"
+  
+  cars:
+    build: ./microservices/car-inventory
+    ports:
+      - "5001:5001"
+
+Test: docker-compose up
+
+
+STEP 19: Create Kubernetes Manifests
+-------------------------------------
+Create kubernetes/deployment.yaml, service.yaml, etc.
+(Detailed K8s configs depend on your setup)
+
+
+===============================================================================
+PHASE 6: CI/CD WITH GITHUB ACTIONS
+===============================================================================
+
+STEP 20: Create GitHub Actions Workflow
+----------------------------------------
+Create .github/workflows/build-deploy.yml:
+
+name: Build and Deploy
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: 3.9
+      
+      - name: Install dependencies
+        run: |
+          pip install -r server/requirements.txt
+      
+      - name: Run tests
+        run: |
+          cd server
+          python manage.py test
+      
+      - name: Build Docker image
+        run: docker build -t car-dealership .
+
+Commit and push to trigger workflow.
+# Save the successful workflow output for Task 23!
+
+
+===============================================================================
+PHASE 7: DEPLOYMENT TO IBM CLOUD CODE ENGINE
+===============================================================================
+
+STEP 21: Install IBM Cloud CLI
+-------------------------------
+# Follow: https://cloud.ibm.com/docs/cli
+curl -fsSL https://clis.cloud.ibm.com/install/linux | sh
+ibmcloud plugin install code-engine
+
+
+STEP 22: Deploy to Code Engine
+-------------------------------
+ibmcloud login
+ibmcloud target -r us-south
+ibmcloud ce project create --name car-dealership
+ibmcloud ce project select --name car-dealership
+
+# Build and deploy
+ibmcloud ce application create --name car-dealership-app \
+  --image <your-docker-image> \
+  --port 8000
+
+# Get deployment URL
+ibmcloud ce application get --name car-dealership-app
+
+# Save URL to deploymentURL.txt for Task 24!
+
+
+===============================================================================
+PHASE 8: TESTING & EVIDENCE COLLECTION
+===============================================================================
+
+STEP 23: Test All cURL Commands
+--------------------------------
+Make sure Django & microservices are running, then execute:
+
+# Task 5 - Login
+curl -X POST http://localhost:8000/djangoapp/login \
+  -H "Content-Type: application/json" \
+  -d '{"username":"testuser","password":"testpass"}' > loginuser.txt
+
+# Task 6 - Logout
+curl -X GET http://localhost:8000/djangoapp/logout > logoutuser.txt
+
+# Task 8 - Get reviews
+curl http://localhost:8000/djangoapp/get_reviews?dealerId=15 > getdealerreviews.txt
+
+# Task 9 - All dealers
+curl http://localhost:8000/djangoapp/get_dealers > getalldealers.txt
+
+# Task 10 - Dealer by ID
+curl http://localhost:8000/djangoapp/get_dealers/15 > getdealerbyid.txt
+
+# Task 11 - Dealers in Kansas
+curl "http://localhost:8000/djangoapp/get_dealers?state=Kansas" > getdealersbyState.txt
+
+# Task 14-15 - Car makes
+curl http://localhost:5001/get_cars > getallcarmakes.txt
+
+# Task 16 - Sentiment
+curl -X POST http://localhost:5000/analyze/Fantastic%20services > analyzereview.txt
+
+
+STEP 24: Take All Screenshots
+------------------------------
+Local app screenshots (with address bar visible):
+□ admin_login.png - Admin login success
+□ admin_logout.png - Admin logout
+□ get_dealers.png - Home page before login
+□ get_dealers_loggedin.png - After login with username
+□ dealersbystate.png - Filtered by state
+□ dealer_id_reviews.png - Dealer details + reviews
+□ dealership_review_submission.png - Review form filled
+□ added_review.png - Posted review visible
+
+Deployed app screenshots:
+□ deployed_landingpage.png
+□ deployed_loggedin.png
+□ deployed_dealer_detail.png
+□ deployed_add_review.png
+
+
+STEP 25: Gather GitHub URLs
+----------------------------
+□ README.md URL
+□ About.html URL
+□ Contact.html URL
+□ Register.jsx URL
+
+Make sure repo is PUBLIC!
+
+
+===============================================================================
+PHASE 9: SUBMISSION
+===============================================================================
+
+STEP 26: Final Checklist
+-------------------------
+□ All 28 evidence files/URLs ready
+□ File names exactly match requirements
+□ GitHub repo is PUBLIC
+□ Deployed app is working
+□ All screenshots have address bars where required
+□ cURL files have both command and response
+
+STEP 27: Submit Assignment
+---------------------------
+1. Navigate to assignment platform
+2. Click "Begin the Assignment"
+3. Fill in each of the 28 fields carefully
+4. Double-check everything
+5. Submit
+6. Wait for grade (need 70% = 35/50 points)
+
+===============================================================================
+TROUBLESHOOTING TIPS
+===============================================================================
+
+Django Issues:
+- ModuleNotFoundError: Activate virtual environment
+- CORS errors: Check CORS_ALLOW_ALL_ORIGINS in settings.py
+- Database errors: Run migrations again
+
+React Issues:
+- npm start fails: Delete node_modules, run npm install
+- API calls fail: Check backend is running, CORS configured
+
+Docker Issues:
+- Permission denied: sudo usermod -aG docker $USER, then logout/login
+- Port conflicts: Stop other services using same ports
+
+Deployment Issues:
+- Code Engine build fails: Check Dockerfile syntax
+- App crashes: Check logs with ibmcloud ce app logs
+
+===============================================================================
+ADDITIONAL RESOURCES
+===============================================================================
+
+Documentation:
+- Django: https://docs.djangoproject.com/
+- React: https://react.dev/
+- Flask: https://flask.palletsprojects.com/
+- Docker: https://docs.docker.com/
+- IBM Code Engine: https://cloud.ibm.com/docs/codeengine
+
+Need help? Check course forums or documentation.
+
+===============================================================================
+END OF BUILD INSTRUCTIONS
+===============================================================================
+Good luck with your capstone project!
