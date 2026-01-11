@@ -1,0 +1,50 @@
+[
+    {
+        "id": 1,
+        "name": "Premium Motors",
+        "city": "Kansas City",
+        "state": "Kansas",
+        "address": "123 Main St",
+        "zip": "66101",
+        "lat": 39.0997,
+        "long": -94.5786,
+        "cars": [
+            "Toyota Camry",
+            "Honda Accord",
+            "Ford F-150",
+            "Chevrolet Silverado"
+        ]
+    },
+    {
+        "id": 2,
+        "name": "AutoHub Central",
+        "city": "Topeka",
+        "state": "Kansas",
+        "address": "456 Oak Ave",
+        "zip": "66603",
+        "lat": 39.0558,
+        "long": -95.689,
+        "cars": [
+            "BMW 3 Series",
+            "Mercedes-Benz C-Class",
+            "Audi A4",
+            "Tesla Model 3"
+        ]
+    },
+    {
+        "id": 3,
+        "name": "Elite Car Sales",
+        "city": "Wichita",
+        "state": "Kansas",
+        "address": "789 Elm St",
+        "zip": "67202",
+        "lat": 37.6872,
+        "long": -97.3301,
+        "cars": [
+            "Nissan Altima",
+            "Hyundai Sonata",
+            "Mazda CX-5",
+            "Subaru Outback"
+        ]
+    }
+]

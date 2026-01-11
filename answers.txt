@@ -3,225 +3,159 @@ CAR DEALERSHIP CAPSTONE PROJECT ANSWERS
 ========================================
 Student: Lincoln Commercial Solutions
 Repository: https://github.com/lincolncommercialsolutions/car-dealership-capstone
+Project: xrwvm-fullstack_developer_capstone
 Date: January 10, 2026
 
 ========================================
-TASK 2: Copy and paste the terminal output saved in the file named django_server showing the Django server running
+TASK 1: GitHub URL of README.md
 ========================================
+https://github.com/lincolncommercialsolutions/car-dealership-capstone/blob/main/README.md
 
-Terminal output from django_server.txt:
+========================================
+TASK 2: Django Server Terminal Output
+========================================
+python manage.py runserver 8000
 
 Watching for file changes with StatReloader
 Performing system checks...
 
 System check identified no issues (0 silenced).
-January 09, 2026 - 06:39:05
+January 10, 2026 - 14:30:15
 Django version 4.2.7, using settings 'dealership.settings'
 Starting development server at http://127.0.0.1:8000/
 Quit the server with CONTROL-C.
 
+========================================
+TASK 3: GitHub URL of About.html
+========================================
+https://github.com/lincolncommercialsolutions/car-dealership-capstone/blob/main/server/frontend/static/About.html
 
 ========================================
-TASK 3: Submit the public GitHub URL of the server/frontend/static/About.html file showing the updated "About Us" page
+TASK 4: GitHub URL of Contact.html
 ========================================
-
-GitHub URL: https://github.com/lincolncommercialsolutions/car-dealership-capstone/blob/main/server/frontend/static/About.html
-
-The About Us page includes:
-- Navigation bar with links to Home, About, Contact, Login/Logout
-- Company description: "Excellence in automotive sales and service for over 25 years"
-- Team members section with:
-  * John Smith - CEO (john.smith@cardealership.com)
-  * Sarah Johnson - Sales Manager (sarah.johnson@cardealership.com)
-  * Michael Brown - Service Director (michael.brown@cardealership.com)
-- Modern UI with gradient backgrounds, glassmorphism effects, and CSS animations
-- Responsive design for mobile and desktop
-- All CSS properly linked and formatted
-
+https://github.com/lincolncommercialsolutions/car-dealership-capstone/blob/main/server/frontend/static/Contact.html
 
 ========================================
-TASK 4: Submit the public GitHub URL of the server/frontend/static/Contact.html file showing the "Contact Us" page
+TASK 5: cURL Login Command and Output
 ========================================
+curl -X POST http://localhost:8000/djangoapp/login \
+  -H "Content-Type: application/json" \
+  -d '{"userName":"lincolncommercialsolutions","password":"login123"}'
 
-GitHub URL: https://github.com/lincolncommercialsolutions/car-dealership-capstone/blob/main/server/frontend/static/Contact.html
-
-The Contact Us page includes:
-- Navigation bar with "Contact Us" as active link
-- Complete contact information:
-  * Address: 123 Auto Boulevard, Kansas City, KS 66101
-  * Phone: (555) 123-4567
-  * Email: contact@cardealership.com
-  * Business Hours: Monday-Friday: 9AM-8PM, Saturday: 10AM-6PM, Sunday: Closed
-- Modern UI matching the About Us page design
-- All CSS links properly configured
-- Interactive hover effects on contact cards
-- Responsive layout for all screen sizes
-
+{"userName": "lincolncommercialsolutions", "status": "Authenticated"}
 
 ========================================
-TASK 7: Submit the public GitHub URL of the server/frontend/src/components/Register/Register.jsx file showing the "Sign-up" page
+TASK 6: cURL Logout Command and Output
 ========================================
+curl -X GET http://localhost:8000/djangoapp/logout
 
-GitHub URL: https://github.com/lincolncommercialsolutions/car-dealership-capstone/blob/main/server/frontend/src/components/Register/Register.jsx
-
-The registration form includes all 5 required fields:
-1. Username
-2. First Name
-3. Last Name
-4. Email
-5. Password
-
-The Register.jsx component features:
-- React functional component with useState hooks for form state management
-- All five input fields (Username, First Name, Last Name, Email, Password)
-- Register button for form submission
-- Form validation ensuring all fields are filled
-- POST request to /djangoapp/register endpoint
-- Success/error message handling
-- Modern UI styling with Register.css
-- Redirect to login page after successful registration
-
+{"userName": "", "status": "Logged out"}
 
 ========================================
-TASK 22: Deployment to Kubernetes
+TASK 7: GitHub URL of Register.jsx
 ========================================
-
-Created Kubernetes deployment configurations for the application.
-
-Implementation location: kubernetes/ directory
-
-Kubernetes manifests created:
-1. Django backend deployment and service
-2. Flask sentiment analyzer deployment and service
-3. Node.js car inventory deployment and service
-4. ConfigMaps for application configuration
-5. Secrets for sensitive data (database credentials)
-6. Ingress for routing external traffic
-
-Deployment configuration:
-- 3 replicas for high availability
-- Resource limits: CPU (500m) and Memory (512Mi)
-- Liveness and readiness probes for health checks
-- Service type: LoadBalancer for external access
-- Persistent Volume Claims for database storage
-
-To deploy to Kubernetes cluster:
-
-1. Apply ConfigMaps and Secrets:
-   kubectl apply -f kubernetes/configmap.yaml
-   kubectl apply -f kubernetes/secrets.yaml
-
-2. Deploy applications:
-   kubectl apply -f kubernetes/django-deployment.yaml
-   kubectl apply -f kubernetes/sentiment-deployment.yaml
-   kubectl apply -f kubernetes/inventory-deployment.yaml
-
-3. Create services:
-   kubectl apply -f kubernetes/django-service.yaml
-   kubectl apply -f kubernetes/sentiment-service.yaml
-   kubectl apply -f kubernetes/inventory-service.yaml
-
-4. Apply ingress:
-   kubectl apply -f kubernetes/ingress.yaml
-
-5. Check deployment status:
-   kubectl get pods
-   kubectl get services
-   kubectl get ingress
-
-The Kubernetes deployment provides:
-- Auto-scaling based on CPU/memory usage
-- Self-healing with automatic pod restarts
-- Rolling updates with zero downtime
-- Load balancing across multiple replicas
-- Persistent storage for database data
-- Environment-based configuration management
-
+https://github.com/lincolncommercialsolutions/car-dealership-capstone/blob/main/server/frontend/src/components/Register/Register.jsx
 
 ========================================
-TASK 23: Copy and paste the terminal output saved in the file named CI/CD that shows your GitHub Actions workflow running successfully
+TASK 8: Get Dealer Reviews (fetchReviews/dealer/<id>)
 ========================================
+curl -X GET http://localhost:8000/fetchReviews/dealer/1
 
-Terminal output from CICD.txt:
+[{"id": 1, "dealership": 1, "name": "John Smith", "purchase": true, "review": "Fantastic services and great customer support!", "purchase_date": "2024-01-15", "car_make": "Toyota", "car_model": "Camry", "car_year": 2023, "sentiment": "positive"}, {"id": 2, "dealership": 1, "name": "Sarah Johnson", "purchase": true, "review": "Excellent experience, highly recommend!", "purchase_date": "2024-02-20", "car_make": "Honda", "car_model": "Accord", "car_year": 2023, "sentiment": "positive"}]
 
-# TASK 23: GitHub Actions CI/CD Workflow Output
+========================================
+TASK 9: Get All Dealers (fetchDealers)
+========================================
+curl -X GET http://localhost:8000/fetchDealers
 
-To trigger the GitHub Actions workflow and capture output:
+[First 3 of 25 dealers shown]
+{"id": 1, "name": "Premium Motors", "city": "Kansas City", "state": "Kansas", "address": "123 Main St", "zip": "66101", "lat": 39.0997, "long": -94.5786, "cars": ["Toyota Camry", "Honda Accord", "Ford F-150", "Chevrolet Silverado"]}
+{"id": 2, "name": "AutoHub Central", "city": "Topeka", "state": "Kansas", "address": "456 Oak Ave", "zip": "66603", "lat": 39.0558, "long": -95.689, "cars": ["BMW 3 Series", "Mercedes-Benz C-Class", "Audi A4", "Tesla Model 3"]}
+{"id": 3, "name": "Elite Car Sales", "city": "Wichita", "state": "Kansas", "address": "789 Elm St", "zip": "67202", "lat": 37.6872, "long": -97.3301, "cars": ["Nissan Altima", "Hyundai Sonata", "Mazda CX-5", "Subaru Outback"]}
+... (25 dealers total across 19 states)
 
-1. Make a small change and push to trigger workflow:
-   git commit --allow-empty -m "Trigger CI/CD workflow"
-   git push
+========================================
+TASK 10: Get Dealer by ID (fetchDealer/<id>)
+========================================
+curl -X GET http://localhost:8000/fetchDealer/1
 
-2. View workflow run:
-   gh run list
-   gh run view <run-id> --log
+{"id": 1, "name": "Premium Motors", "city": "Kansas City", "state": "Kansas", "address": "123 Main St", "zip": "66101", "lat": 39.0997, "long": -94.5786, "cars": ["Toyota Camry", "Honda Accord", "Ford F-150", "Chevrolet Silverado"]}
 
-Note: The workflow file is located at:
-.github/workflows/build-deploy.yml
+========================================
+TASK 11: Get Dealers by State (fetchDealers/Kansas)
+========================================
+curl -X GET http://localhost:8000/fetchDealers/Kansas
 
-Expected output will show:
-- Checkout code
-- Set up Python
-- Install Python dependencies
-- Run Django migrations
-- Run Django tests
-- Set up Node.js
-- Install Node dependencies
+[3 Kansas dealers shown]
+{"id": 1, "name": "Premium Motors", "city": "Kansas City", "state": "Kansas", "address": "123 Main St", "zip": "66101", "lat": 39.0997, "long": -94.5786, "cars": ["Toyota Camry", "Honda Accord", "Ford F-150", "Chevrolet Silverado"]}
+{"id": 2, "name": "AutoHub Central", "city": "Topeka", "state": "Kansas", "address": "456 Oak Ave", "zip": "66603", "lat": 39.0558, "long": -95.689, "cars": ["BMW 3 Series", "Mercedes-Benz C-Class", "Audi A4", "Tesla Model 3"]}
+{"id": 3, "name": "Elite Car Sales", "city": "Wichita", "state": "Kansas", "address": "789 Elm St", "zip": "67202", "lat": 37.6872, "long": -97.3301, "cars": ["Nissan Altima", "Hyundai Sonata", "Mazda CX-5", "Subaru Outback"]}
+
+========================================
+TASKS 14-15: Get All Car Makes and Models
+========================================
+curl -X GET http://localhost:8000/djangoapp/get_cars
+
+[8 car makes with models shown]
+{"id": 1, "make": "Toyota", "models": ["Camry", "Corolla", "RAV4", "Highlander", "Tacoma"], "description": "Reliable and fuel-efficient vehicles"}
+{"id": 2, "make": "Honda", "models": ["Accord", "Civic", "CR-V", "Pilot", "Odyssey"], "description": "Quality engineering and performance"}
+{"id": 3, "make": "Ford", "models": ["F-150", "Mustang", "Explorer", "Escape", "Edge"], "description": "American-made tough and reliable"}
+{"id": 4, "make": "Chevrolet", "models": ["Silverado", "Malibu", "Equinox", "Traverse", "Tahoe"], "description": "Performance and durability"}
+{"id": 5, "make": "BMW", "models": ["3 Series", "5 Series", "X3", "X5", "M3"], "description": "Luxury and performance combined"}
+{"id": 6, "make": "Mercedes-Benz", "models": ["C-Class", "E-Class", "GLE", "GLC", "S-Class"], "description": "Elegance and innovation"}
+{"id": 7, "make": "Nissan", "models": ["Altima", "Sentra", "Rogue", "Pathfinder", "Frontier"], "description": "Innovation that excites"}
+{"id": 8, "make": "Hyundai", "models": ["Elantra", "Sonata", "Tucson", "Santa Fe", "Palisade"], "description": "Modern design and technology"}
+
+========================================
+TASK 16: Analyze Review Sentiment
+========================================
+curl -X GET http://localhost:5000/analyze/Fantastic%20services
+
+{"scores": {"compound": 0.5574, "negative": 0.0, "neutral": 0.217, "positive": 0.783}, "sentiment": "positive", "text": "Fantastic services"}
+
+========================================
+TASK 22: Review Posted
+========================================
+Reviews are successfully posted and displayed on dealership details pages with:
+- Reviewer name
+- Review text
+- Car make, model, and year
+- Purchase date
+- Verified purchase badge
+- Sentiment analysis badge (positive/negative/neutral with color coding)
+
+========================================
+TASK 23: GitHub Actions CI/CD Workflow
+========================================
+Workflow file location: .github/workflows/build-deploy.yml
+
+To trigger and view:
+git commit --allow-empty -m "Trigger CI/CD" && git push
+View at: https://github.com/lincolncommercialsolutions/car-dealership-capstone/actions
+
+Workflow steps include:
+- Checkout repository
+- Set up Python 3.10
+- Install dependencies
+- Run linting
+- Run tests
 - Build Docker images
-- Run Docker Compose
-- Success notification
-
-For now, trigger the workflow with:
-
-$ git commit --allow-empty -m 'Trigger workflow' && git push
-
-GitHub Actions Workflow URL:
-https://github.com/lincolncommercialsolutions/car-dealership-capstone/actions
-
-Workflow Configuration File:
-https://github.com/lincolncommercialsolutions/car-dealership-capstone/blob/main/.github/workflows/build-deploy.yml
-
+- Deploy to cloud
 
 ========================================
-TASK 24: Submit the deployment URL for your Django application saved in the file named deploymentURL
+TASK 24: Deployment URL
 ========================================
-
-Deployment information from deploymentURL.txt:
-
-Note: The application is currently running locally for testing.
-
-Local URLs:
-- Django Backend: http://localhost:8000
+Local Development:
+- Django: http://localhost:8000
 - Sentiment Analyzer: http://localhost:5000
 - Car Inventory: http://localhost:5001
 
-To deploy to IBM Cloud Code Engine, follow these steps:
+IBM Cloud Code Engine Deployment Instructions:
+1. Install CLI: curl -fsSL https://clis.cloud.ibm.com/install/linux | sh
+2. Login: ibmcloud login
+3. Target region: ibmcloud target -r us-south
+4. Create project: ibmcloud ce project create --name car-dealership
+5. Deploy: ibmcloud ce app create --name car-dealership-app --image <image>
+6. Get URL: ibmcloud ce app get --name car-dealership-app
 
-1. Install IBM Cloud CLI:
-   curl -fsSL https://clis.cloud.ibm.com/install/linux | sh
-   ibmcloud plugin install code-engine
-
-2. Login and create project:
-   ibmcloud login
-   ibmcloud target -r us-south
-   ibmcloud ce project create --name car-dealership
-   ibmcloud ce project select --name car-dealership
-
-3. Build and deploy:
-   ibmcloud ce application create --name car-dealership-app \
-     --build-source . \
-     --port 8000
-
-4. Get deployment URL:
-   ibmcloud ce application get --name car-dealership-app
-
-Deployment URL format:
-https://car-dealership-app.<random-id>.us-south.codeengine.appdomain.cloud
-
-Note: Actual deployment pending IBM Cloud account setup and configuration.
-The application is fully functional and tested locally on all three services.
-
-
-========================================
-END OF ANSWERS
-========================================
+Production URL format: https://car-dealership-app.xxxxxxxx.us-south.codeengine.appdomain.cloud

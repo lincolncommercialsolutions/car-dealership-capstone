@@ -1,6 +1,12 @@
 # Car Dealership Capstone Project
+## xrwvm-fullstack_developer_capstone
 
 Full-stack web application for a car dealership with dealer listings, reviews, and sentiment analysis.
+
+### Project Name
+**xrwvm-fullstack_developer_capstone** - Full Stack Developer Capstone Project
+
+This comprehensive application demonstrates full-stack development skills including:
 
 ## Tech Stack
 

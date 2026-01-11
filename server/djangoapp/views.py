@@ -156,6 +156,18 @@ def get_reviews(request):
     return JsonResponse(reviews, safe=False)
 
 
+def get_reviews_by_dealer(request, dealer_id):
+    """Get reviews for a specific dealer (assignment endpoint)"""
+    reviews = get_dealer_reviews(dealer_id)
+    return JsonResponse(reviews, safe=False)
+
+
+def get_dealerships_by_state(request, state):
+    """Get dealers filtered by state (assignment endpoint)"""
+    dealers = get_dealers_by_state(state)
+    return JsonResponse(dealers, safe=False)
+
+
 @csrf_exempt
 def add_dealer_review(request):
     """Add a new review for a dealer"""

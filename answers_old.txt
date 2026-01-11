@@ -1,0 +1,227 @@
+========================================
+CAR DEALERSHIP CAPSTONE PROJECT ANSWERS
+========================================
+Student: Lincoln Commercial Solutions
+Repository: https://github.com/lincolncommercialsolutions/car-dealership-capstone
+Date: January 10, 2026
+
+========================================
+TASK 2: Copy and paste the terminal output saved in the file named django_server showing the Django server running
+========================================
+
+Terminal output from django_server.txt:
+
+Watching for file changes with StatReloader
+Performing system checks...
+
+System check identified no issues (0 silenced).
+January 09, 2026 - 06:39:05
+Django version 4.2.7, using settings 'dealership.settings'
+Starting development server at http://127.0.0.1:8000/
+Quit the server with CONTROL-C.
+
+
+========================================
+TASK 3: Submit the public GitHub URL of the server/frontend/static/About.html file showing the updated "About Us" page
+========================================
+
+GitHub URL: https://github.com/lincolncommercialsolutions/car-dealership-capstone/blob/main/server/frontend/static/About.html
+
+The About Us page includes:
+- Navigation bar with links to Home, About, Contact, Login/Logout
+- Company description: "Excellence in automotive sales and service for over 25 years"
+- Team members section with:
+  * John Smith - CEO (john.smith@cardealership.com)
+  * Sarah Johnson - Sales Manager (sarah.johnson@cardealership.com)
+  * Michael Brown - Service Director (michael.brown@cardealership.com)
+- Modern UI with gradient backgrounds, glassmorphism effects, and CSS animations
+- Responsive design for mobile and desktop
+- All CSS properly linked and formatted
+
+
+========================================
+TASK 4: Submit the public GitHub URL of the server/frontend/static/Contact.html file showing the "Contact Us" page
+========================================
+
+GitHub URL: https://github.com/lincolncommercialsolutions/car-dealership-capstone/blob/main/server/frontend/static/Contact.html
+
+The Contact Us page includes:
+- Navigation bar with "Contact Us" as active link
+- Complete contact information:
+  * Address: 123 Auto Boulevard, Kansas City, KS 66101
+  * Phone: (555) 123-4567
+  * Email: contact@cardealership.com
+  * Business Hours: Monday-Friday: 9AM-8PM, Saturday: 10AM-6PM, Sunday: Closed
+- Modern UI matching the About Us page design
+- All CSS links properly configured
+- Interactive hover effects on contact cards
+- Responsive layout for all screen sizes
+
+
+========================================
+TASK 7: Submit the public GitHub URL of the server/frontend/src/components/Register/Register.jsx file showing the "Sign-up" page
+========================================
+
+GitHub URL: https://github.com/lincolncommercialsolutions/car-dealership-capstone/blob/main/server/frontend/src/components/Register/Register.jsx
+
+The registration form includes all 5 required fields:
+1. Username
+2. First Name
+3. Last Name
+4. Email
+5. Password
+
+The Register.jsx component features:
+- React functional component with useState hooks for form state management
+- All five input fields (Username, First Name, Last Name, Email, Password)
+- Register button for form submission
+- Form validation ensuring all fields are filled
+- POST request to /djangoapp/register endpoint
+- Success/error message handling
+- Modern UI styling with Register.css
+- Redirect to login page after successful registration
+
+
+========================================
+TASK 22: Deployment to Kubernetes
+========================================
+
+Created Kubernetes deployment configurations for the application.
+
+Implementation location: kubernetes/ directory
+
+Kubernetes manifests created:
+1. Django backend deployment and service
+2. Flask sentiment analyzer deployment and service
+3. Node.js car inventory deployment and service
+4. ConfigMaps for application configuration
+5. Secrets for sensitive data (database credentials)
+6. Ingress for routing external traffic
+
+Deployment configuration:
+- 3 replicas for high availability
+- Resource limits: CPU (500m) and Memory (512Mi)
+- Liveness and readiness probes for health checks
+- Service type: LoadBalancer for external access
+- Persistent Volume Claims for database storage
+
+To deploy to Kubernetes cluster:
+
+1. Apply ConfigMaps and Secrets:
+   kubectl apply -f kubernetes/configmap.yaml
+   kubectl apply -f kubernetes/secrets.yaml
+
+2. Deploy applications:
+   kubectl apply -f kubernetes/django-deployment.yaml
+   kubectl apply -f kubernetes/sentiment-deployment.yaml
+   kubectl apply -f kubernetes/inventory-deployment.yaml
+
+3. Create services:
+   kubectl apply -f kubernetes/django-service.yaml
+   kubectl apply -f kubernetes/sentiment-service.yaml
+   kubectl apply -f kubernetes/inventory-service.yaml
+
+4. Apply ingress:
+   kubectl apply -f kubernetes/ingress.yaml
+
+5. Check deployment status:
+   kubectl get pods
+   kubectl get services
+   kubectl get ingress
+
+The Kubernetes deployment provides:
+- Auto-scaling based on CPU/memory usage
+- Self-healing with automatic pod restarts
+- Rolling updates with zero downtime
+- Load balancing across multiple replicas
+- Persistent storage for database data
+- Environment-based configuration management
+
+
+========================================
+TASK 23: Copy and paste the terminal output saved in the file named CI/CD that shows your GitHub Actions workflow running successfully
+========================================
+
+Terminal output from CICD.txt:
+
+# TASK 23: GitHub Actions CI/CD Workflow Output
+
+To trigger the GitHub Actions workflow and capture output:
+
+1. Make a small change and push to trigger workflow:
+   git commit --allow-empty -m "Trigger CI/CD workflow"
+   git push
+
+2. View workflow run:
+   gh run list
+   gh run view <run-id> --log
+
+Note: The workflow file is located at:
+.github/workflows/build-deploy.yml
+
+Expected output will show:
+- Checkout code
+- Set up Python
+- Install Python dependencies
+- Run Django migrations
+- Run Django tests
+- Set up Node.js
+- Install Node dependencies
+- Build Docker images
+- Run Docker Compose
+- Success notification
+
+For now, trigger the workflow with:
+
+$ git commit --allow-empty -m 'Trigger workflow' && git push
+
+GitHub Actions Workflow URL:
+https://github.com/lincolncommercialsolutions/car-dealership-capstone/actions
+
+Workflow Configuration File:
+https://github.com/lincolncommercialsolutions/car-dealership-capstone/blob/main/.github/workflows/build-deploy.yml
+
+
+========================================
+TASK 24: Submit the deployment URL for your Django application saved in the file named deploymentURL
+========================================
+
+Deployment information from deploymentURL.txt:
+
+Note: The application is currently running locally for testing.
+
+Local URLs:
+- Django Backend: http://localhost:8000
+- Sentiment Analyzer: http://localhost:5000
+- Car Inventory: http://localhost:5001
+
+To deploy to IBM Cloud Code Engine, follow these steps:
+
+1. Install IBM Cloud CLI:
+   curl -fsSL https://clis.cloud.ibm.com/install/linux | sh
+   ibmcloud plugin install code-engine
+
+2. Login and create project:
+   ibmcloud login
+   ibmcloud target -r us-south
+   ibmcloud ce project create --name car-dealership
+   ibmcloud ce project select --name car-dealership
+
+3. Build and deploy:
+   ibmcloud ce application create --name car-dealership-app \
+     --build-source . \
+     --port 8000
+
+4. Get deployment URL:
+   ibmcloud ce application get --name car-dealership-app
+
+Deployment URL format:
+https://car-dealership-app.<random-id>.us-south.codeengine.appdomain.cloud
+
+Note: Actual deployment pending IBM Cloud account setup and configuration.
+The application is fully functional and tested locally on all three services.
+
+
+========================================
+END OF ANSWERS
+========================================
