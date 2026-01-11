@@ -297,24 +297,23 @@
         
         async function checkAuth() {
             try {
-                const response = await fetch('/djangoapp/get_dealers');
-                const dealers = await response.json();
+                // Check if user is authenticated
+                const userResponse = await fetch('/djangoapp/get_user', {
+                    credentials: 'include'  // Include cookies for session
+                });
                 
-                // If we get data, user is logged in
-                if (dealers && dealers.length > 0) {
-                    // Try to get username from session
-                    const userResponse = await fetch('/djangoapp/get_user');
-                    if (userResponse.ok) {
-                        const userData = await response.json();
-                        currentUser = userData.userName || 'User';
-                    } else {
-                        currentUser = 'User';
-                    }
+                if (userResponse.ok) {
+                    const userData = await userResponse.json();
                     
-                    document.getElementById('userDisplay').textContent = `Welcome, ${currentUser}!`;
-                    document.getElementById('loginPrompt').style.display = 'none';
-                    document.getElementById('dealerContent').style.display = 'block';
-                    loadDealers();
+                    if (userData.isAuthenticated) {
+                        currentUser = userData.userName || 'User';
+                        document.getElementById('userDisplay').textContent = `Welcome, ${currentUser}!`;
+                        document.getElementById('loginPrompt').style.display = 'none';
+                        document.getElementById('dealerContent').style.display = 'block';
+                        loadDealers();
+                    } else {
+                        showLoginPrompt();
+                    }
                 } else {
                     showLoginPrompt();
                 }
@@ -331,7 +330,9 @@
         
         async function loadDealers() {
             try {
-                const response = await fetch('/djangoapp/get_dealers');
+                const response = await fetch('/djangoapp/get_dealers', {
+                    credentials: 'include'  // Include cookies for session
+                });
                 allDealers = await response.json();
                 
                 // Populate state filter

@@ -81,6 +81,23 @@ def logout_user(request):
     return JsonResponse({'userName': '', 'status': 'Logged out'})
 
 
+def get_user(request):
+    """Get current logged-in user information"""
+    if request.user.is_authenticated:
+        return JsonResponse({
+            'userName': request.user.username,
+            'firstName': request.user.first_name,
+            'lastName': request.user.last_name,
+            'email': request.user.email,
+            'isAuthenticated': True
+        })
+    else:
+        return JsonResponse({
+            'userName': None,
+            'isAuthenticated': False
+        })
+
+
 def get_cars(request):
     """Get all car makes and models"""
     car_makes = CarMake.objects.all()
