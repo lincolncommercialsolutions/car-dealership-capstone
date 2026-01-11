@@ -40,14 +40,7 @@ The About Us page includes:
 
 
 ========================================
-TASK 4: Create Contact Us Static Page
-========================================
-
-Created a Contact Us page at server/frontend/static/Contact.html
-
-The page includes:
-- Navigation bar matching the About Us page
-- ContacSubmit the public GitHub URL of the server/frontend/static/Contact.html file showing the "Contact Us" page
+TASK 4: Submit the public GitHub URL of the server/frontend/static/Contact.html file showing the "Contact Us" page
 ========================================
 
 GitHub URL: https://github.com/lincolncommercialsolutions/car-dealership-capstone/blob/main/server/frontend/static/Contact.html
@@ -62,7 +55,14 @@ The Contact Us page includes:
 - Modern UI matching the About Us page design
 - All CSS links properly configured
 - Interactive hover effects on contact cards
-Created React registration component at server/frontend/src/components/Register/Register.jsx
+- Responsive layout for all screen sizes
+
+
+========================================
+TASK 7: Submit the public GitHub URL of the server/frontend/src/components/Register/Register.jsx file showing the "Sign-up" page
+========================================
+
+GitHub URL: https://github.com/lincolncommercialsolutions/car-dealership-capstone/blob/main/server/frontend/src/components/Register/Register.jsx
 
 The registration form includes all 5 required fields:
 1. Username
@@ -71,20 +71,15 @@ The registration form includes all 5 required fields:
 4. Email
 5. Password
 
-Features implemented:
-- React functional component with useState hooks
-- Controlled form inputs
-- Form validation
+The Register.jsx component features:
+- React functional component with useState hooks for form state management
+- All five input fields (Username, First Name, Last Name, Email, Password)
+- Register button for form submission
+- Form validation ensuring all fields are filled
 - POST request to /djangoapp/register endpoint
 - Success/error message handling
-- Styled with Register.css for modern UI
-
-The component:
-- Captures user input in formData state
-- Validates all fields are filled
-- Sends JSON POST request to Django backend
-- Displays success message and redirects to login on successful registration
-- Shows error messages for registration failures
+- Modern UI styling with Register.css
+- Redirect to login page after successful registration
 
 
 ========================================
@@ -144,43 +139,87 @@ The Kubernetes deployment provides:
 
 
 ========================================
-TASK 23: CI/CD Pipeline with GitHub Actions
+TASK 23: Copy and paste the terminal output saved in the file named CI/CD that shows your GitHub Actions workflow running successfully
 ========================================
 
-Created GitHub Actions workflow for continuous integration and deployment.
+Terminal output from CICD.txt:
 
-Implementation location: .github/workflows/build-deploy.yml
+# TASK 23: GitHub Actions CI/CD Workflow Output
 
-Workflow Features:
-- Triggers on push to main branch and pull requests
-- Runs automated tests for Django backend
-- Builds and tests React frontend
-- Lints code for quality standards
-- Runs on Ubuntu latest environment
+To trigger the GitHub Actions workflow and capture output:
 
-Workflow steps include:
-1. Checkout code from repository
-2. Set up Python 3.12 environment
-3. Install Django dependencies
-4. Run Django migrations
-5. Execute Django test suite
-6. Set up Node.js environment
-7. Install frontend dependencies
-8. Run frontend tests
-9. Build production frontend bundle
+1. Make a small change and push to trigger workflow:
+   git commit --allow-empty -m "Trigger CI/CD workflow"
+   git push
 
-To trigger the workflow:
-git commit --allow-empty -m "Trigger CI/CD workflow"
-git push
+2. View workflow run:
+   gh run list
+   gh run view <run-id> --log
 
-View workflow runs at:
+Note: The workflow file is located at:
+.github/workflows/build-deploy.yml
+
+Expected output will show:
+- Checkout code
+- Set up Python
+- Install Python dependencies
+- Run Django migrations
+- Run Django tests
+- Set up Node.js
+- Install Node dependencies
+- Build Docker images
+- Run Docker Compose
+- Success notification
+
+For now, trigger the workflow with:
+
+$ git commit --allow-empty -m 'Trigger workflow' && git push
+
+GitHub Actions Workflow URL:
 https://github.com/lincolncommercialsolutions/car-dealership-capstone/actions
 
-The workflow automatically:
-- Validates code quality on every push
-- Ensures tests pass before merging
-- Builds deployable artifacts
-- Provides build status badges
+Workflow Configuration File:
+https://github.com/lincolncommercialsolutions/car-dealership-capstone/blob/main/.github/workflows/build-deploy.yml
+
+
+========================================
+TASK 24: Submit the deployment URL for your Django application saved in the file named deploymentURL
+========================================
+
+Deployment information from deploymentURL.txt:
+
+Note: The application is currently running locally for testing.
+
+Local URLs:
+- Django Backend: http://localhost:8000
+- Sentiment Analyzer: http://localhost:5000
+- Car Inventory: http://localhost:5001
+
+To deploy to IBM Cloud Code Engine, follow these steps:
+
+1. Install IBM Cloud CLI:
+   curl -fsSL https://clis.cloud.ibm.com/install/linux | sh
+   ibmcloud plugin install code-engine
+
+2. Login and create project:
+   ibmcloud login
+   ibmcloud target -r us-south
+   ibmcloud ce project create --name car-dealership
+   ibmcloud ce project select --name car-dealership
+
+3. Build and deploy:
+   ibmcloud ce application create --name car-dealership-app \
+     --build-source . \
+     --port 8000
+
+4. Get deployment URL:
+   ibmcloud ce application get --name car-dealership-app
+
+Deployment URL format:
+https://car-dealership-app.<random-id>.us-south.codeengine.appdomain.cloud
+
+Note: Actual deployment pending IBM Cloud account setup and configuration.
+The application is fully functional and tested locally on all three services.
 
 
 ========================================
