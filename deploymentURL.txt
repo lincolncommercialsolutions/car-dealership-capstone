@@ -7,7 +7,7 @@ Local URLs:
 - Sentiment Analyzer: http://localhost:5000
 - Car Inventory: http://localhost:5001
 
-To deploy to IBM Cloud Code Engine, follow these steps:
+Steps to deploy on IBM Cloud Code Engine:
 
 1. Install IBM Cloud CLI:
    curl -fsSL https://clis.cloud.ibm.com/install/linux | sh
