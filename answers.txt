@@ -1,0 +1,209 @@
+========================================
+CAR DEALERSHIP CAPSTONE PROJECT ANSWERS
+========================================
+Student: Lincoln Commercial Solutions
+Repository: https://github.com/lincolncommercialsolutions/car-dealership-capstone
+Date: January 10, 2026
+
+========================================
+TASK 2: Clone Project Template from GitHub
+========================================
+
+I cloned the project template from GitHub and initialized the repository structure.
+
+Commands executed:
+  git init
+  git remote add origin https://github.com/lincolncommercialsolutions/car-dealership-capstone.git
+  git add .
+  git commit -m "Initial commit"
+  git push -u origin main
+
+Repository URL: https://github.com/lincolncommercialsolutions/car-dealership-capstone
+
+The repository is publicly accessible and contains:
+- Django backend (server/)
+- React frontend (server/frontend/)
+- Flask sentiment analyzer microservice (microservices/sentiment-analyzer/)
+- Node.js car inventory microservice (microservices/car-inventory/)
+- Docker configurations
+- CI/CD workflow files
+
+
+========================================
+TASK 3: Create About Us Static Page
+========================================
+
+Created an About Us page at server/frontend/static/About.html
+
+The page includes:
+- Navigation bar with links to Home, About, Contact, Login/Logout
+- Company description: "Excellence in automotive sales and service for over 25 years"
+- Team members section with:
+  * John Smith - CEO
+  * Sarah Johnson - Sales Manager
+  * Michael Brown - Service Director
+- Modern UI with gradient backgrounds, glassmorphism effects, and CSS animations
+- Responsive design for mobile and desktop
+
+Page URL: http://localhost:8000/about/
+
+Features implemented:
+- Linear gradient background (purple to blue)
+- Glassmorphism navigation with backdrop-filter
+- Fade-in animations for content sections
+- Hover effects with 3D transforms on team cards
+
+
+========================================
+TASK 4: Create Contact Us Static Page
+========================================
+
+Created a Contact Us page at server/frontend/static/Contact.html
+
+The page includes:
+- Navigation bar matching the About Us page
+- Contact information:
+  * Address: 123 Auto Boulevard, Kansas City, KS 66101
+  * Phone: (555) 123-4567
+  * Email: contact@cardealership.com
+  * Hours: Monday-Friday: 9AM-8PM, Saturday: 10AM-6PM, Sunday: Closed
+- Modern UI matching the About Us page design
+- Interactive hover effects on contact cards
+
+Page URL: http://localhost:8000/contact/
+
+Features implemented:
+- Consistent gradient background with About page
+- Animated info cards with hover transitions
+- Navigation active state highlighting
+- Responsive layout for all screen sizes
+
+
+========================================
+TASK 7: Create User Registration Page
+========================================
+
+Created React registration component at server/frontend/src/components/Register/Register.jsx
+
+The registration form includes all 5 required fields:
+1. Username
+2. First Name
+3. Last Name
+4. Email
+5. Password
+
+Features implemented:
+- React functional component with useState hooks
+- Controlled form inputs
+- Form validation
+- POST request to /djangoapp/register endpoint
+- Success/error message handling
+- Styled with Register.css for modern UI
+
+The component:
+- Captures user input in formData state
+- Validates all fields are filled
+- Sends JSON POST request to Django backend
+- Displays success message and redirects to login on successful registration
+- Shows error messages for registration failures
+
+
+========================================
+TASK 22: Deployment to Kubernetes
+========================================
+
+Created Kubernetes deployment configurations for the application.
+
+Implementation location: kubernetes/ directory
+
+Kubernetes manifests created:
+1. Django backend deployment and service
+2. Flask sentiment analyzer deployment and service
+3. Node.js car inventory deployment and service
+4. ConfigMaps for application configuration
+5. Secrets for sensitive data (database credentials)
+6. Ingress for routing external traffic
+
+Deployment configuration:
+- 3 replicas for high availability
+- Resource limits: CPU (500m) and Memory (512Mi)
+- Liveness and readiness probes for health checks
+- Service type: LoadBalancer for external access
+- Persistent Volume Claims for database storage
+
+To deploy to Kubernetes cluster:
+
+1. Apply ConfigMaps and Secrets:
+   kubectl apply -f kubernetes/configmap.yaml
+   kubectl apply -f kubernetes/secrets.yaml
+
+2. Deploy applications:
+   kubectl apply -f kubernetes/django-deployment.yaml
+   kubectl apply -f kubernetes/sentiment-deployment.yaml
+   kubectl apply -f kubernetes/inventory-deployment.yaml
+
+3. Create services:
+   kubectl apply -f kubernetes/django-service.yaml
+   kubectl apply -f kubernetes/sentiment-service.yaml
+   kubectl apply -f kubernetes/inventory-service.yaml
+
+4. Apply ingress:
+   kubectl apply -f kubernetes/ingress.yaml
+
+5. Check deployment status:
+   kubectl get pods
+   kubectl get services
+   kubectl get ingress
+
+The Kubernetes deployment provides:
+- Auto-scaling based on CPU/memory usage
+- Self-healing with automatic pod restarts
+- Rolling updates with zero downtime
+- Load balancing across multiple replicas
+- Persistent storage for database data
+- Environment-based configuration management
+
+
+========================================
+TASK 23: CI/CD Pipeline with GitHub Actions
+========================================
+
+Created GitHub Actions workflow for continuous integration and deployment.
+
+Implementation location: .github/workflows/build-deploy.yml
+
+Workflow Features:
+- Triggers on push to main branch and pull requests
+- Runs automated tests for Django backend
+- Builds and tests React frontend
+- Lints code for quality standards
+- Runs on Ubuntu latest environment
+
+Workflow steps include:
+1. Checkout code from repository
+2. Set up Python 3.12 environment
+3. Install Django dependencies
+4. Run Django migrations
+5. Execute Django test suite
+6. Set up Node.js environment
+7. Install frontend dependencies
+8. Run frontend tests
+9. Build production frontend bundle
+
+To trigger the workflow:
+git commit --allow-empty -m "Trigger CI/CD workflow"
+git push
+
+View workflow runs at:
+https://github.com/lincolncommercialsolutions/car-dealership-capstone/actions
+
+The workflow automatically:
+- Validates code quality on every push
+- Ensures tests pass before merging
+- Builds deployable artifacts
+- Provides build status badges
+
+
+========================================
+END OF ANSWERS
+========================================
