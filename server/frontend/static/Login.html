@@ -237,7 +237,7 @@
                     messageDiv.style.display = 'block';
                     messageDiv.textContent = 'Login successful! Redirecting...';
                     setTimeout(() => {
-                        window.location.href = '/dealerships/';
+                        window.location.href = '/welcome/?user=' + encodeURIComponent(data.userName);
                     }, 1000);
                 } else {
                     messageDiv.className = 'message error';

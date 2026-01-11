@@ -11,6 +11,7 @@ urlpatterns = [
     
     # Authentication
     path('login/', TemplateView.as_view(template_name='Login.html'), name='login'),
+    path('welcome/', TemplateView.as_view(template_name='LoggedIn.html'), name='logged_in'),
     
     # Main pages
     path('dealerships/', TemplateView.as_view(template_name='Dealerships.html'), name='dealerships'),
