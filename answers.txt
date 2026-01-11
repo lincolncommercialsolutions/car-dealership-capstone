@@ -6,52 +6,37 @@ Repository: https://github.com/lincolncommercialsolutions/car-dealership-capston
 Date: January 10, 2026
 
 ========================================
-TASK 2: Clone Project Template from GitHub
+TASK 2: Copy and paste the terminal output saved in the file named django_server showing the Django server running
 ========================================
 
-I cloned the project template from GitHub and initialized the repository structure.
+Terminal output from django_server.txt:
 
-Commands executed:
-  git init
-  git remote add origin https://github.com/lincolncommercialsolutions/car-dealership-capstone.git
-  git add .
-  git commit -m "Initial commit"
-  git push -u origin main
+Watching for file changes with StatReloader
+Performing system checks...
 
-Repository URL: https://github.com/lincolncommercialsolutions/car-dealership-capstone
-
-The repository is publicly accessible and contains:
-- Django backend (server/)
-- React frontend (server/frontend/)
-- Flask sentiment analyzer microservice (microservices/sentiment-analyzer/)
-- Node.js car inventory microservice (microservices/car-inventory/)
-- Docker configurations
-- CI/CD workflow files
+System check identified no issues (0 silenced).
+January 09, 2026 - 06:39:05
+Django version 4.2.7, using settings 'dealership.settings'
+Starting development server at http://127.0.0.1:8000/
+Quit the server with CONTROL-C.
 
 
 ========================================
-TASK 3: Create About Us Static Page
+TASK 3: Submit the public GitHub URL of the server/frontend/static/About.html file showing the updated "About Us" page
 ========================================
 
-Created an About Us page at server/frontend/static/About.html
+GitHub URL: https://github.com/lincolncommercialsolutions/car-dealership-capstone/blob/main/server/frontend/static/About.html
 
-The page includes:
+The About Us page includes:
 - Navigation bar with links to Home, About, Contact, Login/Logout
 - Company description: "Excellence in automotive sales and service for over 25 years"
 - Team members section with:
-  * John Smith - CEO
-  * Sarah Johnson - Sales Manager
-  * Michael Brown - Service Director
+  * John Smith - CEO (john.smith@cardealership.com)
+  * Sarah Johnson - Sales Manager (sarah.johnson@cardealership.com)
+  * Michael Brown - Service Director (michael.brown@cardealership.com)
 - Modern UI with gradient backgrounds, glassmorphism effects, and CSS animations
 - Responsive design for mobile and desktop
-
-Page URL: http://localhost:8000/about/
-
-Features implemented:
-- Linear gradient background (purple to blue)
-- Glassmorphism navigation with backdrop-filter
-- Fade-in animations for content sections
-- Hover effects with 3D transforms on team cards
+- All CSS properly linked and formatted
 
 
 ========================================
@@ -62,27 +47,21 @@ Created a Contact Us page at server/frontend/static/Contact.html
 
 The page includes:
 - Navigation bar matching the About Us page
-- Contact information:
+- ContacSubmit the public GitHub URL of the server/frontend/static/Contact.html file showing the "Contact Us" page
+========================================
+
+GitHub URL: https://github.com/lincolncommercialsolutions/car-dealership-capstone/blob/main/server/frontend/static/Contact.html
+
+The Contact Us page includes:
+- Navigation bar with "Contact Us" as active link
+- Complete contact information:
   * Address: 123 Auto Boulevard, Kansas City, KS 66101
   * Phone: (555) 123-4567
   * Email: contact@cardealership.com
-  * Hours: Monday-Friday: 9AM-8PM, Saturday: 10AM-6PM, Sunday: Closed
+  * Business Hours: Monday-Friday: 9AM-8PM, Saturday: 10AM-6PM, Sunday: Closed
 - Modern UI matching the About Us page design
+- All CSS links properly configured
 - Interactive hover effects on contact cards
-
-Page URL: http://localhost:8000/contact/
-
-Features implemented:
-- Consistent gradient background with About page
-- Animated info cards with hover transitions
-- Navigation active state highlighting
-- Responsive layout for all screen sizes
-
-
-========================================
-TASK 7: Create User Registration Page
-========================================
-
 Created React registration component at server/frontend/src/components/Register/Register.jsx
 
 The registration form includes all 5 required fields:
