@@ -137,6 +137,193 @@ def init_sample_data():
             'long': -117.1611,
             'cars': ['Tesla Model S', 'Rivian R1T', 'Lucid Air', 'Polestar 2']
         },
+        {
+            'id': 9,
+            'name': 'Empire Auto Sales',
+            'city': 'New York',
+            'state': 'New York',
+            'address': '555 Broadway',
+            'zip': '10012',
+            'lat': 40.7128,
+            'long': -74.0060,
+            'cars': ['Cadillac Escalade', 'Lincoln Navigator', 'GMC Yukon', 'Infiniti QX80']
+        },
+        {
+            'id': 10,
+            'name': 'Gateway Motors',
+            'city': 'St. Louis',
+            'state': 'Missouri',
+            'address': '321 Gateway Dr',
+            'zip': '63101',
+            'lat': 38.6270,
+            'long': -90.1994,
+            'cars': ['Chevrolet Tahoe', 'Ford Explorer', 'Nissan Pathfinder', 'Volkswagen Atlas']
+        },
+        {
+            'id': 11,
+            'name': 'Emerald City Auto',
+            'city': 'Seattle',
+            'state': 'Washington',
+            'address': '777 Pike St',
+            'zip': '98101',
+            'lat': 47.6062,
+            'long': -122.3321,
+            'cars': ['Volvo XC90', 'Acura MDX', 'Genesis GV80', 'Alfa Romeo Stelvio']
+        },
+        {
+            'id': 12,
+            'name': 'Lone Star Automotive',
+            'city': 'Houston',
+            'state': 'Texas',
+            'address': '999 Texas Ave',
+            'zip': '77002',
+            'lat': 29.7604,
+            'long': -95.3698,
+            'cars': ['Ford F-250', 'Chevrolet Colorado', 'Toyota Tundra', 'GMC Sierra']
+        },
+        {
+            'id': 13,
+            'name': 'Peachtree Auto Group',
+            'city': 'Atlanta',
+            'state': 'Georgia',
+            'address': '150 Peachtree St',
+            'zip': '30303',
+            'lat': 33.7490,
+            'long': -84.3880,
+            'cars': ['Kia Telluride', 'Hyundai Palisade', 'Mitsubishi Outlander', 'Buick Enclave']
+        },
+        {
+            'id': 14,
+            'name': 'Motor City Classics',
+            'city': 'Detroit',
+            'state': 'Michigan',
+            'address': '888 Woodward Ave',
+            'zip': '48226',
+            'lat': 42.3314,
+            'long': -83.0458,
+            'cars': ['Dodge Durango', 'Chrysler 300', 'Jeep Grand Cherokee', 'Ram 2500']
+        },
+        {
+            'id': 15,
+            'name': 'Liberty Auto Exchange',
+            'city': 'Philadelphia',
+            'state': 'Pennsylvania',
+            'address': '444 Market St',
+            'zip': '19106',
+            'lat': 39.9526,
+            'long': -75.1652,
+            'cars': ['Toyota Highlander', 'Honda Pilot', 'Mazda CX-90', 'Nissan Armada']
+        },
+        {
+            'id': 16,
+            'name': 'Windy City Wheels',
+            'city': 'Chicago',
+            'state': 'Illinois',
+            'address': '200 State St',
+            'zip': '60601',
+            'lat': 41.8781,
+            'long': -87.6298,
+            'cars': ['Audi Q7', 'BMW X5', 'Mercedes-Benz GLE', 'Porsche Cayenne']
+        },
+        {
+            'id': 17,
+            'name': 'Boston Bay Motors',
+            'city': 'Boston',
+            'state': 'Massachusetts',
+            'address': '600 Atlantic Ave',
+            'zip': '02210',
+            'lat': 42.3601,
+            'long': -71.0589,
+            'cars': ['Volvo S60', 'Lexus ES', 'Acura TLX', 'Genesis G80']
+        },
+        {
+            'id': 18,
+            'name': 'Desert Oasis Auto',
+            'city': 'Las Vegas',
+            'state': 'Nevada',
+            'address': '777 Las Vegas Blvd',
+            'zip': '89101',
+            'lat': 36.1699,
+            'long': -115.1398,
+            'cars': ['Maserati Ghibli', 'Bentley Continental', 'Aston Martin Vantage', 'McLaren GT']
+        },
+        {
+            'id': 19,
+            'name': 'Pacific Northwest Auto',
+            'city': 'Portland',
+            'state': 'Oregon',
+            'address': '888 SW Broadway',
+            'zip': '97205',
+            'lat': 45.5152,
+            'long': -122.6784,
+            'cars': ['Subaru Crosstrek', 'Toyota RAV4', 'Honda HR-V', 'Mazda CX-30']
+        },
+        {
+            'id': 20,
+            'name': 'Mile High Auto Gallery',
+            'city': 'Colorado Springs',
+            'state': 'Colorado',
+            'address': '1500 S Nevada Ave',
+            'zip': '80903',
+            'lat': 38.8339,
+            'long': -104.8214,
+            'cars': ['Ford Bronco', 'Chevrolet Blazer', 'Jeep Gladiator', 'Toyota Tacoma']
+        },
+        {
+            'id': 21,
+            'name': 'Sunshine State Motors',
+            'city': 'Tampa',
+            'state': 'Florida',
+            'address': '300 Tampa St',
+            'zip': '33602',
+            'lat': 27.9506,
+            'long': -82.4572,
+            'cars': ['Volkswagen Jetta', 'Kia Forte', 'Hyundai Elantra', 'Honda Civic']
+        },
+        {
+            'id': 22,
+            'name': 'Golden Gate Auto',
+            'city': 'San Francisco',
+            'state': 'California',
+            'address': '100 Market St',
+            'zip': '94105',
+            'lat': 37.7749,
+            'long': -122.4194,
+            'cars': ['BMW i4', 'Audi e-tron', 'Jaguar I-PACE', 'Mercedes-Benz EQS']
+        },
+        {
+            'id': 23,
+            'name': 'Music City Motors',
+            'city': 'Nashville',
+            'state': 'Tennessee',
+            'address': '400 Broadway',
+            'zip': '37203',
+            'lat': 36.1627,
+            'long': -86.7816,
+            'cars': ['GMC Acadia', 'Buick Encore', 'Cadillac XT5', 'Chevrolet Traverse']
+        },
+        {
+            'id': 24,
+            'name': 'Twin Cities Auto',
+            'city': 'Minneapolis',
+            'state': 'Minnesota',
+            'address': '250 Nicollet Mall',
+            'zip': '55401',
+            'lat': 44.9778,
+            'long': -93.2650,
+            'cars': ['Subaru Legacy', 'Volkswagen Passat', 'Toyota Avalon', 'Honda Accord Hybrid']
+        },
+        {
+            'id': 25,
+            'name': 'Queen City Automotive',
+            'city': 'Charlotte',
+            'state': 'North Carolina',
+            'address': '500 Tryon St',
+            'zip': '28202',
+            'lat': 35.2271,
+            'long': -80.8431,
+            'cars': ['Ford Edge', 'Chevrolet Equinox', 'Nissan Rogue', 'Hyundai Tucson']
+        },
     ])
     
     # Sample reviews for multiple dealers
