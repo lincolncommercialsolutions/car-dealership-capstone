@@ -121,22 +121,44 @@
         }
         
         .message {
-            padding: 1rem;
-            border-radius: 8px;
-            margin-bottom: 1rem;
+            padding: 1.5rem;
+            border-radius: 12px;
+            margin-bottom: 1.5rem;
             display: none;
+            text-align: center;
+            font-size: 1.1rem;
+            font-weight: 600;
+            animation: slideDown 0.5s ease;
         }
         
         .message.error {
-            background: #fee;
+            background: linear-gradient(135deg, #fee 0%, #fdd 100%);
             color: #c33;
-            border: 1px solid #fcc;
+            border: 2px solid #fcc;
         }
         
         .message.success {
-            background: #efe;
-            color: #3c3;
-            border: 1px solid #cfc;
+            background: linear-gradient(135deg, #d4edda 0%, #c3e6cb 100%);
+            color: #155724;
+            border: 2px solid #28a745;
+            box-shadow: 0 5px 20px rgba(40, 167, 69, 0.3);
+        }
+        
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .success-icon {
+            font-size: 3rem;
+            display: block;
+            margin-bottom: 0.5rem;
         }
         
         .required {
@@ -272,20 +294,25 @@
                     headers: {
                         'Content-Type': 'application/json',
                     },
+                    credentials: 'include',  // Include session cookies
                     body: JSON.stringify(formData)
                 });
                 
                 const result = await response.json();
                 const messageDiv = document.getElementById('message');
                 
-                if (result.status === 'success' || result.id) {
+                if (result.status || result.review_id) {
                     messageDiv.className = 'message success';
                     messageDiv.style.display = 'block';
-                    messageDiv.textContent = 'Review submitted successfully! Redirecting...';
+                    messageDiv.innerHTML = `
+                        <span class="success-icon">✅</span>
+                        <div>Review Submitted Successfully!</div>
+                        <div style="font-size: 0.9rem; font-weight: 400; margin-top: 0.5rem;">Your review will appear on the dealership page. Redirecting...</div>
+                    `;
                     
                     setTimeout(() => {
                         window.location.href = `/dealer/${dealerId}/`;
-                    }, 2000);
+                    }, 2500);
                 } else {
                     messageDiv.className = 'message error';
                     messageDiv.style.display = 'block';

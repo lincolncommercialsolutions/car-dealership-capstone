@@ -252,7 +252,9 @@
         
         async function loadDealerDetails() {
             try {
-                const response = await fetch(`/djangoapp/get_dealers/${dealerId}`);
+                const response = await fetch(`/djangoapp/get_dealers/${dealerId}`, {
+                    credentials: 'include'  // Include session cookies
+                });
                 const dealer = await response.json();
                 
                 if (dealer.error) {
@@ -289,7 +291,9 @@
         
         async function loadReviews() {
             try {
-                const response = await fetch(`/djangoapp/get_reviews?dealerId=${dealerId}`);
+                const response = await fetch(`/djangoapp/get_reviews?dealerId=${dealerId}`, {
+                    credentials: 'include'  // Include session cookies
+                });
                 const reviews = await response.json();
                 
                 document.getElementById('reviewsSection').style.display = 'block';

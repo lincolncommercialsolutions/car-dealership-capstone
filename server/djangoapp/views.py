@@ -176,13 +176,14 @@ def add_dealer_review(request):
             # Add sentiment to review data
             data['sentiment'] = sentiment
             
-            # Save to MongoDB
+            # Save review
             review_id = add_review(data)
             
             return JsonResponse({
                 'status': 'Review added successfully',
                 'review_id': review_id,
-                'sentiment': sentiment
+                'sentiment': sentiment,
+                'dealership': data.get('dealership')
             })
         except Exception as e:
             return JsonResponse({'error': str(e)}, status=500)
