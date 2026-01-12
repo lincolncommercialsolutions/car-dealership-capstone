@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Us - Car Dealership</title>
+    <title>Contact Us - Premium Auto Gallery</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -12,129 +13,299 @@
         }
         
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Montserrat', sans-serif;
             line-height: 1.6;
-            color: #333;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: #1a1a1a;
+            background: #0a0a0a;
             min-height: 100vh;
         }
         
-        nav {rgba(44, 62, 80, 0.95);
-            padding: 1rem 2rem;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
-            backdrop-filter: blur(10px
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.6)),
+                url('https://images.unsplash.com/photo-1568605117036-5fe5e7bab0b7?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            z-index: -1;
+        }
+        
+        nav {
+            background: rgba(10, 10, 10, 0.95);
+            backdrop-filter: blur(20px);
+            padding: 1.2rem 0;
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
+            border-bottom: 2px solid #d4af37;
+        }
+        
+        nav .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+        
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 3rem;
+        }
+        
+        nav .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #d4af37;
+            text-shadow: 0 0 20px rgba(212, 175, 55, 0.5);
+            margin-right: auto;
         }
         
         nav a {
-            color: white;
+            color: #ffffff;
             text-decoration: none;
-            padding: 0.5rem 1rem;
-            margin: 0 0.5rem;
-            border-radius: 4px;
-            transition: background 0.3s;
+            font-weight: 500;
+            padding: 0.7rem 1.5rem;
+            border-radius: 8px;
+            transition: all 0.4s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 0.9rem;
         }
         
         nav a:hover {
-            background: #34495e;
+            color: #d4af37;
         }
         
         nav a.active {
-            background: #3498db;
+            color: #d4af37;
+            background: rgba(212, 175, 55, 0.1);
         }
         
         .container {
-            max-width: 1200px;
+            max-width: 1400px;
             margin: 0 auto;
             padding: 2rem;
         }
         
-        h1 {
-            color: #2c3e50;
-            margin-bottom: 2rem;
+        .page-header {
             text-align: center;
-            font-size: 2.5rem;
+            padding: 4rem 2rem 2rem;
+            animation: fadeInUp 0.8s ease;
+        }
+        
+        .page-header h1 {
+            font-family: 'Playfair Display', serif;
+            color: #ffffff;
+            font-size: 4rem;
+            margin-bottom: 1rem;
+            text-shadow: 0 0 30px rgba(212, 175, 55, 0.5);
+        }
+        
+        .page-header p {
+            color: #d4af37;
+            font-size: 1.3rem;
+            letter-spacing: 2px;
         }
         
         .contact-wrapper {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 2rem;
-            margin-top: 2rem;
+            gap: 3rem;
+            margin-top: 3rem;
         }
         
         .contact-info, .contact-form {
-            background: white;
-            padding: 2rem;15px;
-            box-shadow: 0 8px 30px rgba(0,0,0,0.2);
-            animation: fadeInUp 0.8s ease-out;
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            padding: 3rem;
+            border-radius: 20px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            animation: fadeInUp 0.8s ease;
         }
         
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-        }.5rem;
-            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
-            border-radius: 10px;
+        .contact-info h2, .contact-form h2 {
+            font-family: 'Playfair Display', serif;
+            color: #d4af37;
+            font-size: 2.2rem;
+            margin-bottom: 2rem;
+            border-bottom: 2px solid rgba(212, 175, 55, 0.3);
+            padding-bottom: 1rem;
+        }
+        
+        .info-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+            padding: 1.5rem;
+            background: rgba(212, 175, 55, 0.05);
+            border-radius: 12px;
             transition: all 0.3s ease;
         }
         
         .info-item:hover {
             transform: translateX(10px);
-            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.3)tact-form h2 {
-            color: #2c3e50;
-            margin-bottom: 1.5rem;
-            border-bottom: 3px solid #3498db;
-            padding-bottom: 0.5rem;
+            background: rgba(212, 175, 55, 0.1);
         }
         
-        .info-item {
-            display: flex;
-            align-items: start;
-            margin-bottom: 1.5rem;
-            padding: 1rem;
-            background: #ecf0f1;
-            border-radius: 4px;
+        .info-item .icon {
+            font-size: 2rem;
+            flex-shrink: 0;
         }
         
-        .info-item img {
-            width: 30px;
-            height: 30px;
-            margin-right: 1rem;
+        .info-item strong {
+            color: #d4af37;
+            display: block;
+            margin-bottom: 0.3rem;
+            font-size: 1.1rem;
         }
         
-        .info-item div h3 {
-            color: #3498db;
+        .info-item span {
+            color: rgba(255, 255, 255, 0.8);
+            line-height: 1.6;
+        }
+        
+        .form-group {
+            margin-bottom: 2rem;
+        }
+        
+        .form-group label {
+            display: block;
+            color: #d4af37;
             margin-bottom: 0.5rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 0.9rem;
         }
         
-        .info-item div p {
-            color: #555;
-        }
-        
-        .map {
-            margin-top: 2rem;
-            background: white;
-            padding: 2rem;
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 1rem;
+            border: 1px solid rgba(212, 175, 55, 0.3);
             border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            background: rgba(255, 255, 255, 0.05);
+            color: #ffffff;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+        
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #d4af37;
+            background: rgba(255, 255, 255, 0.1);
+            box-shadow: 0 0 15px rgba(212, 175, 55, 0.2);
+        }
+        
+        .form-group textarea {
+            resize: vertical;
+            min-height: 150px;
+        }
+        
+        button[type="submit"] {
+            width: 100%;
+            padding: 1.2rem;
+            background: linear-gradient(135deg, #d4af37 0%, #f1d78b 100%);
+            color: #0a0a0a;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            cursor: pointer;
+            transition: all 0.4s ease;
+            box-shadow: 0 10px 30px rgba(212, 175, 55, 0.4);
+        }
+        
+        button[type="submit"]:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(212, 175, 55, 0.6);
+        }
+        
+        .hours-section {
+            margin-top: 3rem;
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            padding: 3rem;
+            border-radius: 20px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(212, 175, 55, 0.2);
+        }
+        
+        .hours-section h2 {
+            font-family: 'Playfair Display', serif;
+            color: #d4af37;
+            font-size: 2.2rem;
+            margin-bottom: 2rem;
             text-align: center;
         }
         
-        .map img {
-            max-width: 100%;
-            border-radius: 4px;
-            margin-top: 1rem;
+        .hours-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+        }
+        
+        .hours-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 1rem 1.5rem;
+            background: rgba(212, 175, 55, 0.05);
+            border-radius: 10px;
+            border-left: 3px solid #d4af37;
+        }
+        
+        .hours-item .day {
+            color: #d4af37;
+            font-weight: 600;
+        }
+        
+        .hours-item .time {
+            color: rgba(255, 255, 255, 0.8);
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        footer {
+            background: rgba(10, 10, 10, 0.95);
+            color: rgba(255, 255, 255, 0.7);
+            text-align: center;
+            padding: 2rem;
+            margin-top: 5rem;
+            border-top: 2px solid #d4af37;
         }
         
         @media (max-width: 768px) {
+            .page-header h1 {
+                font-size: 2.5rem;
+            }
+            
+            nav ul {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            
             .contact-wrapper {
                 grid-template-columns: 1fr;
             }
@@ -143,77 +314,131 @@
 </head>
 <body>
     <nav>
-        <a href="/">Home</a>
-        <a href="/about/">About</a>
-        <a href="/contact/" class="active">Contact</a>
+        <div class="container">
+            <ul>
+                <li class="logo">Premium Auto Gallery</li>
+                <li><a href="Home.html">Home</a></li>
+                <li><a href="Dealerships.html">Dealerships</a></li>
+                <li><a href="About.html">About</a></li>
+                <li><a href="Contact.html" class="active">Contact</a></li>
+                <li><a href="Login.html">Login</a></li>
+            </ul>
+        </div>
     </nav>
-    
+
     <div class="container">
-        <h1>Contact Us</h1>
-        
+        <div class="page-header">
+            <h1>Get In Touch</h1>
+            <p>We're here to help you find your dream vehicle</p>
+        </div>
+
         <div class="contact-wrapper">
             <div class="contact-info">
-                <h2>Get In Touch</h2>
+                <h2>Contact Information</h2>
                 
                 <div class="info-item">
-                    <img src="https://via.placeholder.com/30/3498db/ffffff?text=📞" alt="Phone">
+                    <div class="icon">📍</div>
                     <div>
-                        <h3>Phone</h3>
-                        <p>Main: (555) 123-4567</p>
-                        <p>Sales: (555) 123-4568</p>
-                        <p>Service: (555) 123-4569</p>
+                        <strong>Visit Our Showroom</strong>
+                        <span>123 Luxury Auto Drive<br>Premium District, CA 90210<br>United States</span>
                     </div>
                 </div>
                 
                 <div class="info-item">
-                    <img src="https://via.placeholder.com/30/3498db/ffffff?text=✉️" alt="Email">
+                    <div class="icon">📞</div>
                     <div>
-                        <h3>Email</h3>
-                        <p>General: info@dealership.com</p>
-                        <p>Sales: sales@dealership.com</p>
-                        <p>Support: support@dealership.com</p>
+                        <strong>Call Us</strong>
+                        <span>Sales: (555) 123-4567<br>Service: (555) 123-4568<br>Toll-Free: 1-800-PREMIUM</span>
                     </div>
                 </div>
                 
                 <div class="info-item">
-                    <img src="https://via.placeholder.com/30/3498db/ffffff?text=📍" alt="Address">
+                    <div class="icon">✉️</div>
                     <div>
-                        <h3>Address</h3>
-                        <p>123 Main Street</p>
-                        <p>Kansas City, KS 66101</p>
-                        <p>United States</p>
+                        <strong>Email Us</strong>
+                        <span>sales@premiumautogallery.com<br>service@premiumautogallery.com<br>info@premiumautogallery.com</span>
                     </div>
                 </div>
                 
                 <div class="info-item">
-                    <img src="https://via.placeholder.com/30/3498db/ffffff?text=🕐" alt="Hours">
+                    <div class="icon">🌐</div>
                     <div>
-                        <h3>Business Hours</h3>
-                        <p>Monday - Friday: 9:00 AM - 8:00 PM</p>
-                        <p>Saturday: 9:00 AM - 6:00 PM</p>
-                        <p>Sunday: 11:00 AM - 5:00 PM</p>
+                        <strong>Follow Us</strong>
+                        <span>@PremiumAutoGallery on<br>Instagram | Facebook | Twitter<br>LinkedIn | YouTube</span>
                     </div>
                 </div>
             </div>
             
             <div class="contact-form">
-                <h2>Send Us a Message</h2>
-                <p style="color: #7f8c8d; margin-bottom: 1rem;">
-                    Have a question? Fill out the form below and we'll get back to you as soon as possible.
-                </p>
-                <p style="color: #3498db; font-style: italic;">
-                    (Contact form integration coming soon)
-                </p>
+                <h2>Send Us A Message</h2>
+                <form>
+                    <div class="form-group">
+                        <label for="name">Your Name *</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">Email Address *</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="phone">Phone Number</label>
+                        <input type="tel" id="phone" name="phone">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="interest">Interested In</label>
+                        <input type="text" id="interest" name="interest" placeholder="e.g., BMW 3 Series, Test Drive">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="message">Your Message *</label>
+                        <textarea id="message" name="message" required placeholder="Tell us how we can help you..."></textarea>
+                    </div>
+                    
+                    <button type="submit">Send Message</button>
+                </form>
             </div>
         </div>
         
-        <div class="map">
-            <h2>Find Us Here</h2>
-            <p style="color: #7f8c8d; margin-bottom: 1rem;">
-                Visit our showroom at 123 Main Street, Kansas City, KS
-            </p>
-            <img src="https://via.placeholder.com/800x400/ecf0f1/2c3e50?text=Map+Location" alt="Map">
+        <div class="hours-section">
+            <h2>Showroom Hours</h2>
+            <div class="hours-grid">
+                <div class="hours-item">
+                    <span class="day">Monday</span>
+                    <span class="time">9:00 AM - 8:00 PM</span>
+                </div>
+                <div class="hours-item">
+                    <span class="day">Tuesday</span>
+                    <span class="time">9:00 AM - 8:00 PM</span>
+                </div>
+                <div class="hours-item">
+                    <span class="day">Wednesday</span>
+                    <span class="time">9:00 AM - 8:00 PM</span>
+                </div>
+                <div class="hours-item">
+                    <span class="day">Thursday</span>
+                    <span class="time">9:00 AM - 8:00 PM</span>
+                </div>
+                <div class="hours-item">
+                    <span class="day">Friday</span>
+                    <span class="time">9:00 AM - 9:00 PM</span>
+                </div>
+                <div class="hours-item">
+                    <span class="day">Saturday</span>
+                    <span class="time">9:00 AM - 7:00 PM</span>
+                </div>
+                <div class="hours-item">
+                    <span class="day">Sunday</span>
+                    <span class="time">11:00 AM - 6:00 PM</span>
+                </div>
+            </div>
         </div>
     </div>
+
+    <footer>
+        <p>&copy; 2026 Premium Auto Gallery. All rights reserved. | Luxury Vehicles | Performance Cars | Trusted Service</p>
+    </footer>
 </body>
 </html>

@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Us - Car Dealership</title>
+    <title>About Us - Premium Auto Gallery</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -12,73 +13,191 @@
         }
         
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Montserrat', sans-serif;
             line-height: 1.6;
-            color: #333;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: #1a1a1a;
+            background: #0a0a0a;
             min-height: 100vh;
         }
         
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.6)),
+                url('https://images.unsplash.com/photo-1606664515524-ed2f786a0bd6?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            z-index: -1;
+        }
+        
         nav {
-            background: rgba(44, 62, 80, 0.95);
-            padding: 1rem 2rem;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
-            backdrop-filter: blur(10px);
+            background: rgba(10, 10, 10, 0.95);
+            backdrop-filter: blur(20px);
+            padding: 1.2rem 0;
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
+            border-bottom: 2px solid #d4af37;
+        }
+        
+        nav .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+        
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 3rem;
+        }
+        
+        nav .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #d4af37;
+            text-shadow: 0 0 20px rgba(212, 175, 55, 0.5);
+            margin-right: auto;
         }
         
         nav a {
-            color: white;
+            color: #ffffff;
             text-decoration: none;
-            padding: 0.5rem 1rem;
-            margin: 0 0.5rem;
-            border-radius: 4px;
-            transition: background 0.3s;
+            font-weight: 500;
+            padding: 0.7rem 1.5rem;
+            border-radius: 8px;
+            transition: all 0.4s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 0.9rem;
         }
         
         nav a:hover {
-            background: #34495e;
+            color: #d4af37;
         }
         
         nav a.active {
-            background: #3498db;
+            color: #d4af37;
+            background: rgba(212, 175, 55, 0.1);
         }
         
         .container {
-            max-width: 1200px;
+            max-width: 1400px;
             margin: 0 auto;
             padding: 2rem;
         }
         
-        h1 {
-            color: #2c3e50;
-            margin-bottom: 2rem;
+        .page-header {
             text-align: center;
-            font-size: 2.5rem;
+            padding: 4rem 2rem 2rem;
+            animation: fadeInUp 0.8s ease;
+        }
+        
+        .page-header h1 {
+            font-family: 'Playfair Display', serif;
+            color: #ffffff;
+            font-size: 4rem;
+            margin-bottom: 1rem;
+            text-shadow: 0 0 30px rgba(212, 175, 55, 0.5);
+        }
+        
+        .page-header .subtitle {
+            color: #d4af37;
+            font-size: 1.3rem;
+            letter-spacing: 2px;
         }
         
         .intro {
-            text-align: center;
-            margin-bo3rem;
-            background: white;
-            border-radius: 15px;
-            box-shadow: 0 8px 30px rgba(0,0,0,0.2);
-            animation: fadeInUp 0.8s ease-out;
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            padding: 3rem;
+            margin: 3rem auto;
+            max-width: 900px;
+            border-radius: 20px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            animation: fadeInUp 0.8s ease;
         }
         
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            };15px;
-            padding: 2rem;
+        .intro p {
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 1.2rem;
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+        }
+        
+        .mission-vision {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 2.5rem;
+            margin: 4rem 0;
+        }
+        
+        .mission-box {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            padding: 3rem;
+            border-radius: 20px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            transition: all 0.5s ease;
+        }
+        
+        .mission-box:hover {
+            transform: translateY(-10px);
+            border-color: #d4af37;
+            box-shadow: 0 15px 50px rgba(212, 175, 55, 0.3);
+        }
+        
+        .mission-box h2 {
+            font-family: 'Playfair Display', serif;
+            color: #d4af37;
+            font-size: 2.2rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .mission-box p {
+            color: rgba(255, 255, 255, 0.85);
+            line-height: 1.8;
+            font-size: 1.1rem;
+        }
+        
+        .team-section {
+            margin: 5rem 0;
+        }
+        
+        .team-section h2 {
+            font-family: 'Playfair Display', serif;
+            color: #ffffff;
+            font-size: 3rem;
             text-align: center;
-            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
-            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            animation: fadeInUp 0.8s ease-out;
+            margin-bottom: 3rem;
+            text-shadow: 0 0 20px rgba(212, 175, 55, 0.3);
+        }
+        
+        .team {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2.5rem;
+        }
+        
+        .member {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 2.5rem;
+            text-align: center;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+            transition: all 0.5s ease;
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            animation: fadeInUp 0.8s ease;
             animation-fill-mode: both;
         }
         
@@ -88,107 +207,148 @@
         .member:nth-child(4) { animation-delay: 0.4s; }
         
         .member:hover {
-            transform: translateY(-10px) scale(1.02);
-            box-shadow: 0 15px 35px rgba(102, 126, 234, 0.4
-        
-        .member {
-            background: white;
-            border-radius: 8px;
-            padding: 2rem;
-            text-align: center;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-            transition: transform 0.3s;
+            transform: translateY(-15px);
+            box-shadow: 0 15px 50px rgba(212, 175, 55, 0.3);
+            border-color: #d4af37;
         }
         
-        .member:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 6px 12px rgba(0,0,0,0.15);
-        }
-        
-        .member img {
-            width: 150px;
-            height: 150px;
-            border-radius: 50%;
-            object-fit: cover;
-            margin-bottom: 1rem;
-            border: 4px solid #3498db;
+        .member-icon {
+            font-size: 5rem;
+            margin-bottom: 1.5rem;
+            display: block;
         }
         
         .member h3 {
-            color: #2c3e50;
+            font-family: 'Playfair Display', serif;
+            color: #d4af37;
             margin-bottom: 0.5rem;
-            font-size: 1.5rem;
+            font-size: 1.6rem;
         }
         
         .member .role {
-            color: #3498db;
-            font-weight: bold;
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 0.95rem;
             margin-bottom: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
         }
         
-        .member .details {
-            color: #7f8c8d;
-            margin-bottom: 0.5rem;
+        .member p {
+            color: rgba(255, 255, 255, 0.8);
+            line-height: 1.6;
         }
         
-        .member .email {
-            color: #3498db;
-            text-decoration: none;
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
         
-        .member .email:hover {
-            text-decoration: underline;
+        footer {
+            background: rgba(10, 10, 10, 0.95);
+            color: rgba(255, 255, 255, 0.7);
+            text-align: center;
+            padding: 2rem;
+            margin-top: 5rem;
+            border-top: 2px solid #d4af37;
+        }
+        
+        @media (max-width: 768px) {
+            .page-header h1 {
+                font-size: 2.5rem;
+            }
+            
+            nav ul {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            
+            .mission-vision {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
 <body>
     <nav>
-        <a href="/">Home</a>
-        <a href="/about/" class="active">About</a>
-        <a href="/contact/">Contact</a>
-    </nav>
-    
-    <div class="container">
-        <h1>About Our Team</h1>
-        
-        <div class="intro">
-            <h2>Welcome to Car Dealership</h2>
-            <p>We are a dedicated team of professionals committed to providing the best car buying experience. Our mission is to connect customers with their dream vehicles through exceptional service and innovative technology.</p>
+        <div class="container">
+            <ul>
+                <li class="logo">Premium Auto Gallery</li>
+                <li><a href="Home.html">Home</a></li>
+                <li><a href="Dealerships.html">Dealerships</a></li>
+                <li><a href="About.html" class="active">About</a></li>
+                <li><a href="Contact.html">Contact</a></li>
+                <li><a href="Login.html">Login</a></li>
+            </ul>
         </div>
-        
-        <div class="team">
-            <div class="member">
-                <img src="https://via.placeholder.com/150/3498db/ffffff?text=JS" alt="John Smith">
-                <h3>John Smith</h3>
-                <p class="role">CEO & Founder</p>
-                <p class="details">Leading the company with 15+ years of automotive industry experience</p>
-                <a href="mailto:john.smith@dealership.com" class="email">john.smith@dealership.com</a>
+    </nav>
+
+    <div class="container">
+        <div class="page-header">
+            <h1>About Premium Auto Gallery</h1>
+            <p class="subtitle">Excellence in Automotive Retail Since 2001</p>
+        </div>
+
+        <div class="intro">
+            <p>Welcome to Premium Auto Gallery, where luxury meets performance and customer satisfaction drives everything we do. For over two decades, we've been the premier destination for discerning automotive enthusiasts seeking the finest vehicles from the world's most prestigious manufacturers.</p>
+            
+            <p>Our commitment to excellence extends beyond our exceptional inventory. We pride ourselves on providing a personalized, transparent, and enjoyable car-buying experience that sets the standard in the automotive industry.</p>
+        </div>
+
+        <div class="mission-vision">
+            <div class="mission-box">
+                <h2>Our Mission</h2>
+                <p>To deliver an unparalleled automotive retail experience by offering premium vehicles, transparent pricing, expert guidance, and exceptional customer service. We're committed to helping every customer find their perfect vehicle while building lasting relationships based on trust and integrity.</p>
             </div>
             
-            <div class="member">
-                <img src="https://via.placeholder.com/150/e74c3c/ffffff?text=SD" alt="Sarah Davis">
-                <h3>Sarah Davis</h3>
-                <p class="role">Lead Developer</p>
-                <p class="details">Full-stack developer specializing in React and Django</p>
-                <a href="mailto:sarah.davis@dealership.com" class="email">sarah.davis@dealership.com</a>
+            <div class="mission-box">
+                <h2>Our Vision</h2>
+                <p>To be the most trusted and respected automotive dealership network, recognized for our commitment to quality, innovation, and customer satisfaction. We envision a future where every car buyer experiences the joy of finding their dream vehicle with confidence and excitement.</p>
             </div>
+        </div>
+
+        <div class="team-section">
+            <h2>Meet Our Expert Team</h2>
             
-            <div class="member">
-                <img src="https://via.placeholder.com/150/2ecc71/ffffff?text=MJ" alt="Michael Johnson">
-                <h3>Michael Johnson</h3>
-                <p class="role">Sales Director</p>
-                <p class="details">Expert in customer relations and dealership operations</p>
-                <a href="mailto:michael.johnson@dealership.com" class="email">michael.johnson@dealership.com</a>
-            </div>
-            
-            <div class="member">
-                <img src="https://via.placeholder.com/150/f39c12/ffffff?text=EW" alt="Emily Wilson">
-                <h3>Emily Wilson</h3>
-                <p class="role">Marketing Manager</p>
-                <p class="details">Digital marketing specialist with focus on automotive industry</p>
-                <a href="mailto:emily.wilson@dealership.com" class="email">emily.wilson@dealership.com</a>
+            <div class="team">
+                <div class="member">
+                    <span class="member-icon">👨‍💼</span>
+                    <h3>Michael Sterling</h3>
+                    <p class="role">Chief Executive Officer</p>
+                    <p>With 25+ years in automotive retail, Michael leads our vision of redefining luxury car buying with passion and expertise.</p>
+                </div>
+                
+                <div class="member">
+                    <span class="member-icon">👩‍💼</span>
+                    <h3>Sarah Chen</h3>
+                    <p class="role">Sales Director</p>
+                    <p>Sarah's dedication to customer satisfaction and deep product knowledge ensures every client finds their perfect match.</p>
+                </div>
+                
+                <div class="member">
+                    <span class="member-icon">👨‍🔧</span>
+                    <h3>David Rodriguez</h3>
+                    <p class="role">Service Manager</p>
+                    <p>David oversees our state-of-the-art service center, ensuring every vehicle receives world-class maintenance and care.</p>
+                </div>
+                
+                <div class="member">
+                    <span class="member-icon">👩‍💻</span>
+                    <h3>Emily Thompson</h3>
+                    <p class="role">Customer Experience Lead</p>
+                    <p>Emily champions our customer-first approach, ensuring every interaction exceeds expectations and builds lasting relationships.</p>
+                </div>
             </div>
         </div>
     </div>
+
+    <footer>
+        <p>&copy; 2026 Premium Auto Gallery. All rights reserved. | Luxury Vehicles | Performance Cars | Trusted Service</p>
+    </footer>
 </body>
 </html>
