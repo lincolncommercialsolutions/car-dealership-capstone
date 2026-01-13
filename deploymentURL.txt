@@ -3,7 +3,7 @@
 Note: The application is currently running locally for testing.
 
 Local URLs:
-- Django Backend: http://localhost:8000
+- Django Backend: http://34.227.103.252:8000
 - Sentiment Analyzer: http://localhost:5000
 - Car Inventory: http://localhost:5001
 

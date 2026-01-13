@@ -12,12 +12,29 @@
         }
         
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            font-family: 'Montserrat', sans-serif;
+            background: #0a0a0a;
             min-height: 100vh;
             display: flex;
             align-items: center;
             justify-content: center;
+            position: relative;
+        }
+        
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.5)),
+                url('https://images.unsplash.com/photo-1542282088-fe8426682b8f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            z-index: -1;
         }
         
         .container {
@@ -37,9 +54,10 @@
         }
         
         h2 {
-            color: #667eea;
+            color: #d4af37;
             margin-bottom: 2rem;
             font-size: 2rem;
+            font-family: 'Playfair Display', serif;
         }
         
         .form-group {
@@ -71,8 +89,8 @@
         button {
             width: 100%;
             padding: 1rem;
-            background: #667eea;
-            color: white;
+            background: linear-gradient(135deg, #d4af37 0%, #f1d78b 100%);
+            color: #0a0a0a;
             border: none;
             border-radius: 8px;
             font-size: 1.1rem;
@@ -83,9 +101,8 @@
         }
         
         button:hover {
-            background: #5568d3;
             transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+            box-shadow: 0 5px 15px rgba(212, 175, 55, 0.6);
         }
         
         .message {
@@ -114,7 +131,7 @@
         }
         
         .toggle-link a {
-            color: #667eea;
+            color: #d4af37;
             text-decoration: none;
             font-weight: 600;
         }
@@ -137,7 +154,7 @@
         .back-link {
             display: inline-block;
             margin-bottom: 1rem;
-            color: #667eea;
+            color: #d4af37;
             text-decoration: none;
             font-weight: 500;
         }
