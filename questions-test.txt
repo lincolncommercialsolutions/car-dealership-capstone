@@ -1,0 +1,149 @@
+Project Title *
+​
+
+Task 1: Submit your public GitHub Project repo URL with all code changes. (1 point)
+URL
+​
+
+Task 2: Submit the screenshot (django_server.png or django_server.jpg) showing the Django server running. (1 point)
+
+Note the screenshot should be taken in the “Hands-on Lab: Static Pages.”
+Upload File
+File preview
+django_server.png
+86KB
+Upload completed
+Title
+​
+Caption
+​
+
+Task 3: Submit the screenshot (about_us.png or about_us.jpg) of the “About Us” page of the Django application. (3 points)
+
+Note the screenshot should be taken in the “Hands-on Lab: Static Pages.”
+Upload File
+
+Task 4: Submit the screenshot (contact_us.png or .jpg) of the “Contact Us’’ page of the Django application. (2 points)
+
+Note the screenshot should be taken in the “Hands-on Lab: Static Pages.”
+Upload File
+
+Task 5:  Submit a screenshot of the “Home” page of the Django application (login.png or login.jpg), displaying the logged-in user.  (2 points)
+
+Note the screenshot should be taken in the “Hands-on Lab: User Management with REACT front-end.”
+Upload File
+
+Task 6: Submit the screenshot (logout.png or logout.jpg) of the “Logout alert” of the Django application. (2 points)
+
+Note the screenshot should be taken in the “Hands-on Lab: User Management with REACT front-end.”
+Upload File
+
+Task 7: Submit the screenshot (sign-up.png or sign-up.jpg) of the “Sign-up” page of the Django application. (1 point)
+
+Note the screenshot should be taken in the “Hands-on Lab: User Management with REACT front-end.”
+Upload File
+
+Task 8: Submit the screenshot (dealer_review.png or dealer_review.jpg) showing dealer reviews through the Express-Mongo application endpoint. The endpoint should be visible on the browser address bar. Please ensure you choose a dealer who has reviews. (2 points)
+
+Note the screenshot should be taken in the “Hands-on Lab: Implement API endpoints using Express-Mongo.
+Upload File
+
+Task 9: Submit the screenshot (dealerships.png or dealerships.jpg) showing all dealers through the Express-Mongo application endpoint. The endpoint should be visible on the browser address bar. (2 points)
+
+Note the screenshot should be taken in the “Hands-on Lab: Implement API endpoints using Express-Mongo.”
+Upload File
+
+Task 10: Submit the screenshot (dealer_details.png or dealer_details.jpg) showing all dealer details through the Express-Mongo application endpoint. The endpoint should be visible on the browser address bar. (2 points)
+
+Note the screenshot should be taken in the “Hands-on Lab: Implement API endpoints using Express-Mongo.”
+Upload File
+
+Task 11: Submit the screenshot (kansasDealers.png or kansasDealers.jpg) showing all dealers in Kansas through the Express-Mongo application endpoint. The endpoint should be visible on the browser address bar. (2 points)
+
+Note the screenshot should be taken in the “Hands-on Lab: Implement API endpoints using Express-Mongo.”
+Upload File
+
+Task 12: Submit the screenshot (admin_login.png or admin_login.jpg) showing the root user login on the admin page. (2 points)
+
+Note the screenshot should be taken in the “ Hands-on Lab: Build CarModel and CarMake Django Models .”
+Upload File
+
+Task 13: Submit the screenshot (admin_logout.png or admin_logout.jpg) showing the root user logged out from the admin page. (1 point)
+
+Note the screenshot should be taken in the “ Hands-on Lab: Build CarModel and CarMake Django Models .”
+Upload File
+
+Task 14: Submit the screenshot (cars.png or cars.jpg) showing car makes (after adding or populating the car makes), and the endpoint should be visible on the browser address bar.  (2 points)
+
+Note the screenshot should be taken in the “ Hands-on Lab: Build CarModel and CarMake Django Models .”
+Upload File
+
+Task 15: Submit the screenshot (car_models.png or car_models.jpg) showing car models (after adding or populating the car makes) from the admin page. (2 points)
+
+Note the screenshot should be taken in the “ Hands-on Lab: Build CarModel and CarMake Django Models .”
+Upload File
+
+Task 16: Submit the screenshot (sentiment_analyzer.png or sentiment_analyzer.jpg) showing the sentiment analyzer working through the deployed URL. Please ensure that the endpoint is visible in the browser address bar. (2 points)
+
+Note the screenshot should be taken in the “Hands-on Lab: Create Django Proxy Services of Backend APIs.” 
+
+Upload File
+
+Task 17: Submit the screenshot (get_dealers.png or get_dealers.jpg) showing the dealers on the home page of the Django application before logging in. Please ensure that the endpoint is visible in the browser address bar. (1 point)
+
+Note the screenshot should be taken in the “Hands-on Lab: Add Dynamic Pages.”
+
+Upload File
+
+Task 18: Submit the screenshot (get_dealers_loggedin.png or get_dealers_loggedin.jpg) showing the dealers on the home page of the Django application after logging in. The “Post Review” button and the logged-in username should be visible. Please ensure that the endpoint is visible in the browser address bar. (2 points)
+
+Note the screenshot should be taken in the “Hands-on Lab: Add Dynamic Pages.”
+Upload File
+
+Task 19: Submit the screenshot (dealersbystate.png or dealersbystate.jpg) showing the dealers filtered by the State on the home page of the Django application. Please ensure that the endpoint is visible in the browser address bar. (2 points)
+
+Note the screenshot should be taken in the “Hands-on Lab: Add Dynamic Pages.”
+Upload File
+
+Task 20: Submit the screenshot (dealer_id_reviews.png or dealer_id_reviews.jpg) showing the selected dealer details on the dealer page along with the reviews. Please ensure that the endpoint is visible in the browser address bar. (1 point)
+
+Note the screenshot should be taken in the “Hands-on Lab: Add Dynamic Pages.”
+Upload File
+
+Task 21: Submit the screenshot (dealership_review_submission.png or dealership_review_submission.jpg) showing the “Post Review” page after adding the details before you submit. Please ensure that the endpoint is visible in the browser address bar. (1 point)
+
+Note the screenshot should be taken in the “Hands-on Lab: Add Dynamic Pages.”
+Upload File
+
+Task 22: Submit the screenshot (added_review.png or added_review.jpg) showing the review you posted. The details should match with the input shown in the previous task. Please ensure that the endpoint is visible in the browser address bar. (2 points)
+
+Note the screenshot should be taken in the “Hands-on Lab: Add Dynamic Pages.”
+Upload File
+
+Task 23: Submit the screenshot (CICD.png or CICD.jpg) of the successful implementation of CI/CD on GitHub. (3 points) 
+
+Note the screenshot should be taken in the “Add Continuous Integration and Continuous Deployment.”
+Upload File
+
+Task 24: Submit the deployment URL for your Django application. (1 point)
+URL
+​
+
+Task 25: Submit the screenshot (deployed_landingpage.png or deployed_landingpage.jpg) of the landing page opened through your deployment. The URL in the address bar of the browser should be visible, and it must match the URL submitted in the previous task. (2 points).
+
+Note the screenshot should be taken in the “Hands-on Lab: Containerize your Application.”
+Upload File
+
+Task 26: Submit the screenshot (deployed_loggedin.png or deployed_loggedin.jpg) of the logged-in page opened through your deployment. It should show the username of the logged-in user. The URL in the address bar of the browser should be visible, and it must match the URL submitted in the previous task. (2 points).
+
+Note the screenshot should be taken in the “Hands-on Lab: Containerize your Application.”
+Upload File
+
+Task 27: Submit the screenshot (deployed_dealer_detail.png or deployed_dealer_detail.jpg) of a dealer details page opened through your deployment. The URL in the address bar of the browser should be visible, and it must match the URL submitted in the previous task. (2 points).
+
+Note the screenshot should be taken in the “Hands-on Lab: Containerize your Application.”
+Upload File
+
+Task 28: Submit the screenshot (deployed_add_review.png or deployed_add_review.jpg) of a review added through your deployed application. The URL in the address bar of the browser should be visible, and it must match the URL submitted in the previous task. (2 points)
+
+Note the screenshot should be taken in the “Hands-on Lab: Containerize your Application.”

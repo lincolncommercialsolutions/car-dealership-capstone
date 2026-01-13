@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Write Review - Car Dealership</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 2rem;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .back-link {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            margin-bottom: 1rem;
+            display: inline-block;
+        }
+        
+        .back-link:hover {
+            text-decoration: underline;
+        }
+        
+        .form-container {
+            background: white;
+            padding: 3rem;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+        }
+        
+        h1 {
+            color: #667eea;
+            margin-bottom: 0.5rem;
+        }
+        
+        .dealer-name {
+            color: #666;
+            margin-bottom: 2rem;
+            font-size: 1.1rem;
+        }
+        
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: #333;
+            font-weight: 500;
+        }
+        
+        input, select, textarea {
+            width: 100%;
+            padding: 0.8rem;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-family: inherit;
+            transition: all 0.3s ease;
+        }
+        
+        input:focus, select:focus, textarea:focus {
+            outline: none;
+            border-color: #667eea;
+            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+        }
+        
+        textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+        
+        .checkbox-group {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .checkbox-group input[type="checkbox"] {
+            width: auto;
+        }
+        
+        button {
+            width: 100%;
+            padding: 1rem;
+            background: #667eea;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        button:hover {
+            background: #5568d3;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+        }
+        
+        button:disabled {
+            background: #ccc;
+            cursor: not-allowed;
+            transform: none;
+        }
+        
+        .message {
+            padding: 1.5rem;
+            border-radius: 12px;
+            margin-bottom: 1.5rem;
+            display: none;
+            text-align: center;
+            font-size: 1.1rem;
+            font-weight: 600;
+            animation: slideDown 0.5s ease;
+        }
+        
+        .message.error {
+            background: linear-gradient(135deg, #fee 0%, #fdd 100%);
+            color: #c33;
+            border: 2px solid #fcc;
+        }
+        
+        .message.success {
+            background: linear-gradient(135deg, #d4edda 0%, #c3e6cb 100%);
+            color: #155724;
+            border: 2px solid #28a745;
+            box-shadow: 0 5px 20px rgba(40, 167, 69, 0.3);
+        }
+        
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .success-icon {
+            font-size: 3rem;
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+        
+        .required {
+            color: #f44336;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="#" onclick="history.back()" class="back-link">← Back to Dealer</a>
+        
+        <div class="form-container">
+            <h1>Write a Review</h1>
+            <p class="dealer-name" id="dealerName">Loading...</p>
+            
+            <div id="message" class="message"></div>
+            
+            <form id="reviewForm" onsubmit="submitReview(event)">
+                <div class="form-group">
+                    <label for="reviewerName">Your Name <span class="required">*</span></label>
+                    <input type="text" id="reviewerName" name="name" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="carMake">Car Make <span class="required">*</span></label>
+                    <select id="carMake" name="car_make" required onchange="updateModels()">
+                        <option value="">Select a make...</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="carModel">Car Model <span class="required">*</span></label>
+                    <select id="carModel" name="car_model" required>
+                        <option value="">Select a model...</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="carYear">Car Year <span class="required">*</span></label>
+                    <input type="number" id="carYear" name="car_year" min="2000" max="2026" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="reviewText">Your Review <span class="required">*</span></label>
+                    <textarea id="reviewText" name="review" placeholder="Share your experience with this dealership..." required></textarea>
+                </div>
+                
+                <div class="form-group">
+                    <label for="purchaseDate">Purchase Date</label>
+                    <input type="date" id="purchaseDate" name="purchase_date">
+                </div>
+                
+                <div class="form-group checkbox-group">
+                    <input type="checkbox" id="isPurchase" name="purchase">
+                    <label for="isPurchase" style="margin-bottom: 0;">This is a verified purchase</label>
+                </div>
+                
+                <button type="submit" id="submitBtn">Submit Review</button>
+            </form>
+        </div>
+    </div>
+    
+    <script>
+        const dealerId = window.location.pathname.split('/')[2];
+        let carData = [];
+        
+        async function loadCarMakes() {
+            try {
+                const response = await fetch('http://localhost:5001/get_cars');
+                carData = await response.json();
+                
+                const makeSelect = document.getElementById('carMake');
+                carData.forEach(car => {
+                    const option = document.createElement('option');
+                    option.value = car.make;
+                    option.textContent = car.make;
+                    makeSelect.appendChild(option);
+                });
+            } catch (error) {
+                console.error('Error loading car makes:', error);
+            }
+        }
+        
+        function updateModels() {
+            const make = document.getElementById('carMake').value;
+            const modelSelect = document.getElementById('carModel');
+            modelSelect.innerHTML = '<option value="">Select a model...</option>';
+            
+            if (make) {
+                const selectedCar = carData.find(car => car.make === make);
+                if (selectedCar && selectedCar.models) {
+                    selectedCar.models.forEach(model => {
+                        const option = document.createElement('option');
+                        option.value = model;
+                        option.textContent = model;
+                        modelSelect.appendChild(option);
+                    });
+                }
+            }
+        }
+        
+        async function loadDealerName() {
+            try {
+                const response = await fetch(`/djangoapp/get_dealers/${dealerId}`);
+                const dealer = await response.json();
+                document.getElementById('dealerName').textContent = `For: ${dealer.name}`;
+            } catch (error) {
+                document.getElementById('dealerName').textContent = 'Dealer Information';
+            }
+        }
+        
+        async function submitReview(event) {
+            event.preventDefault();
+            
+            const submitBtn = document.getElementById('submitBtn');
+            submitBtn.disabled = true;
+            submitBtn.textContent = 'Submitting...';
+            
+            const formData = {
+                dealership: parseInt(dealerId),
+                name: document.getElementById('reviewerName').value,
+                review: document.getElementById('reviewText').value,
+                purchase: document.getElementById('isPurchase').checked,
+                purchase_date: document.getElementById('purchaseDate').value || null,
+                car_make: document.getElementById('carMake').value,
+                car_model: document.getElementById('carModel').value,
+                car_year: parseInt(document.getElementById('carYear').value)
+            };
+            
+            try {
+                const response = await fetch('/djangoapp/add_review', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    credentials: 'include',  // Include session cookies
+                    body: JSON.stringify(formData)
+                });
+                
+                const result = await response.json();
+                const messageDiv = document.getElementById('message');
+                
+                if (result.status || result.review_id) {
+                    messageDiv.className = 'message success';
+                    messageDiv.style.display = 'block';
+                    messageDiv.innerHTML = `
+                        <span class="success-icon">✅</span>
+                        <div>Review Submitted Successfully!</div>
+                        <div style="font-size: 0.9rem; font-weight: 400; margin-top: 0.5rem;">Your review will appear on the dealership page. Redirecting...</div>
+                    `;
+                    
+                    setTimeout(() => {
+                        window.location.href = `/dealer/${dealerId}/`;
+                    }, 2500);
+                } else {
+                    messageDiv.className = 'message error';
+                    messageDiv.style.display = 'block';
+                    messageDiv.textContent = result.error || 'Failed to submit review. Please try again.';
+                    submitBtn.disabled = false;
+                    submitBtn.textContent = 'Submit Review';
+                }
+            } catch (error) {
+                const messageDiv = document.getElementById('message');
+                messageDiv.className = 'message error';
+                messageDiv.style.display = 'block';
+                messageDiv.textContent = 'An error occurred. Please try again.';
+                submitBtn.disabled = false;
+                submitBtn.textContent = 'Submit Review';
+            }
+        }
+        
+        // Initialize
+        loadDealerName();
+        loadCarMakes();
+    </script>
+</body>
+</html>

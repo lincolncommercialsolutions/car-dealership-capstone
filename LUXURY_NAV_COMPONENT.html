@@ -1,0 +1,92 @@
+<!-- CONSISTENT NAVIGATION FOR ALL PAGES -->
+<!-- Copy this nav into each HTML file -->
+
+<nav>
+    <div class="container">
+        <ul>
+            <li class="logo">Premium Auto Gallery</li>
+            <li><a href="/static/Home.html">Home</a></li>
+            <li><a href="/static/Dealerships.html">Dealerships</a></li>
+            <li><a href="/static/About.html">About</a></li>
+            <li><a href="/static/Contact.html">Contact</a></li>
+            <li><a href="/static/Login.html">Login</a></li>
+        </ul>
+    </div>
+</nav>
+
+<style>
+/* CONSISTENT NAVIGATION STYLES - Add to each page's <style> section */
+nav {
+    background: rgba(10, 10, 10, 0.95);
+    backdrop-filter: blur(20px);
+    padding: 1.2rem 0;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 2px solid #d4af37;
+}
+
+nav .container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 3rem;
+    padding: 0;
+}
+
+nav .logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #d4af37;
+    text-shadow: 0 0 20px rgba(212, 175, 55, 0.5);
+    margin-right: auto;
+}
+
+nav a {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 500;
+    padding: 0.7rem 1.5rem;
+    border-radius: 8px;
+    transition: all 0.4s ease;
+    position: relative;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 0.9rem;
+}
+
+nav a::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background: #d4af37;
+    transition: all 0.4s ease;
+    transform: translateX(-50%);
+}
+
+nav a:hover {
+    color: #d4af37;
+    transform: translateY(-2px);
+}
+
+nav a:hover::before {
+    width: 100%;
+}
+
+nav a.active {
+    color: #d4af37;
+    background: rgba(212, 175, 55, 0.1);
+}
+</style>

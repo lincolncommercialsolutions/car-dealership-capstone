@@ -1,0 +1,6 @@
+# TASK 10: Get Dealer by ID
+# Command:
+curl http://localhost:8000/djangoapp/get_dealers/15
+
+# Output:
+{"error": "Dealer not found"}{"error": "Dealer not found"}

@@ -1,0 +1,55 @@
+# TASK 14-15: Get All Car Makes and Models
+# Command:
+curl http://localhost:5001/get_cars
+
+# Output:
+[
+    {
+        "id": 1,
+        "make": "Toyota",
+        "models": [
+            "Camry",
+            "Corolla",
+            "RAV4",
+            "Highlander",
+            "Tacoma"
+        ],
+        "description": "Reliable and fuel-efficient vehicles"
+    },
+    {
+        "id": 2,
+        "make": "Honda",
+        "models": [
+            "Accord",
+            "Civic",
+            "CR-V",
+            "Pilot",
+            "Odyssey"
+        ],
+        "description": "Quality engineering and performance"
+    },
+    {
+        "id": 3,
+        "make": "Ford",
+        "models": [
+            "F-150",
+            "Mustang",
+            "Explorer",
+            "Escape",
+            "Edge"
+        ],
+        "description": "American-made tough and reliable"
+    },
+    {
+        "id": 4,
+        "make": "Chevrolet",
+        "models": [
+            "Silverado",
+            "Malibu",
+            "Equinox",
+            "Traverse",
+            "Tahoe"
+        ],
+        "description": "Performance and durability"
+    },
+    {

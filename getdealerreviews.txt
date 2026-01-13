@@ -1,0 +1,6 @@
+# TASK 8: Get Dealer Reviews
+# Command:
+curl http://localhost:8000/djangoapp/get_reviews?dealerId=15
+
+# Output:
+[][]

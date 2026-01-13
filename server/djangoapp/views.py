@@ -81,6 +81,23 @@ def logout_user(request):
     return JsonResponse({'userName': '', 'status': 'Logged out'})
 
 
+def get_user(request):
+    """Get current logged-in user information"""
+    if request.user.is_authenticated:
+        return JsonResponse({
+            'userName': request.user.username,
+            'firstName': request.user.first_name,
+            'lastName': request.user.last_name,
+            'email': request.user.email,
+            'isAuthenticated': True
+        })
+    else:
+        return JsonResponse({
+            'userName': None,
+            'isAuthenticated': False
+        })
+
+
 def get_cars(request):
     """Get all car makes and models"""
     car_makes = CarMake.objects.all()
@@ -139,6 +156,18 @@ def get_reviews(request):
     return JsonResponse(reviews, safe=False)
 
 
+def get_reviews_by_dealer(request, dealer_id):
+    """Get reviews for a specific dealer (assignment endpoint)"""
+    reviews = get_dealer_reviews(dealer_id)
+    return JsonResponse(reviews, safe=False)
+
+
+def get_dealerships_by_state(request, state):
+    """Get dealers filtered by state (assignment endpoint)"""
+    dealers = get_dealers_by_state(state)
+    return JsonResponse(dealers, safe=False)
+
+
 @csrf_exempt
 def add_dealer_review(request):
     """Add a new review for a dealer"""
@@ -159,13 +188,14 @@ def add_dealer_review(request):
             # Add sentiment to review data
             data['sentiment'] = sentiment
             
-            # Save to MongoDB
+            # Save review
             review_id = add_review(data)
             
             return JsonResponse({
                 'status': 'Review added successfully',
                 'review_id': review_id,
-                'sentiment': sentiment
+                'sentiment': sentiment,
+                'dealership': data.get('dealership')
             })
         except Exception as e:
             return JsonResponse({'error': str(e)}, status=500)

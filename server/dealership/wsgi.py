@@ -4,8 +4,8 @@ WSGI config for dealership project.
 
 import os
 
-from django.core.wsgi import application
+from django.core.wsgi import get_wsgi_application
 
 os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'dealership.settings')
 
-application = application()
+application = get_wsgi_application()

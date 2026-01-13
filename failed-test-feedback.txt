@@ -1,0 +1,923 @@
+Keep Pushing Forward!
+
+Keep going! Mistakes are opportunities to learn and grow. Review your answers and try again to achieve your best result.
+
+Required passing grade: 70%
+
+Status:Failed
+
+Final Score: 20 / 50 (40%)
+40%
+Question 1
+
+Score: 0/1
+
+Task 1: Submit the public GitHub URL of the README.md file that contains the Project name details. This submission should include:
+
+    Repository name
+    Project name
+
+https://github.com/lincolncommercialsolutions/car-dealership-capstone/blob/main/README.md
+
+The submitted URL does not meet the criteria for awarding points. Although the URL is functional and directs to a README.md file, it does not contain the correct repository name as per the assignment requirements. The expected repository name is 'xrwvm-fullstack_developer_capstone', but the provided URL belongs to 'lincolncommercialsolutions/car-dealership-capstone'. Additionally, while the README.md file contains a detailed description of the project, it does not explicitly mention the project name in a format that aligns with the expected submission. To improve, ensure that the repository name matches the specified criteria and that the project name is clearly stated in the README.md file.
+Question 2
+
+Score: 0/1
+
+Task 2: Copy and paste the terminal output saved in the file named django_server showing the Django server running.
+
+
+I awarded 0 points because the submission contains no evidence of the Django server running. Specific missing elements: 1) No python3 manage.py runserver or similar command present. 2) No confirmation/system check lines (e.g., "System check identified no issues (0 silenced)."). 3) No server address line (e.g., "Starting development server at http://127.0.0.1:8000/"). The only text in the submission is "
+
+
+", which is empty and unrelated to the requested terminal output.
+
+
+Steps to correct: 1) In your project directory, run: python3 manage.py runserver. 2) In the terminal, select and copy the output that includes system checks and the "Starting development server at ..." line. 3) Save that exact terminal output (plain text) in the file named django_server. 4) Paste the contents of django_server into your assignment submission. Ensure the pasted output includes the command you ran and the server address (for example, http://127.0.0.1:8000/).
+
+Score: 0/1 (0%)
+
+Detailed Breakdown:
+
+Analysis: The learner's response contains only the HTML fragment "
+
+
+" and has no terminal output. There is no evidence of the python3 manage.py runserver command, no server address (for example, http://127.0.0.1:8000/), and no system check messages. Because the assignment requested the terminal output saved in a file named django_server showing the Django server running, the submission fails to provide any of the required artifacts.
+
+
+Evaluation: Rubric item: "Did the learner submit the terminal output showing the Django server running?" — The submission does not meet the requirement. It is missing the terminal command and expected server output, so it matches the rubric criterion that awards 0 points.
+
+Explanation: I awarded 0 points because the submission contains no evidence of the Django server running. Specific missing elements: 1) No python3 manage.py runserver or similar command present. 2) No confirmation/system check lines (e.g., "System check identified no issues (0 silenced)."). 3) No server address line (e.g., "Starting development server at http://127.0.0.1:8000/"). The only text in the submission is "
+
+
+", which is empty and unrelated to the requested terminal output.
+
+
+Guidance: Steps to correct: 1) In your project directory, run: python3 manage.py runserver. 2) In the terminal, select and copy the output that includes system checks and the "Starting development server at ..." line. 3) Save that exact terminal output (plain text) in the file named django_server. 4) Paste the contents of django_server into your assignment submission. Ensure the pasted output includes the command you ran and the server address (for example, http://127.0.0.1:8000/).
+Question 3
+
+Score: 3/3
+
+Task 3: Submit the public GitHub URL of the server/frontend/static/About.html file showing the updated “About Us” page with correct CSS links, realistic images, names, roles, brief details, and email IDs.
+
+
+https://github.com/lincolncommercialsolutions/car-dealership-capstone/blob/main/server/frontend/static/About.html
+
+Your submission meets all the requirements of the assignment. The URL provided points to the correct GitHub repository and redirects to the About.html file. The file contains the necessary CSS links in the head section, ensuring proper styling. The "About Us" section includes a well-written description of the company, which aligns with the expectations set forth in the assignment.
+
+Additionally, each team member section is populated with realistic names, roles, and brief details, along with valid email IDs. The use of placeholder images has been replaced effectively with realistic images, enhancing the overall presentation of the page.
+
+The structure and layout follow the provided reference closely, demonstrating a good understanding of HTML and CSS best practices. Keep up the great work!
+Question 4
+
+Score: 1/2
+
+Task 4: Submit the public GitHub URL of the  server/frontend/static/Contact.html file showing the “Contact Us” page of your Django app which you created with updated CSS links, navigation bar (active on Contact Us), images, and all required contact details.
+https://github.com/lincolncommercialsolutions/car-dealership-capstone/blob/main/server/frontend/static/Contact.html
+
+The submitted URL points to the Contact.html file within the GitHub repository. However, it does not meet all the criteria for full points. While the navigation bar correctly highlights the 'Contact Us' link, the page is missing the required stylesheet links for '/static/style.css' and '/static/bootstrap.min.css', which are essential for proper styling. Additionally, while there are images included for contact information, they are placeholders and do not represent the specific images required (e.g., cars.jpeg and contactus.png). To improve your submission, ensure to include the correct stylesheet links in the head section and replace placeholder images with the specified images relevant to your project.
+Question 5
+
+Score: 1/2
+
+Task 5: Copy and paste the cURL command and its output, saved in a file named loginuser, which performs a login operation using any valid username and password.
+
+# Command:
+
+curl -X POST http://localhost:8000/djangoapp/login \
+
+  -H "Content-Type: application/json" \
+
+  -d '{"username":"admin","password":"admin123"}'
+
+
+# Output:
+
+{"userName": "admin", "status": "Authenticated"}{"userName": "admin", "status": "Authenticated"}
+
+
+I awarded 1 of 2 points because the submission demonstrates a POST cURL to the correct endpoint with the correct header and shows an authenticated JSON response (evidence: "-H "Content-Type: application/json"" and response "{"userName": "admin", "status": "Authenticated"}"). However, the request body used "username" instead of the expected "userName" key (evidence: request body "'{"username":"admin","password":"admin123"}'"), which means the request format does not exactly match the rubric's required field names. The rubric's partial/incorrect format criterion applies.
+
+Fix the request JSON key to use "userName" (camelCase) exactly: e.g. -d '{"userName":"admin","password":"admin123"}'. Remove duplicate output (only paste the single response), and place the cURL command plus its output into a file named exactly 'loginuser' before submission. Optionally run the command and capture output with: curl -s -X POST http://localhost:8000/djangoapp/login -H "Content-Type: application/json" -d '{"userName":"admin","password":"admin123"}' > loginuser
+
+Score: 1/2 (50%)
+
+Detailed Breakdown:
+
+Analysis: Observed student submission: curl command: "curl -X POST http://localhost:8000/djangoapp/login \n  -H "Content-Type: application/json" \n  -d '{"username":"admin","password":"admin123"}'". Output shown: "{"userName": "admin", "status": "Authenticated"}{"userName": "admin", "status": "Authenticated"}". Positive: correct HTTP method (-X POST), correct endpoint (/djangoapp/login), Content-Type header present, provided JSON body and received JSON response indicating authentication. Issues: request body uses "username" rather than the expected "userName" key; output is duplicated (appears twice); student did not indicate that this content was saved in a file named 'loginuser'.
+
+Evaluation: Endpoint: correct (/djangoapp/login) — met. Header: correct (Content-Type: application/json) — met. Request body fields: partially met — includes password but uses "username" instead of required "userName" (mismatch). Response output: present and shows "userName" and "status": "Authenticated" — met, but duplicated output is noisy. Overall meets some requirements but contains a field-name mismatch and minor presentation issues.
+
+Explanation: I awarded 1 of 2 points because the submission demonstrates a POST cURL to the correct endpoint with the correct header and shows an authenticated JSON response (evidence: "-H "Content-Type: application/json"" and response "{"userName": "admin", "status": "Authenticated"}"). However, the request body used "username" instead of the expected "userName" key (evidence: request body "'{"username":"admin","password":"admin123"}'"), which means the request format does not exactly match the rubric's required field names. The rubric's partial/incorrect format criterion applies.
+
+Guidance: Fix the request JSON key to use "userName" (camelCase) exactly: e.g. -d '{"userName":"admin","password":"admin123"}'. Remove duplicate output (only paste the single response), and place the cURL command plus its output into a file named exactly 'loginuser' before submission. Optionally run the command and capture output with: curl -s -X POST http://localhost:8000/djangoapp/login -H "Content-Type: application/json" -d '{"userName":"admin","password":"admin123"}' > loginuser
+Question 6
+
+Score: 2/2
+
+Task 6: Copy and paste the cURL command and its output, saved in a file named logoutuser, which performs the logout operation for the logged-in user.
+
+# Command:
+
+curl -X GET http://localhost:8000/djangoapp/logout
+
+
+# Output:
+
+{"userName": "", "status": "Logged out"}{"userName": "", "status": "Logged out"}
+
+
+Full points awarded because the submission includes the exact GET cURL command for /djangoapp/logout and provides a valid JSON logout response containing "userName": "". Specific observations: command = "curl -X GET http://localhost:8000/djangoapp/logout"; output includes "{"userName": "", "status": "Logged out"}" (appears twice). These satisfy the highest-scoring rubric criterion.
+
+
+    Remove the duplicate JSON output so only one response is shown. 2) Paste raw terminal output (no HTML tags) to make it clearer. 3) Save the command and output in a file named exactly "logoutuser" (as the task requested) and mention that the file was created. 4) Optionally, show the exact command used to save to file (e.g., curl -X GET http://localhost:8000/djangoapp/logout > logoutuser) so graders can verify the file content.
+
+
+Score: 2/2 (100%)
+
+Detailed Breakdown:
+
+Analysis: The learner submitted a GET request targeting the correct endpoint: "curl -X GET http://localhost:8000/djangoapp/logout". The output contains JSON with the required field "userName" set to an empty string, e.g. {"userName": "", "status": "Logged out"}. The output appears twice back-to-back, suggesting a duplicated paste: {"userName": "", "status": "Logged out"}{"userName": "", "status": "Logged out"}. The response was embedded in HTML paragraph tags in the submission (e.g., 
+
+...)
+ rather than plain terminal text. The assignment also asked that the content be saved in a file named logoutuser; the submission did not indicate that a file with that name was created or attached.
+
+
+Evaluation: Meets rubric: The command is correctly formatted and targets /djangoapp/logout. The JSON output includes the required "userName" field with an empty value, so the learner satisfies the primary rubric criterion for full credit. Minor issues: duplicated output and HTML wrapping do not affect correctness but should be cleaned up. The file-saving requirement (logoutuser) was not demonstrated in the submission.
+
+Explanation: Full points awarded because the submission includes the exact GET cURL command for /djangoapp/logout and provides a valid JSON logout response containing "userName": "". Specific observations: command = "curl -X GET http://localhost:8000/djangoapp/logout"; output includes "{"userName": "", "status": "Logged out"}" (appears twice). These satisfy the highest-scoring rubric criterion.
+
+Guidance: 1) Remove the duplicate JSON output so only one response is shown. 2) Paste raw terminal output (no HTML tags) to make it clearer. 3) Save the command and output in a file named exactly "logoutuser" (as the task requested) and mention that the file was created. 4) Optionally, show the exact command used to save to file (e.g., curl -X GET http://localhost:8000/djangoapp/logout > logoutuser) so graders can verify the file content.
+Question 7
+
+Score: 0/1
+
+Task 7: Submit the public GitHub URL of the server/frontend/src/components/Register/Register.jsx file showing the “Sign-up” page of your Django/React application with all five input fields (Username, First Name, Last Name, Email, Password) and the Register button. 
+https://github.com/lincolncommercialsolutions/car-dealership-capstone/blob/main/server/frontend/src/components/Register/Register.jsx
+
+The submitted URL does not meet the assignment criteria. While the Register.jsx file is present, it does not contain the required repository name 'xrwvm-fullstack_developer_capstone'. Additionally, the form correctly includes five input fields for 'Username', 'First Name', 'Last Name', 'Email', and 'Password', along with a submit button labeled 'Register'. However, since the repository name is a critical part of the criteria, the submission cannot receive any points. To improve, ensure that the correct repository name is used in future submissions.
+Question 8
+
+Score: 0/2
+
+Task 8: Copy and paste the cURL command and its output, saved in a file named getdealerreviews, which displays the review(s) for any dealer ID.
+
+# Command:
+
+curl http://localhost:8000/djangoapp/get_reviews?dealerId=15
+
+
+# Output:
+
+[][]
+
+
+Grade assigned (0/2) because the submission fails both required parts: the endpoint and the output. Evidence: the command string "curl http://localhost:8000/djangoapp/get_reviews?dealerId=15" does not match the required pattern "/fetchReviews/dealer/<dealer_id>", and the provided output "[][]" contains no reviewer or car information as required by the rubric.
+
+Please correct as follows: 1) Use the exact endpoint format: curl -X GET http://localhost:8000/fetchReviews/dealer/15 (replace 15 with any dealer_id). 2) Return and paste valid JSON — an array of objects — including these fields: "name", "dealership", "review", "purchase" (true/false), "purchase_date" (MM/DD/YYYY), "car_make", "car_model", "car_year". 3) Save the command and its output in a file named getdealerreviews and resubmit. Example expected output to paste (exact structure required):
+[{
+"name": "Sample Reviewer",
+"dealership": 15,
+"review": "Sample review text",
+"purchase": true,
+"purchase_date": "01/15/2020",
+"car_make": "Toyota",
+"car_model": "Camry",
+"car_year": 2020
+}]
+
+Score: 0/2 (0%)
+
+Detailed Breakdown:
+
+Analysis: Observed submission: the student provided the command: "curl http://localhost:8000/djangoapp/get_reviews?dealerId=15" and the output: "[][]". The required endpoint is /fetchReviews/dealer/<dealer_id> but the student called /djangoapp/get_reviews with a query parameter. The output "[][]" is not valid JSON containing the reviewer name, dealership, review text, purchase info, or car details (car_make, car_model, car_year, purchase_date).
+
+Evaluation: Aspect 1 - cURL endpoint correctness: Not met. The command did not call /fetchReviews/dealer/<dealer_id> (used "/djangoapp/get_reviews?dealerId=15"). Aspect 2 - JSON output completeness and format: Not met. Output "[][]" is not a JSON array of objects and lacks required fields such as "name", "dealership", "review", "purchase", "purchase_date", "car_make", "car_model", "car_year".
+
+Explanation: Grade assigned (0/2) because the submission fails both required parts: the endpoint and the output. Evidence: the command string "curl http://localhost:8000/djangoapp/get_reviews?dealerId=15" does not match the required pattern "/fetchReviews/dealer/<dealer_id>", and the provided output "[][]" contains no reviewer or car information as required by the rubric.
+
+Guidance: Please correct as follows: 1) Use the exact endpoint format: curl -X GET http://localhost:8000/fetchReviews/dealer/15 (replace 15 with any dealer_id). 2) Return and paste valid JSON — an array of objects — including these fields: "name", "dealership", "review", "purchase" (true/false), "purchase_date" (MM/DD/YYYY), "car_make", "car_model", "car_year". 3) Save the command and its output in a file named getdealerreviews and resubmit. Example expected output to paste (exact structure required):
+[{
+"name": "Sample Reviewer",
+"dealership": 15,
+"review": "Sample review text",
+"purchase": true,
+"purchase_date": "01/15/2020",
+"car_make": "Toyota",
+"car_model": "Camry",
+"car_year": 2020
+}]
+Question 9
+
+Score: 1/2
+
+Task 9: Copy and paste the cURL command and its output, saved in the file named getalldealers, which displays all dealer(s) retrieved.
+
+
+# TASK 9: Get All Dealers
+
+# Command:
+
+curl http://localhost:8000/djangoapp/get_dealers
+
+
+# Output:
+
+[][]
+
+
+Score of 1 awarded because the student did supply a GET cURL command but the output "[][]" demonstrates failure to retrieve the dealer list or missing required fields. The rubric's 1-point criterion describes this exact situation (GET submitted but response shows errors or incomplete/missing dealer data). There is no evidence of the 50 dealer objects or any of the required fields in the provided output.
+
+
+    Confirm the correct endpoint and use the assignment's expected URL (e.g., /fetchDealers). 2) Make sure the backend server is running and connected to the populated database. 3) Run: curl -X GET http://
+
+
+Score: 1/2 (50%)
+
+Detailed Breakdown:
+
+Analysis: The student supplied a cURL command pointing to a local endpoint (/djangoapp/get_dealers) and the output shown is "[][]". That output indicates an empty or malformed response rather than a JSON array of 50 dealer objects. The submission lacks the required dealer fields (id, city, state, address, zip, lat, long, short_name, full_name). The rubric expects either the correct endpoint (/fetchDealers) or a response containing all 50 dealers; this submission meets neither requirement.
+
+Evaluation: Does the submission include the correct GET cURL command and the complete list of 50 dealers with required fields? No. The command is present but the response is empty. The submission therefore meets the partial-success criterion: the learner issued a GET request but did not retrieve the expected dealer data.
+
+Explanation: Score of 1 awarded because the student did supply a GET cURL command but the output "[][]" demonstrates failure to retrieve the dealer list or missing required fields. The rubric's 1-point criterion describes this exact situation (GET submitted but response shows errors or incomplete/missing dealer data). There is no evidence of the 50 dealer objects or any of the required fields in the provided output.
+
+Guidance: 1) Confirm the correct endpoint and use the assignment's expected URL (e.g., /fetchDealers). 2) Make sure the backend server is running and connected to the populated database. 3) Run: curl -X GET http://
+Question 10
+
+Score: 0/2
+
+Task 10: Copy and paste the cURL command and its output, saved in a file named getdealerbyid, which displays the details of any dealer ID.
+
+# Command:
+
+curl http://localhost:8000/djangoapp/get_dealers/15
+
+
+# Output:
+
+{"error": "Dealer not found"}{"error": "Dealer not found"}
+
+Score 0/2 because: (1) The cURL command targeted the wrong endpoint ('curl http://localhost:8000/djangoapp/get_dealers/15') instead of '/fetchDealer/<dealer_id>'. (2) The output returned error messages ('{"error": "Dealer not found"}{"error": "Dealer not found"}') rather than a JSON object/array with the required dealer fields (id, city, state, address, zip, lat, long, short_name, full_name). These observations directly map to the rubric's lowest criterion.
+
+
+    Use the exact endpoint required: curl -X GET http://localhost:8000/fetchDealer/<dealer_id> (replace <dealer_id> with a valid numeric id). 2) Ensure the dealer ID exists in the app/database; if not, seed or create a dealer record before requesting. 3) Verify the server is running and the endpoint path is correct. 4) The expected output should be JSON containing fields: id, city, state, address, zip, lat, long, short_name, full_name. 5) Save the full curl command and its JSON output to a file named getdealerbyid and resubmit.
+
+
+Score: 0/2 (0%)
+
+Detailed Breakdown:
+
+Analysis: The student submitted the command: "curl http://localhost:8000/djangoapp/get_dealers/15" and the output: "{"error": "Dealer not found"}{"error": "Dealer not found"}". The assignment requires calling the /fetchDealer/<dealer_id> endpoint and returning a JSON object (or array) containing fields such as id, city, state, address, zip, lat, long, short_name, and full_name. Instead, the provided command uses a different path (/djangoapp/get_dealers/15) and the response contains error messages rather than the required dealer fields.
+
+Evaluation: The submission does not meet the rubric requirements. The command did not call the required /fetchDealer/<dealer_id> endpoint and the output did not contain any dealer details or the required JSON fields. Per the rubric, this matches the criterion for no valid GET cURL command or missing JSON output.
+
+Explanation: Score 0/2 because: (1) The cURL command targeted the wrong endpoint ('curl http://localhost:8000/djangoapp/get_dealers/15') instead of '/fetchDealer/<dealer_id>'. (2) The output returned error messages ('{"error": "Dealer not found"}{"error": "Dealer not found"}') rather than a JSON object/array with the required dealer fields (id, city, state, address, zip, lat, long, short_name, full_name). These observations directly map to the rubric's lowest criterion.
+
+Guidance: 1) Use the exact endpoint required: curl -X GET http://localhost:8000/fetchDealer/<dealer_id> (replace <dealer_id> with a valid numeric id). 2) Ensure the dealer ID exists in the app/database; if not, seed or create a dealer record before requesting. 3) Verify the server is running and the endpoint path is correct. 4) The expected output should be JSON containing fields: id, city, state, address, zip, lat, long, short_name, full_name. 5) Save the full curl command and its JSON output to a file named getdealerbyid and resubmit.
+Question 11
+
+Score: 1/2
+
+Task 11: Copy and paste the cURL command and its output, saved in the file named getdealersbyState, which displays the dealer(s) located in the state of Kansas.
+
+# Command: 
+
+curl "http://localhost:8000/djangoapp/get_dealers?state=Kansas"
+
+
+# Output:
+
+[][]
+
+
+Per the rubric, criterion 2 best matches this response: the learner submitted a GET cURL command but the response does not include the required dealer fields or returns an empty result. Evidence: the submitted command curl "http://localhost:8000/djangoapp/get_dealers?state=Kansas" is present, and the output is [][], indicating no dealer objects were returned. Therefore award = 1 (out of 2).
+
+
+    Verify you are using the exact required endpoint (the rubric sample uses /fetchDealers/Kansas) or ensure your implementation supports the query form you used. 2) Confirm the dataset contains dealers for Kansas; if none exist, add a dealer or explain why none exist. 3) Re-run the cURL and paste the full JSON array of dealer objects. Example expected structure: [{"id":2,"city":"Wichita","state":"Kansas","address":"123 Main St","zip":"67000","lat":"37.7","long":"-97.3","short_name":"ACME","full_name":"ACME Auto"}].
+
+
+Score: 1/2 (50%)
+
+Detailed Breakdown:
+
+Analysis: The learner provided a cURL command: curl "http://localhost:8000/djangoapp/get_dealers?state=Kansas" and the output shown is: [][] . The expected result per the assignment/rubric is an array of dealer objects (e.g. objects containing id, city, state, address, zip, lat, long, short_name, full_name). The submission shows an empty result (no dealer objects) and the endpoint used differs from the rubric's sample (/fetchDealers/Kansas vs /get_dealers?state=Kansas).
+
+Evaluation: Presence of command: present (positive). Endpoint correctness: differs from rubric sample (neutral/negative). Output completeness: incomplete — output is empty and lacks required fields (negative). Overall: meets the minimum of submitting a command but fails to return the required dealer details.
+
+Explanation: Per the rubric, criterion 2 best matches this response: the learner submitted a GET cURL command but the response does not include the required dealer fields or returns an empty result. Evidence: the submitted command curl "http://localhost:8000/djangoapp/get_dealers?state=Kansas" is present, and the output is [][], indicating no dealer objects were returned. Therefore award = 1 (out of 2).
+
+Guidance: 1) Verify you are using the exact required endpoint (the rubric sample uses /fetchDealers/Kansas) or ensure your implementation supports the query form you used. 2) Confirm the dataset contains dealers for Kansas; if none exist, add a dealer or explain why none exist. 3) Re-run the cURL and paste the full JSON array of dealer objects. Example expected structure: [{"id":2,"city":"Wichita","state":"Kansas","address":"123 Main St","zip":"67000","lat":"37.7","long":"-97.3","short_name":"ACME","full_name":"ACME Auto"}].
+Question 12
+
+Score: 0/2
+
+Task 12: Submit the screenshot (admin_login.png or admin_login.jpeg) showing the root user login on the admin page.
+
+    admin_login.png
+
+Analysis:
+The image is a screenshot of a login page for Django administration, showing the login form with the username field filled with 'linkl0n' and a password entered but obscured. The page URL indicates it is the admin login page on localhost. The screenshot is clear, well-focused, and has good resolution, with no visual noise or distortions. However, the image only shows the login screen before authentication, and does not show any logged-in state or confirmation that the root user is logged in on the admin page.
+
+Evaluation:
+The rubric question asks if the screenshot clearly shows that the root user is logged in on the admin page. This image shows a user attempting to log in, but it does not show a logged-in state or any indication that the root user is logged in. Therefore, it does not meet the highest criterion. It also does not show a logged-in user at all, so it cannot meet the second criterion. It falls under the third criterion: the screenshot does not display the logged-in admin page.
+
+Explanation:
+I awarded 0 points because the screenshot depicts the login form before the user has logged in. The username 'linkl0n' is visible, but there is no evidence that this user is the root user or that any user has successfully logged in. The assignment specifically requires a screenshot showing the root user logged in on the admin page, which this image does not fulfill. A higher score was not given because the core requirement of showing a logged-in admin page is missing.
+
+Guidance:
+To improve, submit a screenshot taken after successful login, clearly showing the admin interface with the root user logged in. Ensure the username or user role is visible in the interface to confirm the correct user. Use screenshots that capture the full admin dashboard or a page that confirms the logged-in status. Avoid submitting images of the login form before authentication. Also, consider cropping or annotating the screenshot if needed to highlight the logged-in user information clearly.
+
+Final Score: 0/2 points (0%)
+Question 13
+
+Score: 0/1
+
+Task 13: Submit the screenshot (admin_logout.png or admin_logout.jpeg) showing the root user logged out from the admin page.
+
+    admin_logout.png
+
+Analysis:
+The submitted image is a screenshot of a web browser displaying the Django administration logout page at the URL 'http://localhost:8000/admin/logout/'. The page header clearly shows "Django administration" and a navigation bar with "Home". The main content area shows the text "Logged out" and a message thanking the user for spending time on the site, followed by a "Log in again" link. The screenshot is clear, well-focused, and of good resolution. However, there is no visible indication on the page that the logged-out user was specifically the 'root' user, as required by the task instructions. The technical quality is good, but the content does not fully meet the assignment requirement to show the root user logged out.
+
+Evaluation:
+The rubric question asks if the screenshot clearly shows that the user (root or admin) has been logged out and the logout page is rendered. While the logout page is indeed rendered, the screenshot does not explicitly show that the root user was logged out, as there is no username or user-specific information visible. Therefore, it does not fully satisfy the criterion for a clear display of the root user logout. According to the rubric, this means the screenshot is missing the key user identification element and thus scores 0 points.
+
+Explanation:
+I awarded 0 points because although the logout page is correctly displayed and the user is logged out, the screenshot lacks any indication that the logged-out user is the root user. The assignment specifically requires proof that the root user was logged out from the admin page, which this image does not demonstrate. The page only shows a generic logout confirmation without user details, so it does not meet the rubric's requirement for clarity on the user identity.
+
+Guidance:
+To improve this submission, ensure that the screenshot includes visible evidence that the root user was logged in before logging out or that the logout page explicitly references the root user. For example, capture the admin page showing the root user logged in, then take a screenshot immediately after logout that still shows the username or session details. Alternatively, include a screenshot of the login page showing the root username or a prior step confirming the root user's login state. Using browser developer tools or session info might help make the user identity clearer. Additionally, ensure the screenshot is cropped to remove unnecessary browser UI elements and focus on the relevant content for better clarity.
+
+Final Score: 0/1 points (0%)
+Question 14
+
+Score: 1/4
+
+Tasks 14 and 15: Copy and paste the cURL command and its output, saved in the file named getallcarmakes, which displays all car makes and models retrieved.
+
+# Command:
+
+curl http://localhost:5001/get_cars
+
+
+# Output:
+
+[
+
+    {
+
+        "id": 1,
+
+        "make": "Toyota",
+
+        "models": [
+
+            "Camry",
+
+            "Corolla",
+
+            "RAV4",
+
+            "Highlander",
+
+            "Tacoma"
+
+        ],
+
+        "description": "Reliable and fuel-efficient vehicles"
+
+    },
+
+    {
+
+        "id": 2,
+
+        "make": "Honda",
+
+        "models": [
+
+            "Accord",
+
+            "Civic",
+
+            "CR-V",
+
+            "Pilot",
+
+            "Odyssey"
+
+        ],
+
+        "description": "Quality engineering and performance"
+
+    },
+
+    {
+
+        "id": 3,
+
+        "make": "Ford",
+
+        "models": [
+
+            "F-150",
+
+            "Mustang",
+
+            "Explorer",
+
+            "Escape",
+
+            "Edge"
+
+        ],
+
+        "description": "American-made tough and reliable"
+
+    },
+
+    {
+
+        "id": 4,
+
+        "make": "Chevrolet",
+
+        "models": [
+
+            "Silverado",
+
+            "Malibu",
+
+            "Equinox",
+
+            "Traverse",
+
+            "Tahoe"
+
+        ],
+
+        "description": "Performance and durability"
+
+    },
+
+    {
+
+
+Grade assigned = 1 because the rubric option for 1 point states: "The learner submitted a GET cURL command, but it uses the wrong endpoint or produces output unrelated to car makes or models." Evidence: the command is "curl http://localhost:5001/get_cars" (wrong endpoint) while the expected endpoint is "/djangoapp/get_cars". The output does show car makes (e.g., "make": "Toyota"), but endpoint mismatch triggers the 1-point criterion.
+
+
+    Re-run the request using the exact endpoint: curl -X GET http://
+
+
+Score: 1/4 (25%)
+
+Detailed Breakdown:
+
+Analysis: The learner submitted: "curl http://localhost:5001/get_cars" which uses /get_cars. The returned JSON is a valid array of objects showing multiple makes (examples present in the output: "make": "Toyota", "make": "Honda", "make": "Ford", "make": "Chevrolet"). The sample rubric expects the GET to target /djangoapp/get_cars and/or a JSON structure containing a top-level "CarModels" key with ~15 entries. The student's output is relevant (lists car makes and models) but the endpoint differs from the required one and the JSON structure does not include the expected "CarModels" key.
+
+Evaluation: Meets some aspects: The submission included a working cURL command and relevant JSON output of car makes and models. Does not meet critical aspect: the required endpoint is /djangoapp/get_cars (the student used /get_cars), and the output structure differs from the sample (no top-level "CarModels" key and the sample count ≈15 entries was not matched). According to the rubric, the 'wrong endpoint' criterion best fits.
+
+Explanation: Grade assigned = 1 because the rubric option for 1 point states: "The learner submitted a GET cURL command, but it uses the wrong endpoint or produces output unrelated to car makes or models." Evidence: the command is "curl http://localhost:5001/get_cars" (wrong endpoint) while the expected endpoint is "/djangoapp/get_cars". The output does show car makes (e.g., "make": "Toyota"), but endpoint mismatch triggers the 1-point criterion.
+
+Guidance: 1) Re-run the request using the exact endpoint: curl -X GET http://
+Question 15
+
+Score: 2/2
+
+Task 16: Copy and paste the cURL command and its output, saved in the file named analyzereview, which displays the sentiment analysis result for the review text "Fantastic services".
+
+# Command:
+
+curl http://localhost:5000/analyze/Fantastic%20services
+
+
+# Output:
+
+{
+
+  "scores": {
+
+    "compound": 0.5574,
+
+    "negative": 0.0,
+
+    "neutral": 0.217,
+
+    "positive": 0.783
+
+  },
+
+  "sentiment": "positive",
+
+  "text": "Fantastic services"
+
+}
+
+{
+
+  "scores": {
+
+    "compound": 0.5574,
+
+    "negative": 0.0,
+
+    "neutral": 0.217,
+
+    "positive": 0.783
+
+  },
+
+  "sentiment": "positive",
+
+  "text": "Fantastic services"
+
+}
+
+Awarded 2/2 points because the submitted command "curl http://localhost:5000/analyze/Fantastic%20services" and the provided output contain the required key-value pair "sentiment": "positive", which directly matches the sample/reference expectation. The duplication of the JSON output does not change correctness, so full points are given.
+
+
+    Remove the duplicated JSON block so the output appears only once. 2) Save the command output to the file named exactly analyzereview (for example: curl -s "http://localhost:5000/analyze/Fantastic%20services" > analyzereview) and include a short line showing the file save if required. 3) Optionally include -X GET in the curl command to make the request method explicit (curl -X GET ...).
+
+
+Score: 2/2 (100%)
+
+Detailed Breakdown:
+
+Analysis: The learner submitted the GET cURL command: "curl http://localhost:5000/analyze/Fantastic%20services" and included the JSON output showing sentiment. The output contains the JSON key-value pair "sentiment": "positive" along with score details (e.g., "compound": 0.5574, "positive": 0.783). The same JSON block appears twice, indicating a duplicated paste rather than distinct responses. The submission does not explicitly show the file name 'analyzereview' or that the output was saved to that file.
+
+Evaluation: Meets rubric criterion 1 (full credit). Evidence: the command targets /analyze/Fantastic%20services and the returned JSON includes "sentiment": "positive". Minor issues: duplicated output and no explicit mention of saving to the file analyzereview (task requested saving the output in that file).
+
+Explanation: Awarded 2/2 points because the submitted command "curl http://localhost:5000/analyze/Fantastic%20services" and the provided output contain the required key-value pair "sentiment": "positive", which directly matches the sample/reference expectation. The duplication of the JSON output does not change correctness, so full points are given.
+
+Guidance: 1) Remove the duplicated JSON block so the output appears only once. 2) Save the command output to the file named exactly analyzereview (for example: curl -s "http://localhost:5000/analyze/Fantastic%20services" > analyzereview) and include a short line showing the file save if required. 3) Optionally include -X GET in the curl command to make the request method explicit (curl -X GET ...).
+Question 16
+
+Score: 0/1
+
+Task 17: Submit a screenshot showing the dealers displayed on the home page of the Django application before logging in, with the image name get_dealers.
+
+    get_dealers.png
+
+Analysis:
+The screenshot shows a Django application page at the URL 'http://localhost:8000/dealerships/'. The page title is 'Our Dealerships' and it has a navigation bar with links including Home, Dealerships, About, Contact, and login/logout options. The user is clearly indicated as 'Not logged in'. The main content area displays a message with a lock icon stating 'Login Required' and instructs the user to login to view dealership locations and inventory. There is a prominent 'Login / Register' button below the message. No list or table of dealers is visible on this page. The image is clear, well-focused, and the text is legible with good resolution and lighting. The screenshot captures the required page before login but does not show any dealers or their details.
+
+Evaluation:
+The rubric question asks whether the screenshot shows the list of dealers with details such as ID, dealer name, city, address, ZIP, and state. This screenshot does not show any list of dealers or their details. Instead, it shows a login requirement message blocking access to dealership information. Therefore, it meets the criterion: 'The submitted screenshot does not show the list of dealers with their details.' and earns 0 points.
+
+Explanation:
+The screenshot clearly shows that the user is not logged in and the application restricts access to dealer information until login. Because no dealer list or details (ID, dealer name, city, address, ZIP, and state) are visible, the submission does not fulfill the assignment requirement. Although the image quality is good, the content does not meet the rubric's expectations, resulting in zero points awarded.
+
+Guidance:
+To improve, the learner should log in to the Django application and then navigate to the home page or dealerships page to capture a screenshot showing the full list of dealers with all required details visible: ID, dealer name, city, address, ZIP, and state. Ensure the screenshot is clear, well-framed, and includes all necessary information as specified by the assignment. This will demonstrate that the page correctly displays the dealers before login restriction blocks access. Practice capturing screenshots that directly address the assignment prompts to achieve full credit.
+
+Final Score: 0/1 points (0%)
+Question 17
+
+Score: 2/2
+
+﻿﻿﻿Task 18: Submit a screenshot showing the dealers displayed on the home page of the Django application after logging in, with the image name get_dealers_loggedin. The screenshot must clearly show the Review Dealer option, the logged-in username, and the endpoint visible in the browser address bar.
+
+    get_dealers_loggedin.png
+
+Analysis:
+The screenshot shows a well-organized Django application home page displaying a list of six dealerships. Each dealership card includes the dealership name, location, address, ZIP code, available vehicles, and two buttons: 'View Details' and 'Write Review'. The page header clearly shows the logged-in username as 'Welcome, lincolncommercialsolutions!' and a 'Logout' option. The browser address bar at the top is visible, showing the endpoint URL 'http://localhost:8000/dealerships/'. The image is clear, well-lit, and in focus, with good resolution and no visible blurring or distortions. The 'Write Review' button corresponds to the 'Review Dealer' option required by the assignment. Overall, the screenshot fulfills the task requirements by including the dealer list, logged-in username, the review option, and the endpoint visible in the URL bar.
+
+Evaluation:
+The rubric question asks if the screenshot shows the list of dealers along with the logged-in username and the browser URL. This screenshot clearly meets all these criteria. The dealer list is fully visible, the logged-in username is prominently displayed in the navigation bar, and the browser URL is completely visible at the top. Therefore, it qualifies for the highest rubric level, awarding 2 points.
+
+Explanation:
+I awarded 2 points because the screenshot fully meets the rubric requirements. The dealer list is clearly presented with detailed information for each dealership. The logged-in username 'lincolncommercialsolutions' is visible and clearly labeled in the navigation bar, indicating the user is logged in. The browser address bar shows the exact endpoint URL 'http://localhost:8000/dealerships/', fulfilling the requirement to show the endpoint. The presence of the 'Write Review' button on each dealer card satisfies the 'Review Dealer' option requirement. The image quality is good, with no issues that would detract from clarity or visibility of required elements. Hence, the highest score is justified.
+
+Guidance:
+For future submissions, ensure the screenshot captures the entire relevant page area without cropping important interface elements. Maintain good lighting and focus to keep text and UI elements legible. To further improve, consider including a cursor or highlight on the 'Write Review' button to emphasize the review option more clearly. Additionally, ensure the browser URL is fully visible and not obscured by any browser extensions or UI elements. Using a clean browser window with minimal distractions enhances professionalism. Finally, double-check that the logged-in username is visible and spelled correctly to avoid ambiguity.
+
+Final Score: 2/2 points (100%)
+Question 18
+
+Score: 1/2
+
+Task 19: Submit a screenshot showing the dealers filtered by State on the home page of the Django application, with the image name dealersbystate. The screenshot must clearly display the endpoint visible in the browser address bar.
+
+
+    dealersbystate.png
+
+Analysis:
+The submitted image is a screenshot of a web page header section that includes a dropdown labeled 'Filter by State' set to 'All States', a search input field, and a 'Clear Filters' button. The screenshot is well-lit, clear, and focused, showing the UI elements distinctly. However, the screenshot does not show any list of dealers filtered by a specific state. The URL bar is not visible in the image, so the endpoint is not shown. The composition is centered on the filter controls, but it lacks the main content area where the filtered dealers list would appear.
+
+Evaluation:
+The rubric question asks if the screenshot shows the list of dealers filtered by a specific state with the URL visible in the browser address bar. This screenshot does not show any filtered dealer list, nor is the URL visible. Therefore, it does not meet the highest criterion. It does show the filter controls, but not the filtered results or URL, so it aligns best with the criterion: 'The submitted screenshot shows the list of dealers, but it is not filtered by state and/or the URL is not visible in the browser’s address bar.' This corresponds to 1 point.
+
+Explanation:
+I awarded 1 point because the image shows the filter UI but does not show the dealers list filtered by a specific state, nor does it show the URL in the browser address bar as required. The image is clear and technically sound but does not fulfill the core assignment requirements. The highest rubric criterion requires both the filtered dealer list and visible URL, which are missing here.
+
+Guidance:
+To improve, ensure the screenshot includes the actual list of dealers filtered by a chosen state (not 'All States') so the filter effect is visible. Also, include the browser's address bar in the screenshot showing the endpoint URL reflecting the filter state. Use a browser zoom level that captures both the URL bar and the filtered content clearly. Avoid cropping out important UI elements and consider using full-window screenshots to capture all relevant information.
+
+Final Score: 1/2 points (50%)
+Question 19
+
+Score: 0/1
+
+Task 20: Submit a screenshot showing the selected dealer details on the dealer page along with the reviews, with the image name dealer_id_reviews (saved as .png or .jpeg). The screenshot must clearly display the endpoint visible in the browser address bar.
+
+    dealer_id_reviews.png
+
+Analysis:
+The submitted image is a screenshot of a web page showing a 'Write a Review' form for a dealer named 'Premium Motors'. The browser's address bar is visible, displaying the URL http://localhost:8000/dealer/1/review/. The page includes fields for entering review details such as name, car make, model, year, review text, purchase date, and a verification checkbox. The screenshot is clear, well-lit, and focused, with good resolution. However, it does not show any dealer details or existing reviews, only the review submission form. The URL endpoint is visible as required.
+
+Evaluation:
+The rubric question asks whether the screenshot shows a dealer's details along with the reviews and the URL visible in the browser's address bar. While the URL is clearly visible, the screenshot does not show any dealer details or reviews; it only shows the review submission form. Therefore, it does not meet the full requirement of displaying dealer details and reviews along with the URL.
+
+Explanation:
+I awarded 0 points because the screenshot lacks the critical elements of dealer details and reviews. The presence of the URL alone is insufficient to meet the rubric's criteria. The image shows only the review form, which is not what the task requested. To earn full points, the screenshot must clearly display dealer information and existing reviews on the page, alongside the visible URL.
+
+Guidance:
+For improvement, ensure that the screenshot captures the page section where dealer details and reviews are visible, not just the review submission form. Navigate to the dealer's detail page with reviews displayed before taking the screenshot. Verify that the URL in the browser address bar corresponds to the dealer review endpoint. Use a high-resolution capture tool to ensure clarity and include all required elements in a single frame.
+
+Final Score: 0/1 points (0%)
+Question 20
+
+Score: 0/1
+
+Task 21: Submit a screenshot showing the Post Review page after entering the review details, before submission, with the image name dealership_review_submission.
+
+    dealership_review_submission.png
+
+Analysis:
+The image shows a web page titled 'Write a Review' for 'Premium Motors'. The form fields visible include 'Your Name', 'Car Make', 'Car Model', 'Car Year', and 'Your Review'. All these fields are filled in with appropriate values. However, a prominent green success message box stating 'Review Submitted Successfully!' is displayed at the top of the form, indicating the review has already been submitted. The 'Post Review' button is not visible anywhere on the page. The page background is a gradient purple, and the form is centered with good clarity and focus. The image is well-lit and clear, but it does not match the requirement of showing the review submission form before submission.
+
+Evaluation:
+The rubric question asks if the screenshot shows the review submission form with all required fields filled in and the 'Post Review' button visible before submission. While the form fields are filled, the success message indicates the form is no longer in the pre-submission state. The 'Post Review' button is missing, so the image does not meet the criteria for full points. Therefore, the image matches the second criterion that it does not show the review submission form with entered details and is missing a key element (the submit button).
+
+Explanation:
+The green success message at the top clearly indicates the review has already been submitted, which means the form is in a post-submission state rather than the required pre-submission state. The absence of the 'Post Review' button confirms this. Although the form fields are filled with valid data, the rubric specifically requires the form before submission with the button visible. Hence, the image cannot receive the full point for showing the form ready to submit.
+
+Guidance:
+To improve, the learner should capture the screenshot immediately after filling in all the required fields but before clicking the 'Post Review' button. Ensure the 'Post Review' button is clearly visible and the success message is not displayed yet. Double-check the page state to confirm it is the review submission form page, not the confirmation page. Using a screen capture tool that allows quick snapshots can help capture the correct moment. Reviewing the assignment instructions carefully before taking the screenshot will ensure all requirements are met.
+
+Final Score: 0/1 points (0%)
+Question 21
+
+Score: 2/2
+
+Task 22: Submit a screenshot showing the posted review, with the image name added_review.
+
+    added_review.png
+
+Analysis:
+The screenshot shows a web page titled 'Customer Reviews' with multiple posted reviews displayed. Each review includes the reviewer's name, the review text, the vehicle model and year, the review date, a sentiment label (positive or neutral) with a colored background, and a 'Verified Purchase' badge. The image is clear, well-focused, and the text is legible. The sentiment labels are visually distinct with green for positive and orange for neutral, effectively representing the sentiment image requirement. The composition is straightforward, focusing on the review section, and the lighting and resolution are adequate for reading all details clearly. This screenshot directly addresses the assignment requirement to show the posted review along with the sentiment image.
+
+Evaluation:
+The rubric question asks if the screenshot shows the posted review along with the sentiment image (happy, sad, or neutral). The image clearly displays multiple posted reviews with sentiment labels (positive and neutral) next to them. This fully meets the highest criterion of showing the posted review along with the sentiment image. Therefore, the full 2 points are awarded.
+
+Explanation:
+I awarded 2 points because the screenshot clearly shows the posted reviews with all relevant details and includes the sentiment images as colored labels indicating positive or neutral sentiment. The sentiment images are visually present and distinct, fulfilling the rubric's requirement for showing the sentiment image alongside the posted review. The image quality is good with clear text and appropriate focus, making all elements easily identifiable. There is no missing sentiment image, so the lower criteria do not apply.
+
+Guidance:
+To improve further, ensure the screenshot captures the entire relevant review section without cropping any part of the sentiment image or review details. Use a high-resolution capture tool to maintain text clarity. If possible, include a review with a 'sad' sentiment to demonstrate full coverage of sentiment types. Additionally, consider adding a subtle highlight or zoom effect on the sentiment image to draw attention, enhancing visual communication. Practicing consistent naming and file organization will also help with assignment submission.
+
+Final Score: 2/2 points (100%)
+Question 22
+
+Score: 0/3
+
+Task 23: Copy and paste the terminal output saved in the file named CI/CD that shows your GitHub Actions workflow running successfully. The output should clearly display the steps executed in the workflow.
+
+# TASK 23: GitHub Actions CI/CD Workflow Output
+
+
+To trigger the GitHub Actions workflow and capture output:
+
+
+1. Make a small change and push to trigger workflow:
+
+   git commit --allow-empty -m "Trigger CI/CD workflow"
+
+   git push
+
+
+2. View workflow run:
+
+   gh run list
+
+   gh run view <run-id> --log
+
+
+Note: The workflow file is located at:
+
+.github/workflows/build-deploy.yml
+
+
+Expected output will show:
+
+- Checkout code
+
+- Set up Python
+
+- Install Python dependencies
+
+- Run Django migrations
+
+- Run Django tests
+
+- Set up Node.js
+
+- Install Node dependencies
+
+- Build Docker images
+
+- Run Docker Compose
+
+- Success notification
+
+
+For now, trigger the workflow with:
+
+
+$ git commit --allow-empty -m 'Trigger workflow' && git push
+
+
+The rubric requires the pasted terminal output that clearly displays the workflow run (e.g., lines like "✓ main Lint Code · 
+
+Concrete next steps:
+
+
+    Trigger the workflow (commit & push) as you indicated. 2) Run: gh run list to find the run-id, then run: gh run view 
+
+
+Score: 0/3 (0%)
+
+Detailed Breakdown:
+
+Analysis: The learner supplied only instructions and commands to trigger the workflow (for example: "git commit --allow-empty -m 'Trigger workflow' && git push" and references to "gh run list" / "gh run view 
+
+Evaluation: Per the rubric, the submission is missing the required GitHub Actions output. It does not show the workflow header, job details, or completed step lines. Therefore it matches the criterion: "The submission is missing, incorrect, or irrelevant..." and receives 0 points.
+
+Explanation: The rubric requires the pasted terminal output that clearly displays the workflow run (e.g., lines like "✓ main Lint Code · 
+
+Guidance: Concrete next steps:
+
+
+    Trigger the workflow (commit & push) as you indicated. 2) Run: gh run list to find the run-id, then run: gh run view 
+
+Question 23
+
+Score: 0/1
+
+Task 24: Submit the deployment URL for your Django application saved in the file named deploymentURL.
+
+Note: The application is currently running locally for testing.
+
+
+Local URLs:
+
+- Django Backend: http://localhost:8000
+
+- Sentiment Analyzer: http://localhost:5000
+
+- Car Inventory: http://localhost:5001
+
+
+Steps to deploy on IBM Cloud Code Engine:
+
+
+1. Install IBM Cloud CLI:
+
+   curl -fsSL https://clis.cloud.ibm.com/install/linux | sh
+
+   ibmcloud plugin install code-engine
+
+
+2. Login and create project:
+
+   ibmcloud login
+
+   ibmcloud target -r us-south
+
+   ibmcloud ce project create --name car-dealership
+
+   ibmcloud ce project select --name car-dealership
+
+
+3. Build and deploy:
+
+   ibmcloud ce application create --name car-dealership-app \
+
+     --build-source . \
+
+     --port 8000
+
+
+4. Get deployment URL:
+
+   ibmcloud ce application get --name car-dealership-app
+
+
+Deployment URL will be in the format:
+
+https://car-dealership-app.xxxxxxxx.us-south.codeengine.appdomain.cloud
+
+
+
+I awarded 0 out of 1 because the one applicable rubric question requires an exact URL structure. Evidence from the submission: "Django Backend: http://localhost:8000" (local, not https and not on the required domain) and the absence of a line in the submission that matches the rubric's required pattern (https://... .proxy.cognitiveclass.ai with -8000). The rubric's 0-point criterion explicitly covers incorrect/missing format or missing deployment URL, which best fits this response.
+
+
+    Complete the deployment and copy the exact production URL into the file named deploymentURL. Ensure it begins with https:// and ends with .proxy.cognitiveclass.ai and includes the required '-8000' segment as specified. 2) If you cannot deploy to that domain, explain why in deploymentURL and provide any publicly reachable URL that matches the rubric format or contact the instructor for an exception. 3) Re-run verification (open the URL) and include a screenshot if the platform requires one.
+
+
+Score: 0/1 (0%)
+
+Detailed Breakdown:
+
+Analysis: The student response contains only local addresses: "http://localhost:8000", "http://localhost:5000", "http://localhost:5001" and instructions for deploying to IBM Cloud Code Engine. There is no file content named deploymentURL and no URL matching the rubric-required structure (https://... .proxy.cognitiveclass.ai with the -8000 token). The rubric requires a single deployment URL that exactly fits the specified pattern; the submission did not provide that.
+
+Evaluation: Assessment aspect: Submit the deployment URL for the Django application. The student did not submit a URL that matches the required structure. The provided local URLs are not acceptable (they use http://localhost and are not accessible publicly) and the sample IBM Cloud URL shown in the steps (https://car-dealership-app.xxxxxxxx.us-south.codeengine.appdomain.cloud) does not match the required .proxy.cognitiveclass.ai pattern. Therefore the response meets the 0-point criterion.
+
+Explanation: I awarded 0 out of 1 because the one applicable rubric question requires an exact URL structure. Evidence from the submission: "Django Backend: http://localhost:8000" (local, not https and not on the required domain) and the absence of a line in the submission that matches the rubric's required pattern (https://... .proxy.cognitiveclass.ai with -8000). The rubric's 0-point criterion explicitly covers incorrect/missing format or missing deployment URL, which best fits this response.
+
+Guidance: 1) Complete the deployment and copy the exact production URL into the file named deploymentURL. Ensure it begins with https:// and ends with .proxy.cognitiveclass.ai and includes the required '-8000' segment as specified. 2) If you cannot deploy to that domain, explain why in deploymentURL and provide any publicly reachable URL that matches the rubric format or contact the instructor for an exception. 3) Re-run verification (open the URL) and include a screenshot if the platform requires one.
+Question 24
+
+Score: 1/2
+
+Task 25: Submit a screenshot showing the deployed landing page, with the image name deployed_landingpage.
+
+    deployed_landingpage.png
+
+Analysis:
+The submitted image is a screenshot of a web browser showing a landing page titled 'Premium Auto Dealership.' The page features a centered layout with a gradient blue to purple background, a red car emoji above the main heading, a tagline, two call-to-action buttons ('Get Started' and 'Learn More'), and four feature boxes highlighting 'Top Brands,' 'Quality First,' 'Secure,' and 'Fast Service.' The screenshot captures the entire visible landing page content clearly, with good focus and resolution. However, the URL displayed in the browser's address bar is 'http://localhost:8000', which is a local development URL rather than a deployed public URL. The browser's UI is visible, including tabs and some extension icons, but the URL is not fully visible or indicative of a deployed environment. Overall, the image quality is good, but the URL does not reflect a deployed site.
+
+Evaluation:
+According to the rubric, the main criteria are whether the screenshot shows the landing page and the URL in the browser. The landing page is fully visible and clear, but the URL is a localhost address, not a deployed URL. The rubric states that a partially visible URL is acceptable, but the URL must indicate deployment. Since this is a localhost URL, it does not meet the requirement of a deployment URL. Therefore, the screenshot shows the landing page but does not display a valid deployment URL in the browser. This corresponds to the criterion awarding 1 point.
+
+Explanation:
+I awarded 1 point because the screenshot clearly shows the landing page with all required content visible and well-presented, fulfilling part of the rubric. However, the URL shown is 'localhost:8000', which is a local development environment, not a deployed URL. The rubric's highest point level requires the URL to be a deployment URL or partially visible deployment URL, which this does not meet. Hence, the screenshot cannot receive full points.
+
+Guidance:
+To improve, submit a screenshot of the landing page with the actual deployed URL visible in the browser's address bar. Ensure the URL reflects a live, publicly accessible deployment rather than a localhost or development environment. Use a clean browser window with minimal UI distractions and make sure the URL is fully or partially visible. This will meet the rubric's highest standard and earn full points.
+
+Final Score: 1/2 points (50%)
+Question 25
+
+Score: 0/2
+
+Task 26: Submit a screenshot showing the deployed logged-in page, with the image name deployed_loggedin. The screenshot must clearly display the username of the logged-in user.
+
+    deployed_loggedin.png
+
+Analysis:
+The submitted image is a screenshot of a webpage showing a congratulatory message with the username "lincolncommercialsolutions" prominently displayed in the center. The background is a purple gradient with confetti animation. The page includes two large buttons labeled "Browse Dealerships" and "View Vehicles." The browser's URL bar is visible at the top, displaying "http://localhost:8000/welcome?user=lincolncommercialsolutions." However, there is no visible logout option anywhere on the page. The image is clear and well-focused, with good resolution and lighting, but it lacks the logout element required by the assignment instructions.
+
+Evaluation:
+The rubric requires the screenshot to show the logged-in username, the logout option, and the browser URL/address bar. The username and URL bar are visible, but the logout option is missing. Therefore, the screenshot does not fully meet the highest criterion. It meets the lowest criterion of missing either the logout option or the full logged-in page display with the browser URL. Hence, it receives 0 points.
+
+Explanation:
+I awarded 0 points because although the username is clearly visible and the browser URL bar is shown, the logout option is not present anywhere on the page. The rubric explicitly requires the logout option to be visible for full or partial credit. Since this key element is missing, the screenshot does not meet the minimum requirements for any points.
+
+Guidance:
+To improve, ensure the screenshot includes the logout option visibly displayed on the logged-in page along with the username and browser URL bar. This may require navigating to or displaying the page section where logout is available before taking the screenshot. Also, consider cropping or framing the screenshot to clearly capture all required elements without unnecessary empty space. Practice verifying all rubric requirements before submission to avoid missing key components.
+
+Final Score: 0/2 points (0%)
+Question 26
+
+Score: 2/2
+
+Task 27: Submit a screenshot showing the dealer details page opened through your deployment, with the image name deployed_dealer_detail.
+
+    deployed_dealer_detail.png
+
+Analysis:
+The submitted image is a clear screenshot of a web page displaying dealer details. The page shows a navigation bar with links, a breadcrumb navigation link back to dealerships, and a main content area with the dealer name "Premium Motors" prominently displayed. Below the dealer name, detailed information such as location, address, and ZIP code is clearly visible. Additionally, a section listing available vehicles with clickable links is present. The browser's URL/address bar is visible at the top, showing the URL "http://localhost:8000/dealer/1/", which indicates the dealer details page is accessed through a deployment environment. The screenshot is well-focused, with good resolution and lighting, making all text and UI elements easy to read. The composition centers the dealer details page content, fulfilling the task requirements effectively.
+
+Evaluation:
+The rubric question asks if the screenshot shows the dealer details page and the browser URL/address bar. This image clearly shows both the dealer details page content and the URL bar at the top of the browser window. The page content includes dealer-specific information, confirming the correct page is displayed. Therefore, the image meets the highest rubric criterion.
+
+Explanation:
+I awarded 2 points because the screenshot clearly shows the dealer details page with relevant dealer information (name, location, address, ZIP) and also includes the browser URL/address bar visible at the top, displaying the exact URL of the dealer details page. This fully satisfies the top rubric criterion of showing both the dealer details page and browser URL/address bar. The image is clear and well-composed, with no missing elements required by the rubric.
+
+Guidance:
+For future submissions, ensure that the URL bar remains visible and the page content clearly shows the requested details. To improve, you might consider cropping out unnecessary browser UI elements (like bookmarks or extensions) to focus more tightly on the content, but always keep the URL bar visible. Using a high-resolution screenshot tool and ensuring the page is fully loaded before capturing can enhance clarity. Additionally, including any dynamic data or user-specific details if required by other tasks can demonstrate thoroughness.
+
+Final Score: 2/2 points (100%)
+Question 27
+
+Score: 0/2
+
+Task 28: Submit a screenshot showing the review displayed in your deployed application, with the image name deployed_add_review.
+
+    deployed_add_review.png
+
+Analysis:
+The image shows a section titled 'Customer Reviews' with a single review by 'John Smith' displayed. The review includes a positive comment, the car model and year, the review date, and tags such as 'positive' and 'Verified Purchase'. The layout is clean with good use of spacing and colors for tags. However, the image does not show any dealer details or the browser's URL bar, which are critical elements required by the assignment.
+
+Evaluation:
+The rubric question requires the screenshot to show a dealer's details along with the reviews and the URL visible in the browser's address bar. This image only shows the reviews section without any dealer details or URL bar. Therefore, it does not meet any of the rubric criteria for points.
+
+Explanation:
+The screenshot lacks the dealer details page entirely and does not include the browser's URL bar. Although the review content is nicely displayed, the absence of the dealer details and URL means it does not fulfill the assignment requirements. Hence, it matches the lowest rubric criterion and earns zero points.
+
+Guidance:
+To improve, ensure the screenshot captures the entire dealer details page including the customer reviews section. Also, include the browser's address bar showing the URL of the deployed application to confirm it is live and correctly linked. Use a higher resolution and full window capture to provide clear context. This will meet the rubric criteria for higher scoring.
+
+Final Score: 0/2 points (0%)
